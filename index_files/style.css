@@ -1,0 +1,130 @@
+DIV.fb2 {
+         background-image:url('/textures/paper001.jpg'); background-repeat: repeat; padding-top:25px; padding-bottom:25px; padding-right:50px;padding-left:50px;
+        } 
+
+.button1 {
+    width: 100px;
+    max-height: 25px;
+    border: none;
+    background: url('/buttons/grey-1.png') no-repeat top left;
+    padding: 2px 8px;
+}
+.button1:hover {
+    border: none;
+    background: url('/buttons/red-1.png') no-repeat top left;
+    padding: 2px 8px;
+}
+label {
+       display: block; width: 100px; float: left; text-align: right; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+}
+INPUT.button {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; DISPLAY: inline; OVERFLOW: none; BACKGROUND-COLOR: #fdefd7; width: 85px; max-width: 300px
+}
+INPUT {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; DISPLAY: inline; OVERFLOW: none; BACKGROUND-COLOR: #fdefd7; width: 300px
+}
+INPUT:hover {
+background: #ffc;
+}
+INPUT.text {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #0000ff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; DISPLAY: inline; OVERFLOW: none; BACKGROUND-COLOR: #fdefd7; width: 300px
+}
+SELECT {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; DISPLAY: inline; OVERFLOW: none; BACKGROUND-COLOR: #fdefd7; width: 300px
+}
+qqINPUT {
+	BORDER-RIGHT: #674a49 2px solid; PADDING-RIGHT: 10px; BORDER-TOP: #674a49 1px solid; DISPLAY: inline; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; OVERFLOW: auto; BORDER-LEFT: #674a49 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #674a49 2px solid; BACKGROUND-COLOR: #fdefd7; max-height: 500px; max-width: 400px
+}
+PRE {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none;  
+}
+TEXTAREA.example {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #c96300; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none; max-height: 300px; OVERFLOW: auto; WIDTH: 576px; DISPLAY: block; border-color: #FAFAFA; border-style: solid
+}
+TEXTAREA.sample {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px;BACKGROUND-COLOR: #000000; COLOR: #00ff00; FONT-FAMILY: monospace; TEXT-DECORATION: none; max-height: 300px; OVERFLOW: auto; WIDTH: 576px; DISPLAY: block; border-color: #FAFAFA; border-style: solid
+}
+TEXTAREA.preview {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px;BACKGROUND-COLOR: #ffffff; COLOR: #c96300; FONT-FAMILY: monospace; TEXT-DECORATION: none; max-height: 300px; OVERFLOW: auto; WIDTH: 576px; DISPLAY: block; border-color: #FAFAFA; border-style: solid;
+}
+TEXTAREA.postview {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px;BACKGROUND-COLOR: #ffffff; COLOR: #c96300; FONT-FAMILY: monospace; TEXT-DECORATION: none; max-height: 300px; OVERFLOW: auto; WIDTH: 576px; DISPLAY: block; border-color: #FAFAFA; border-style: solid;
+}
+TEXTAREA.liveview {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px;BACKGROUND-COLOR: #ffffff; COLOR: #c96300; FONT-FAMILY: monospace; TEXT-DECORATION: none; max-height: 300px; OVERFLOW: auto; WIDTH: 576px; DISPLAY: block; border-color: #FAFAFA; border-style: solid;
+}
+TT {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #0000cc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none; WIDTH: 570px
+}
+TD {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+TH {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #cc0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+H1 {
+	FONT-SIZE: 14px; COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+H2 {
+	FONT-SIZE: 13px; COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+H3 {
+	FONT-SIZE: 12px; COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+H4 {
+	FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+H5 {
+	FONT-SIZE: 10px; COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.content {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #c96300; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.footer {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+BODY {
+	BACKGROUND-COLOR: #FAFAFA; margin-left:0; margin-right:0;margin-top:0; margin-bottom:0; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #ff0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #c96300; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #c96300; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #c96300; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+A:active {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #c96300; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.topMenu {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.topMenu A:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.topMenu A:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.topMenu A:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.newsLine {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.newsLine H1 {
+	FONT-SIZE: 11px; COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.newsLine A:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.newsLine A:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.newsLine A:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.clock {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #c96300; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
