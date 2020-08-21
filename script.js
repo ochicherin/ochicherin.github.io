@@ -47,6 +47,7 @@ function GetFileNext(file_url) {
   if(!xmlhttp) try {
     xmlhttp=new XMLHttpRequest();
   } catch (e){}   
+alert(location.pathname);
   var path = location.pathname.split("/");
   for (var i=path.length-1; i>0; i--) {
     xmlhttp.open("GET", path.slice(0,i).join("/")+"/"+file_url, false);
