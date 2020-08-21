@@ -1,0 +1,67 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+
+<h1>Читалка для FB2.</h1>
+
+<pre>
+Часто возникает задача отобразить на странице контент из файла в формате FB2.
+Браузеры этот формат пока не поддерживают, за исключением внешнего pligin для FireFox.
+FB2 по своей сути обычный XML. А значит его можно при помощи XSLT преобразовать
+в HTML, текст и многое другое. Файлы, осуществляющие такие XSL преобразования 
+лежат <a href="http://www.gribuser.ru/xml/fictionbook/2.0/xsl/export/">здесь</a>.
+Но у них есть несколько недостатков. Во первых они упускают иллюстрации.
+Эту проблему решили <a href="http://habrahabr.ru/blogs/xslt/75827/#habracut">здесь</a>, расширив xsl.
+Работает только в тех браузерах, которые поддерживают ссылку на изображение
+в виде &lt;IMG SRC="data:image/jpeg;base64,бинарное изображение.
+Вторая проблема - кодировка. Как всегда, русский текст нормально не отображает.
+Для того, чтобы работало, надо заменить в xsl файле
+xsl:output method="xml" encoding="UTF-8"/
+на
+xsl:output method="xml" encoding="windows-1251"/
+ 
+Итак.
+<a href="/testbook.fb2">Здесь</a> - исходный текст книги.
+<a href="/fb2html.xslt">Здесь</a> - текст XSL.
+
+Вот что получается в результате.
+
+</pre>
+
+<span id=fb2_area>
+<div class=fb2>testbook.fb2</div>
+</span>
+
+<pre>
+
+Здесь текст исходного кода элемента.
+
+<textarea class="preview">fb2_area</textarea>
+
+
+Здесь то, что получается после обработки.
+
+<textarea class="postview">fb2_area</textarea>
+
+
+Чтобы получить автономный файл, который может прочитать браузер,
+необходимо переименовать fb2 в xml и добавить ссылку на xsl.
+Выглядит это так
+<textarea class="example">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="fb22xhtml.xsl"?>
+<FictionBook xmlns="http://www.gribuser.ru/xml/fictionbook/2.0"
+</textarea>
+
+Готовый файл <a href="testbook.xml">здесь</a>.
+
+Всё.
+</pre>
+
+</body>
+</html>

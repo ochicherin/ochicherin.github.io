@@ -1,0 +1,27 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <script src="calendar.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Заголовок первый</H1>
+<form name=test_form>
+
+<a href="javascript:show_calendar('document.test_form.REPORT_DATE', document.test_form.REPORT_DATE.value);">
+<INPUT TYPE="TEXT" NAME="REPORT_DATE" VALUE="15.05.2009"> 
+<img src="index_files/calendar.gif" border="0"></a><br>
+
+<a href="javascript:show_calendar('document.test_form.REPORT_TIME', document.test_form.REPORT_TIME.value,1);">
+<INPUT TYPE="TEXT" NAME="REPORT_TIME" VALUE="15.05.2009 11:00"> 
+<img src="index_files/calendar.gif" border="0"></a><br>
+
+<a href="javascript:show_list(document.test_form.REPORT_text);">
+<INPUT TYPE="TEXT" NAME="REPORT_text" VALUE="15.05.2009"> 
+<img src="index_files/calendar.gif" border="0"></a><br>
+
+</form> 
+</BODY>
+</HTML>

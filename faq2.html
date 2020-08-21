@@ -1,0 +1,210 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Как запустить telnet на NAS сервере.</H1>
+
+<pre>
+Речь идет об устройстве NSB3AS1T.
+<a href="http://www.agestar.com/english/products/nsb3as1t.asp">
+<img src="http://www.agestar.com/english/products/proimg/nub3art.gif" align=right></a>
+Оно в общем много чего может.
+<ul>
+<li>Supports FTP and DHCP
+<li>Supports network print server
+<li>Supports BT download
+<li>Supports Samba server on LAN
+</ul>
+Внутри живет <a href="http://www.busybox.net/">BusyBox</a>. Это такой Linux. 
+
+Оригинал методки запуска демона telnetd описан <a href="http://emprex-nas.blogspot.com/2008/08/how-to-telnet-nsd-100.html">здесь</a>.
+
+Итак нам предстоит редактировать файлы в разделе XFS.
+Для этого необходима ОС, которая понимает данную файловую систему.
+Windows не подойдет. 
+Проще всего воспользоваться Live CD 
+скачав образ загрузочного диска <a href="http://software.opensuse.org/112/ru">отсюда</a> и загрузиться с него.
+Далее подключаем NAS сервер к компьютеру по USB.
+На диске будут 3 раздела. 
+Служебный раздел, swap и основной раздел, где собственно храняться данные.
+<textarea class="example">
+Disk /dev/sda: 640.1 GB, 640135028736 bytes
+255 heads, 63 sectors/track, 77825 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+
+   Device Boot    Start       End    Blocks   Id  System
+/dev/sda1               1          16      128488+  82  Linux swap
+/dev/sda2              17          32      128520   83  Linux
+/dev/sda3              33       77825   624872272+   c  Win95 FAT32 (LBA)
+</textarea>
+В отличии от оригинальной методики, нам нужен только служебный раздел sda2. 
+Все дальнейшие действия производятся в корне служебного раздела /dev/sda2, 
+на него смонтирована директория /conf.
+Заходим в директорию /conf и создаем в ней файл с произвольным именем, например <b>bd</b>.
+Записываем в него следующее
+<textarea class="example">
+#!/bin/sh 
+echo "pts/0" >> /etc/securetty 
+/usr/sbin/telnetd 
+</textarea>
+Делаем файл исполняемым.
+<textarea class="example">
+chmod 755 bd
+</textarea>
+Открываем на редактирование файл <b>smb.conf</b>
+Находим секцию <b>[public]</b> и сразу за ней дописываем строку <b>root preexec = /conf/bd</b>
+<textarea class="example">
+[global]
+#unix charset = UTF-8
+#dos charset = UTF-8
+workgroup = workgroup
+server string = Network Storage Device
+printcap name = /etc/printcap
+load printers = yes
+printing = lprng
+log file = /dev/null
+#log file = /var/log/samba/%m.log
+max log size = 10
+security = user
+socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=32768 SO_SNDBUF=32768
+read size = 65536
+max xmit = 65535
+dns proxy = no
+encrypt passwords = yes
+smb passwd file = /etc/samba/smbpasswd
+veto files = /lost+found/
+delete veto files = False
+map to guest = Bad User
+guest account = guest
+[printers]
+comment = ALL PRINTERS
+path = /var/spool/samba
+use client driver = yes
+browseable = yes
+guest ok = yes
+writable = no
+printable = yes
+print command = /usr/sbin/lpr -P%p -r %s
+lpq command = /usr/sbin/lpq -P%p
+lprm command = /usr/sbin/lprm -P%p %j
+lppause command = /usr/sbin/lpc hold %p %j
+lpresume command = /usr/sbin/lpc release %p %j
+queuepause command = /usr/sbin/lpc -P%p stop
+queueresume command = /usr/sbin/lpc -P%p start
+[public]
+root preexec = /conf/bd
+comment=Public folder (Writable For Others)
+path=/mnt/data/public
+create mode = 0664
+directory mode = 0775
+writable = yes
+public=yes
+[admin]
+comment=admin's private folder (Not Access For Others)
+path=/mnt/data
+create mode = 0664
+directory mode = 0775
+writable = yes
+valid users = @admin
+[sh_oleg]
+comment=oleg's private folder (Writable For Others)
+path=/mnt/data/oleg
+create mode = 0664
+directory mode = 0775
+writable = yes
+valid users=@oleg
+</textarea>
+Отключаем usb и обращаемся через сеть в ресурсу public.
+При первом обращении к ресурсу будет выполнена 
+программа <b>/mnt/data/public/bd</b> и запустится демон telnetd.
+После этого можно соединяться.
+<textarea class="example">
+telnet 192.168.1.111
+
+NSDC0728F login: root
+warning: cannot change to home directory
+
+
+BusyBox v1.1.2 (2009.05.08-05:51+0000) Built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+[root@FA520]# uname -a
+Linux NSDC0728F 2.6.16-star #17 Tue Jun 23 16:08:43 CST 2009 armv4l unknown
+[root@FA520]# cat /proc/cpuinfo
+Processor       : FA526id(wb) rev 1 (v4l)
+BogoMIPS        : 191.69
+Features        : swp half
+CPU implementer : 0x66
+CPU architecture: 4
+CPU variant     : 0x0
+CPU part        : 0x526
+CPU revision    : 1
+Cache type      : write-back
+Cache clean     : cp15 c7 ops
+Cache lockdown  : format B
+Cache format    : Harvard
+I size          : 8192
+I assoc         : 2
+I line length   : 16
+I sets          : 256
+D size          : 8192
+D assoc         : 2
+D line length   : 16
+D sets          : 256
+
+Hardware        : STAR STR8131
+Revision        : 0000
+Serial          : 0000000000000000
+[root@FA520]# cat /proc/meminfo
+MemTotal:        28796 kB
+MemFree:          1592 kB
+Buffers:          1032 kB
+Cached:          10784 kB
+SwapCached:         92 kB
+Active:          15204 kB
+Inactive:         7376 kB
+HighTotal:           0 kB
+HighFree:            0 kB
+LowTotal:        28796 kB
+LowFree:          1592 kB
+SwapTotal:      128480 kB
+SwapFree:       120404 kB
+Dirty:               0 kB
+Writeback:           0 kB
+Mapped:          14648 kB
+Slab:             3196 kB
+CommitLimit:    142876 kB
+Committed_AS:    35904 kB
+PageTables:        316 kB
+VmallocTotal:   221184 kB
+VmallocUsed:       120 kB
+VmallocChunk:   221064 kB
+[root@FA520]# df -k
+Filesystem           1k-blocks      Used Available Use% Mounted on
+/dev/mtdblock3            5824      5824         0 100% /
+none                     14396         8     14388   0% /tmp
+none                     14396         0     14396   0% /mnt
+none                     14396       196     14200   1% /var
+none                     14396       316     14080   2% /etc
+none                     14396      1180     13216   8% /web
+none                     14396      5768      8628  40% /usr/sbin
+/dev/sda2               109888      2092    107796   2% /conf
+/dev/sda3            624567280  57600848 566966432   9% /mnt/data
+</textarea>
+
+ПРИМЕЧАНИЕ. Редактировать файл init.d бесполезно. 
+При перезагрузке он будет перетерт копией, хранящейся в флеш памяти.
+Кроме того, команда, указанная нами в smb.conf будет выполнена только 
+при первом обращении к ресурсу public и за содержимое файла /etc/securetty 
+можно не беспокоится.
+
+Можно поступить еще кардинальнее и установить Debian. Как это сделать, 
+описано <a href="http://tinyhack.com/2008/09/20/update-debian-on-agestar-firmware/">здесь</a>.
+</pre>
+  
+</BODY>
+</HTML>

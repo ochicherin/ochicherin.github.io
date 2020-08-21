@@ -1,0 +1,28 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Пример copy, paste, печать текста.</H1>
+
+<textarea id=news1 cols=60 rows=25>
+Ситуация в Египте после отказа президента Хосни Мубарака уйти в отставку перетекла
+ в новое русло и, как опасаются наблюдатели, может повлечь новую волну насилия.
+ Столкновения уже начались. В пятницу армия страны фактически выступила на 
+стороне главы государства, поддержав его решение передать власть де-факто 
+вице-президенту Омару Сулейману и пообещав стать гарантом реформ.
+Однако выступление Мубарака, который возглавляет страну уже почти 30 лет, 
+вызвало огромное разочарование в рядах сотен тысяч протестующих граждан, 
+ожидавших его добровольной отставки или военного переворота. В пятницу в 
+Каире и других городах ожидаются самые масштабные за 18 дней революции 
+манифестации с участием свыше 10 миллионов человек.
+</textarea><br>
+<input type=submit value=Copy  onClick="CopyText(document.getElementById('news1').value);">
+<input type=submit value=Paste onClick="document.getElementById('news1').value=PasteText();"><br>
+<input type=submit value=Print onClick="PrintText(document.getElementById('news1').value);">
+
+</BODY>
+</HTML>

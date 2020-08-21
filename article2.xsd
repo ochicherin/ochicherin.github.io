@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://xmlns.oracle.com/xdb" xdb:storeVarrayAsTable="true" xdb:mapUnboundedStringToLob="true" version="1.0">
+
+<xs:element name="ARTICLE" type="article_one_type" xdb:defaultTable="ARTICLE_ONE">
+ <xs:annotation>
+  <xs:documentation>Статья по принципу каждый узел отдельно</xs:documentation>
+ </xs:annotation>
+</xs:element>
+
+<xs:complexType name="article_one_type" xdb:SQLType="ARTICLE_ONE_TYPE">
+ <xs:annotation>
+  <xs:documentation>Статья</xs:documentation>
+ </xs:annotation>
+ <xs:sequence>
+  <xs:element name="NP_NAME" minOccurs="1" maxOccurs="1" xdb:SQLName="NP_NAME" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Наименование издания</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="127"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="ID" minOccurs="1" maxOccurs="1" xdb:SQLName="ID" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Уникальный идентификатор статьи</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="127"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="REF_ID" minOccurs="0" maxOccurs="1" xdb:SQLName="REF_ID" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Идентификатор родительской статьи</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="0"/>
+     <xs:maxLength value="127"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="URL" minOccurs="0" maxOccurs="1" xdb:SQLName="URL" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Адрес статьи в интернет</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="ISS_ID" minOccurs="1" maxOccurs="1" xdb:SQLName="ISS_ID" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Уникальный идентификатор сеанса загрузки</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="127"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="ISS_NUMBER" minOccurs="0" maxOccurs="1" xdb:SQLName="ISS_NUMBER" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Дата выпуска (для газет)</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="31"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="ISS_DATE" minOccurs="0" maxOccurs="1" type="xs:date" xdb:SQLName="ISS_DATE" xdb:SQLType="DATE">
+   <xs:annotation>
+    <xs:documentation>Дата выпуска (для газет)</xs:documentation>
+   </xs:annotation>
+  </xs:element>
+  <xs:element name="TITLE" minOccurs="1" maxOccurs="1" xdb:SQLName="TITLE" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Заголовок статьи</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="0"/>
+     <xs:maxLength value="255"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="AUTHOR" minOccurs="1" maxOccurs="1" xdb:SQLName="AUTHOR" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Автор статьи</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="0"/>
+     <xs:maxLength value="255"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="ARTICLE_DATE" type="xs:date" xdb:SQLName="ARTICLE_DATE" xdb:SQLType="DATE">
+   <xs:annotation>
+    <xs:documentation>Дата создания документа</xs:documentation>
+   </xs:annotation>
+  </xs:element>
+  <xs:element name="BODY" minOccurs="1" maxOccurs="1" type="body_type" xdb:SQLType="CLOB" xdb:SQLInline="true" xdb:defaultTable="ARTICLE_ONE_BODY"/>
+ </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="body_type" xdb:SQLType="BODY_TYPE">
+ <xs:sequence>
+   <xs:group ref="all_body" minOccurs="0" maxOccurs="unbounded"/> 
+ </xs:sequence>
+</xs:complexType>  
+
+<xs:group name="all_body"> 
+<xs:sequence> 
+    <xs:element name="P" type="p_type" minOccurs="0"  maxOccurs="unbounded" xdb:SQLName="P" xdb:SQLCollType="P_ARRAY" xdb:SQLInline="true" xdb:defaultTable="ARTICLE_ONE_P"/>
+    <xs:element name="IMG" type="img_type" minOccurs="0" maxOccurs="unbounded" xdb:SQLName="IMG" xdb:SQLCollType="IMG_ARRAY" xdb:SQLInline="true" xdb:defaultTable="ARTICLE_ONE_IMG"/>
+    <xs:element name="table" type="table_type" minOccurs="0" maxOccurs="unbounded" xdb:SQLName="TABLEE" xdb:SQLCollType="TABLE_ARRAY" xdb:SQLInline="true" xdb:defaultTable="ARTICLE_ONE_TABLE"/>
+</xs:sequence> 
+</xs:group> 
+
+<xs:complexType name="p_type" xdb:SQLType="P_TYPE" mixed="true">
+    <xs:sequence> 
+     <xs:element name="a" type="a_type" minOccurs="0" maxOccurs="unbounded" xdb:SQLName="A" xdb:SQLCollType="A_ARRAY" xdb:SQLInline="true" xdb:defaultTable="ARTICLE_ONE_A"/> 
+    </xs:sequence> 
+</xs:complexType>  
+
+<xs:complexType name="a_type" xdb:SQLType="A_TYPE" mixed="true">
+       <xs:simpleContent>
+        <xs:extension base="xs:string">
+         <xs:attribute name="href" type="xs:anyURI" use="required" xdb:SQLName="HREF" xdb:SQLType="VARCHAR2"/>
+        </xs:extension>
+       </xs:simpleContent>
+</xs:complexType>  
+
+<xs:simpleType name="longstring">
+	<xs:restriction base="xs:base64Binary">
+     <xs:minLength value="0"/>
+     <xs:maxLength value="32000"/>
+	</xs:restriction>
+</xs:simpleType>  
+
+<xs:complexType name="img_type" xdb:SQLType="IMG_TYPE" mixed="true">
+       <xs:simpleContent>
+        <xs:extension base="xs:string">
+         <xs:attribute name="SRC" type="xs:anyURI" use="required" xdb:SQLType="VARCHAR2"/>
+         <xs:attribute name="ALT" type="xs:string" use="optional" xdb:SQLType="VARCHAR2"/>
+        </xs:extension>
+       </xs:simpleContent>
+</xs:complexType>  
+
+<xs:complexType name="table_type" xdb:SQLType="TABLE_TYPE">
+ <xs:sequence>
+       <xs:any/>
+ </xs:sequence>
+  <xs:attribute name="border" type="xs:string" use="optional" xdb:SQLType="VARCHAR2"/>
+</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,101 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Двумерные штрихкоды на сайте</H1>
+<pre>
+Принципы описаны <a href="/faq19.html">здесь</a>.
+
+Сфера применения штрихкодов достаточно узкая.
+Это необходимость передать информацию с твердой копии документа, например
+бумаги на мобильное устройство. Чаще всего это сотовый телефон.
+Передаются ссылки, номера телефонов, небольшие тексты и визитные карточки.
+
+Ссылка на текущую страницу.
+<span id=area1>
+<img class=href>
+</span>
+
+
+Исходный вид элемента на странице.
+
+<textarea class=preview>area1</textarea>
+
+Конечный вид элемента .
+
+<textarea class=postview>area1</textarea>
+
+
+Номер телефона в формате datamatrix
+<span id=area2>
+<img class=datamatrix alt="TEL:+7495999999">
+</span>
+
+Исходный вид элемента на странице.
+
+<textarea class=preview>area2</textarea>
+
+Конечный вид элемента .
+
+<textarea class=postview>area2</textarea>
+
+
+Номер телефона в формате qr-code 
+<span id=area3>
+<img class=qrcode alt="TEL:+7495999999">
+</span>
+
+Исходный вид элемента на странице.
+
+<textarea class=preview>area3</textarea>
+
+Конечный вид элемента .
+
+<textarea class=postview>area3</textarea>
+
+
+Простой текст.
+<span id=area4>
+<img class=datamatrix alt="Ехал Гpека через реку, 
+Видит Гpека - в рeкe рак, 
+">
+</span>
+
+Исходный вид элемента на странице.
+
+<textarea class=preview>area4</textarea>
+
+Конечный вид элемента .
+
+<textarea class=postview>area4</textarea>
+
+
+Визитная карточка
+<span id=area5>
+<img class=datamatrix alt="BEGIN:VCARD
+N;ENCODING=BASE64;CHARSET=windows-1251:1+j35fDo7TvO6+XjO83o6u7r4OXi6Pc7Ow==
+
+EMAIL:OChicherin@yandex.ru
+URL:http://ochicherin.narod.ru
+END:VCARD
+"> 
+</span>
+
+Исходный вид элемента на странице.
+
+<textarea class=preview>area5</textarea>
+
+Конечный вид элемента .
+
+<textarea class=postview>area5</textarea>
+
+
+
+Всё.
+</pre>
+</body>
+</html>

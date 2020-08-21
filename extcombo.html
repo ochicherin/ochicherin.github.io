@@ -1,0 +1,45 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+<H1>Combobox загружаемый из внешнего файла.</H1>
+
+<pre>
+Часто возникают ситуации, когда элемент select с один и тем же содержимым
+используется на нескольких страницах. 
+Чтобы избежать copy/paste можно загружать элемент из внешнего файла.
+ 
+
+Вот работающий элемент
+<span id=list_area>
+<SELECT id="list1" class=external>
+<option value="fotogalery.xml">Фотогалерея</option>
+<option value="fotogalery.xml">Фотогалерея 2</option>
+</SELECT>
+</span>
+
+Для того, чтобы его сделать, надо создать один или несколько файлов с наполнением 
+аналогичным стандартному наполнению тега select, т.е. тегами option. 
+Файл должен иметь кодировку utf-8.
+В самом документе в тегах option в атрибуте value указывается путь к файлу.
+В тексте тега option может указываться заголовок списка(заготовка на будущее).
+
+Пример содержимого файла.
+
+<textarea class=sample>fotogalery.xml</textarea>
+
+Исходный вид элемента на странице.
+
+<textarea class=preview>list_area</textarea>
+
+Конечный вид элемента после отработки скриптов.
+<textarea class=postview>list_area</textarea>
+
+Все.
+</pre>
+</body>
+</html>

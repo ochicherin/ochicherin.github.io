@@ -1,0 +1,370 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Как сделать из pl/sql процедуры Web Service и вызвать его 
+      из того же pl/sql</H1>
+
+<pre>
+Сначало настраиваем XDB. 
+Настройка описана в документе <b>OracleR XML DB Developer's Guide 11g Release 1 (11.1)</b> 
+в разделе <b>33 Using Native Oracle XML DB Web Services</b>.
+
+Открываем порты для http и https. В примере будет использоваться порт 8888 для http.
+
+Затем инсталируем сервлет.
+</pre>
+<textarea class="example">
+DECLARE
+  SERVLET_NAME VARCHAR2(32) := 'orawsv';
+BEGIN
+  DBMS_XDB.deleteServletMapping(SERVLET_NAME);
+  DBMS_XDB.deleteServlet(SERVLET_NAME);
+  DBMS_XDB.addServlet(NAME     => SERVLET_NAME,
+                      LANGUAGE => 'C',
+                      DISPNAME => 'Oracle Query Web Service',
+                      DESCRIPT => 'Servlet for issuing queries as a Web Service',
+                      SCHEMA   => 'XDB');
+  DBMS_XDB.addServletSecRole(SERVNAME => SERVLET_NAME,
+                             ROLENAME => 'XDB_WEBSERVICES',
+                             ROLELINK => 'XDB_WEBSERVICES');
+  DBMS_XDB.addServletMapping(PATTERN => '/orawsv/*',
+                             NAME    => SERVLET_NAME);
+END;
+/
+</textarea>
+
+<pre>
+
+Назначаем пользователю БД роли
+ - XDB_WEBSERVICES
+ - XDB_WEBSERVICES_OVER_HTTP - Enable use of Web services over HTTP (not just HTTPS).
+ - XDB_WEBSERVICES_WITH_PUBLIC - Enable access, using Web services, 
+                                 to database objects that are accessible to PUBLIC.
+
+Создаем тестовую таблицу
+</pre>
+
+<textarea class="example">
+create table SMI_SOURCE
+(
+  SRC_ID   NUMBER(9) not null,
+  SRC_NAME VARCHAR2(127),
+  SRC_TYPE VARCHAR2(15),
+  SRC_ICON VARCHAR2(127)
+)
+;
+comment on table SMI_SOURCE is 'Издания';
+comment on column SMI_SOURCE.SRC_ID  is 'Сурогатный ключ';
+comment on column SMI_SOURCE.SRC_NAME  is 'Наименование издания';
+comment on column SMI_SOURCE.SRC_TYPE  is 'Тип издания';
+comment on column SMI_SOURCE.SRC_ICON  is 'url иконки';
+alter table SMI_SOURCE  add constraint SMI_SOURCE_PK primary key (SRC_ID);
+
+insert into SMI_SOURCE values 
+(3, 'Московский комсомолец', 'internet', 'images/siteIcons/mk.png');
+insert into SMI_SOURCE values (4, 'ЖЖ', 'blog', 'images/siteIcons/livejournal.png');
+insert into SMI_SOURCE values (6, 'Газета Ру', 'internet', 'images/siteIcons/gazeta.png');
+insert into SMI_SOURCE values (11, 'АПН', 'internet', 'images/siteIcons/internet.png');
+insert into SMI_SOURCE values (12, 'inoСМИ.ru', 'internet', 'images/siteIcons/inosmi.png');
+insert into SMI_SOURCE values (13, 'интерфакс', 'internet', 'images/siteIcons/interfax.png');
+insert into SMI_SOURCE values (14, 'Труд', 'internet', 'images/siteIcons/trud.png');
+insert into SMI_SOURCE values 
+(1, 'Комсомольская правда', 'internet', 'images/siteIcons/kp.png');
+insert into SMI_SOURCE values (2, 'Лента Ру', 'internet', 'images/siteIcons/lenta.png');
+insert into SMI_SOURCE values (9, 'ПРАВДА', 'internet', 'images/siteIcons/internet.png');
+insert into SMI_SOURCE values (10, 'Известия', 'internet', 'images/siteIcons/internet.png');
+insert into SMI_SOURCE values (5, 'Наука', 'internet', 'images/siteIcons/internet.png');
+insert into SMI_SOURCE values (7, 'полит.ру', 'internet', 'images/siteIcons/polit.png');
+insert into SMI_SOURCE values (8, 'росбалт', 'internet', 'images/siteIcons/rosbalt.png');
+commit;                                                       
+</textarea>
+<pre>
+
+
+Создаем тестовую процедуру
+
+</pre>
+
+<textarea class="example">
+create or replace procedure get_src_name(p_src_name out varchar2, p_src_id in number) is
+begin
+  select src_name into p_src_name
+  from smi_source
+  where src_id=p_src_id;
+exception
+ when others then p_src_name := ' ';  
+end get_src_name;
+</textarea>
+<pre>
+
+Запрашиваем wsdl. Регистр имеет значение!
+http://localhost:8888/orawsv/NEW_SMI/GET_SRC_NAME?wsdl
+
+Получаем в ответ.
+
+</pre>
+
+<textarea class="example">
+<definitions name="GET_SRC_NAME"
+    targetNamespace="http://xmlns.oracle.com/orawsv/NEW_SMI/GET_SRC_NAME"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:tns="http://xmlns.oracle.com/orawsv/NEW_SMI/GET_SRC_NAME"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xsd:schema targetNamespace="http://xmlns.oracle.com/orawsv/NEW_SMI/GET_SRC_NAME"
+     elementFormDefault="qualified">
+      <xsd:element name="GET_SRC_NAMEInput">
+        <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="P_SRC_NAME-VARCHAR2-OUT">
+                <xsd:complexType/>
+              </xsd:element>
+              <xsd:element name="P_SRC_ID-NUMBER-IN" type="xsd:double"/>
+            </xsd:sequence>
+          </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GET_SRC_NAMEOutput">
+        <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="P_SRC_NAME" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+      </xsd:element>
+   </xsd:schema>
+  </types>
+  <message name="GET_SRC_NAMEInputMessage">
+    <part name="parameters" element="tns:GET_SRC_NAMEInput"/>
+  </message>
+  <message name="GET_SRC_NAMEOutputMessage">
+    <part name="parameters" element="tns:GET_SRC_NAMEOutput"/>
+  </message>
+  <portType name="GET_SRC_NAMEPortType">
+  <operation name="GET_SRC_NAME">
+      <input message="tns:GET_SRC_NAMEInputMessage"/>
+      <output message="tns:GET_SRC_NAMEOutputMessage"/>
+    </operation>
+  </portType>
+  <binding name="GET_SRC_NAMEBinding"
+           type="tns:GET_SRC_NAMEPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GET_SRC_NAME">
+      <soap:operation soapAction="GET_SRC_NAME"/>
+      <input>
+        <soap:body parts="parameters" use="literal"/>
+      </input>
+      <output>
+        <soap:body parts="parameters" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="GET_SRC_NAMEService">
+    <documentation>Oracle Web Service</documentation>
+    <port name="GET_SRC_NAMEPort" binding="tns:GET_SRC_NAMEBinding">
+       <soap:address 
+             location="http://localhost:8888/orawsv/NEW_SMI/GET_SRC_NAME"/>
+     </port>
+  </service>
+</definitions>
+</textarea>
+<pre>
+
+
+Пробуем вызвать процедуру. 
+
+</pre>
+<textarea class="example">
+declare
+    env       VARCHAR2(32767);
+    http_req  utl_http.req;
+    http_resp utl_http.resp;
+    resp      sys.xmltype;
+    in_xml    sys.xmltype;
+    url       varchar2(2000):='http://localhost:8888/orawsv/NEW_SMI/GET_SRC_NAME';
+    i         number;
+  BEGIN
+    env:='<?xml version="1.0" ?>
+    <soap:Envelope xmlns:soap="http://www.w3.org/2002/06/soap-envelope">
+<soap:Body>
+<GET_SRC_NAMEInput xmlns="http://xmlns.oracle.com/orawsv/NEW_SMI/GET_SRC_NAME">
+<P_SRC_ID-NUMBER-IN>1</P_SRC_ID-NUMBER-IN>
+<P_SRC_NAME-VARCHAR2-OUT></P_SRC_NAME-VARCHAR2-OUT>
+</GET_SRC_NAMEInput>
+</soap:Body>
+</soap:Envelope>';
+    http_req := utl_http.begin_request(url, 'POST','HTTP/1.1');
+    utl_http.set_body_charset(http_req, 'windows-1251'); -- UTF-8
+--   utl_http.set_proxy('proxy:80', NULL);
+--   utl_http.set_persistent_conn_support(TRUE);
+   UTL_HTTP.set_authentication(http_req, 'new_smi', 'viewsonic', 'Basic', false );
+    utl_http.set_header(http_req, 'Content-Type', 'text/xml');
+    utl_http.set_header(http_req, 'Content-Length', length(env));
+--    utl_http.set_header(http_req, 'SOAPAction', 'http://localhost:8888/GET_SRC_NAME');
+    utl_http.write_text(http_req, env);
+    http_resp := utl_http.get_response(http_req);
+    utl_http.read_text(http_resp, env);
+    utl_http.end_response(http_resp);
+    in_xml := sys.xmltype.createxml(env);
+    resp := xmltype.createxml(env);
+    for i in 0..trunc(length(env)/255) loop
+      dbms_output.put_line(SUBSTR(env, i*255+1, 255));
+    end loop;
+  END;
+</textarea>
+<pre>
+
+Получаем результат
+
+</pre>
+<textarea class="example">
+<?xml version="1.0" ?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2002/06/soap-envelope">
+  <soap:Body>
+    <GET_SRC_NAMEOutput xmlns="http://xmlns.oracle.com/orawsv/NEW_SMI/GET_SRC_NAME">
+      <P_SRC_NAME>Комсомольская правда</P_SRC_NAME>
+    </GET_SRC_NAMEOutput>
+  </soap:Body>
+</soap:Envelope>
+</textarea>
+<pre>
+
+Теперь пробуем запросить таблицу напрямую.
+Выбрать все строки, у которых ИД меньше 5.
+
+</pre>
+<textarea class="example">
+declare
+    env       VARCHAR2(32767);
+    http_req  utl_http.req;
+    http_resp utl_http.resp;
+    resp      sys.xmltype;
+    in_xml    sys.xmltype;
+    url       varchar2(2000):='http://localhost:8888/orawsv';
+    i         number;
+  BEGIN
+    env:='<?xml version="1.0" ?>
+<env:Envelope xmlns:env="http://www.w3.org/2002/06/soap-envelope">
+ <env:Body>
+  <query xmlns="http://xmlns.oracle.com/orawsv">
+   <query_text type="SQL">
+    <![CDATA[SELECT * FROM smi_source WHERE src_id < :e]]>
+   </query_text>
+   <bind name="e">5</bind>
+   <pretty_print>true</pretty_print>
+   <rowset_tag>smi_sources</rowset_tag>
+   <row_tag>row</row_tag>
+  </query>
+ </env:Body>
+</env:Envelope>';
+    http_req := utl_http.begin_request(url, 'POST','HTTP/1.1');
+    utl_http.set_body_charset(http_req, 'windows-1251'); -- UTF-8
+--   utl_http.set_proxy('proxy:80', NULL);
+--   utl_http.set_persistent_conn_support(TRUE);
+   UTL_HTTP.set_authentication(http_req, 'new_smi', 'viewsonic', 'Basic', false );
+    utl_http.set_header(http_req, 'Content-Type', 'text/xml');
+    utl_http.set_header(http_req, 'Content-Length', length(env));
+    utl_http.write_text(http_req, env);
+    http_resp := utl_http.get_response(http_req);
+    utl_http.read_text(http_resp, env);
+    utl_http.end_response(http_resp);
+    in_xml := sys.xmltype.createxml(env);
+    resp := xmltype.createxml(env);
+    dbms_output.put_line('same output');
+    for i in 0..trunc(length(env)/255) loop
+      dbms_output.put_line(SUBSTR(env, i*255+1, 255));
+    end loop;
+  END;
+</textarea>
+<pre>
+
+Получаем в результате
+
+</pre>
+<textarea class="example">
+<?xml version="1.0" ?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2002/06/soap-envelope">
+ <soap:Body>
+  <queryOut xmlns="http://xmlns.oracle.com/orawsv">
+   <smi_sources>
+    <row>
+     <SRC_ID>3</SRC_ID>
+     <SRC_NAME>Московский комсомолец</SRC_NAME>
+     <SRC_TYPE>internet</SRC_TYPE>
+     <SRC_ICON>images/siteIcons/mk.png</SRC_ICON>
+    </row>
+    <row>
+     <SRC_ID>4</SRC_ID>
+     <SRC_NAME>ЖЖ</SRC_NAME>
+     <SRC_TYPE>blog</SRC_TYPE>
+     <SRC_ICON>images/siteIcons/livejournal.png</SRC_ICON>
+    </row>
+    <row>
+     <SRC_ID>1</SRC_ID>
+     <SRC_NAME>Комсомольская правда</SRC_NAME>
+     <SRC_TYPE>internet</SRC_TYPE>
+     <SRC_ICON>images/siteIcons/kp.png</SRC_ICON>
+    </row>
+    <row>
+     <SRC_ID>2</SRC_ID>
+     <SRC_NAME>Лента Ру</SRC_NAME>
+     <SRC_TYPE>internet</SRC_TYPE>
+     <SRC_ICON>images/siteIcons/lenta.png</SRC_ICON>
+    </row>
+   </smi_sources>
+  </queryOut>
+ </soap:Body>
+</soap:Envelope>
+</textarea>
+<pre>
+
+Теперь по авторизацию. 
+Авторизация не отключается. Максимум, что можно сделать, получить анонимный доступ к wsdl.
+Для этого необходимо добавить в <i>/xdbconfig.xml</i> тег allow-repository-anonymous-access. 
+Далее надо разлочить аккаунт пользователя anonymous.
+</pre>
+<textarea class="example">
+  <allow-repository-anonymous-access xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">true</allow-repository-anonymous-access>
+        <authentication>
+          <allow-mechanism>basic</allow-mechanism>
+          <digest-auth>
+            <nonce-timeout>300</nonce-timeout>
+          </digest-auth>
+        </authentication>
+      </httpconfig>
+    </protocolconfig>
+    <xdbcore-xobmem-bound>1024</xdbcore-xobmem-bound>
+    <xdbcore-loadableunit-size>16</xdbcore-loadableunit-size>
+    <acl-evaluation-method>ace-order</acl-evaluation-method>
+  </sysconfig>
+</xdbconfig>
+</textarea>
+<pre>
+
+Авторизация при вызове самой процедуры запрашивется сервером всегда.
+Если все же необходим публичный сервис, можно воспользоваться Apache в качестве прокси.
+Добавляем в httpd.conf следующие строки. Добавлять можно и в VirtualHost
+
+</pre>
+<textarea class="example">
+RewriteEngine on
+RewriteLogLevel	9
+RewriteLog	/logs/rewrite.log
+RequestHeader append Authorization "Basic cHVicGd1OnB1YnBndQ=="
+RewriteRule ^/orawsv(.*) http://10.32.1.156:8080/orawsv$1 [P]
+</textarea>
+<pre>
+
+Трансформируем запрос и скармливаем его прокси.
+Авторизация подставляется в заголовок запроса опцией RequestHeader.
+Конструкция вида <i>http://username:password@server:port/orawsv</i> не работает. 
+
+Всё.
+</pre>
+
+</BODY>
+</HTML>

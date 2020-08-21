@@ -1,0 +1,30 @@
+<div style="position: absolute; z-index: 999; left: 916px; top: 130px; visibility: visible; " >
+</div>
+<TABLE cellSpacing=0 cellPadding=0 width=779 align=center border=0>
+  <TR>
+    <TD width=160><IMG height=115 alt="" src="/index_files/t1-1.jpg"></TD>
+    <TD width=274 align=center><h1>Чичерин Олег Николаевич</h1> </TD>
+    <TD><IMG height=115 alt="" src="/index_files/t1-3.jpg" width=345></TD>
+  </TR>
+  <TR>
+    <TD bgColor=#c96300 width=160 height=23 align=center rowspan=2> <font size=+1>  </font> </TD>
+    <TD height=23 colspan=2 class=topMenu align=middle bgColor=#333333> 
+      <div class=sitemap_top>/sitemap.xml</div> <!--div class=bar>mainmenu.xml</div-->
+    </TD>
+  </TR>
+  <TR>
+    <TD vAlign=top align=left height=23><IMG height=23 src="/index_files/t4-1.gif" width=21></TD>
+    <TD vAlign=top align=right colspan=2><span id=clock class=clock></span></TD>
+  </TR>
+</TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=779 align=center border=0>
+  <TR vAlign=top align=left>
+    <TD class=newsLine bgColor=#c96300 width=160><!--div class=rss_short>rss.xml</div--><div class=sitemap_current>/sitemap.xml</div>
+      <div align="center"><br><br>
+        <a href="/geostat.html">
+          <img src="http://www2.clustrmaps.com/counter/index2.php?url=http://ochicherin.narod.ru" width="100" style="border:0px;">
+        </a>
+      </div>
+    </TD>
+    <TD width=21 background=/index_files/t4-2.gif></TD>  
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-TOP: 10px" vAlign=top align=left height=383>

@@ -1,0 +1,18 @@
+    </TD>
+  </TR>
+</TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=779 align=center border=0>
+  <TR>
+    <TD width=160><IMG height=22 alt="" src="/index_files/t2-1.gif" width=160></TD>
+    <TD vAlign=bottom align=left><IMG height=22 alt="" src="/index_files/t4-4.gif" width=21></TD>
+    <TD align=right></TD>
+  </TR>
+<!--  <TR>
+    <TD width=160><IMG height=23 alt="" src="/index_files/t2-1.gif" width=160></TD>
+    <TD align=right bgColor=#333333 class="footer">Чичерин О.Н., Москва, 2009&nbsp;&nbsp;</TD>
+  </TR> -->
+  <TR>
+    <TD bgColor=#c96300 align=center width=160 height=23><img src="http://www.narod.ru/counter.xhtml" alt="" width=50 height=14 /><img src="http://mc.yandex.ru/watch/1723305" alt="" /></TD>
+    <TD align=right bgColor=#333333 class="footer">&nbsp;&nbsp;Чичерин О.Н., Москва, 2009&nbsp;&nbsp;</TD>
+  </TR>
+</TABLE>

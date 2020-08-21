@@ -1,0 +1,24 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>#list_title#</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script type="text/javascript" src="lov.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<body onLoad="refresh_list(form.input_target.value, form.service_url.value, form.text_input, form.list_input, form.service_username.value, form.service_password.value);">
+<H1>#list_description#</h1>
+<form name=form ONSUBMIT="apply_list(input_target.value, service_url.value, text_input, list_input);self.close();"
+                 onreset="self.close();">
+<INPUT TYPE="hidden" NAME="service_username" value="#service_username#"><br> 
+<INPUT TYPE="hidden" NAME="service_password" VALUE="#service_password#"><br> 
+<INPUT TYPE="hidden" NAME="input_target" value="#input_target#"><br> 
+<INPUT TYPE="hidden" NAME="service_url" VALUE="#service_url#"><br> 
+<INPUT TYPE="TEXT" NAME="text_input" VALUE="#text_input#" onkeyup="refresh_list(input_target.value, service_url.value, text_input, list_input, form.service_username.value, form.service_password.value);"><br> 
+<SELECT size=10 name="list_input" onChange="text_input.value=this.options[this.selectedIndex].text">
+<OPTION VALUE="495"></option>
+</SELECT><br>
+<INPUT TYPE="SUBMIT" VALUE="Ok" width=10>
+<INPUT TYPE="RESET" VALUE="Cancel"><br> 
+</form> 
+</body>
+</html>

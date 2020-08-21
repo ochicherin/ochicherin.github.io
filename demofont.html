@@ -1,0 +1,118 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+  <style>
+    @font-face {
+      font-family: 'PostIndexBold';
+      src: url('fonts/postindex.eot');
+      src: url('fonts/postindex.eot?#iefix') format('eot'),
+           url('fonts/postindex.woff') format('woff'),
+           url('fonts/postindex.ttf') format('truetype'),
+           url('fonts/postindex.svg#webfont94jKE1SE') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'LEDNormal';
+      src: url('fonts/ledbdrev.eot');
+      src: url('fonts/ledbdrev.eot?#iefix') format('eot'),
+           url('fonts/ledbdrev.woff') format('woff'),
+           url('fonts/ledbdrev.ttf') format('truetype'),
+           url('fonts/ledbdrev.svg#webfontRRQjhvjf') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'barcod39';
+      src: url('fonts/barcod39.eot');
+      src: url('fonts/barcod39.eot?#iefix') format('eot'),
+           url('fonts/barcod39.woff') format('woff'),
+           url('fonts/barcod39.ttf') format('truetype'),
+           url('fonts/barcod39.svg#webfontqwxrEtdN') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+</style>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Использование нестандартных шрифтов</H1>
+<pre>
+Иногда возникает потребность использовать на странице нестандартный шрифт.
+Браузер по умолчанию использует локальные шрифты.
+
+А нам например необходимо воспроизвести бланк почтового отправления.
+Мало у кого на компьютере найдется шрифт, воспроизводящий почтовый индекс.
+Или например линейный штрихкод.
+
+Делается это достаточно просто. Шрифт выкладывается на сервер.
+В заголовок файла добавляется секция STYLE. Выглядит это так.
+<textarea class=example>
+<style>
+    @font-face {
+      font-family: 'PostIndexBold';
+      src: url('/fonts/postindex.ttf') format('truetype');,
+    }
+</style>
+</textarea>
+
+Теперь можно использовать шрифт на странице, добавляя его у атрибут style.
+
+Например 
+
+<textarea class=example>
+<span style="font-family: 'PostIndexBold'; font-size:2cm;">$117574</span>
+</textarea>
+
+Получится следующее
+
+<span style="font-family: 'PostIndexBold'; font-size:2cm;">$117574</span>
+
+Все хорошо, только в IE это не работает. Ему нужен шрифт в файле eot.
+Где его брать? 
+Идем на ресурс <a href="http://www.fontsquirrel.com/fontface/generator">FONT-FACE GENERATOR</a>. Загружаем туда ttf шрифт и в ответ 
+в архиве получаем комплект файлов своего шрифта в различных форматах.
+В результате секция STYLE будет выглядеть следующим образом.
+<textarea class=example>
+  <style>
+    @font-face {
+      font-family: 'PostIndexBold';
+      src: url('/fonts/postindex.eot');
+      src: url('/fonts/postindex.eot?#iefix') format('eot'),
+           url('/fonts/postindex.woff') format('woff'),
+           url('/fonts/postindex.ttf') format('truetype'),
+           url('/fonts/postindex.svg#webfont94jKE1SE') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</textarea>
+
+Аналогичным образом делаются часы.
+
+<span id=area1>
+ <span class=clock style="background: #000000; color:#00ff00; font-family: 'LEDNormal'; font-size:2cm;"></span>
+</span>
+
+Исходный код элемента. 
+ <textarea class=liveview>area1</textarea>
+
+
+Или штрихкод.
+
+<span id=area2>
+ <span style="font-family: 'barcod39'; font-size:3cm;">12345678</span>
+</span>
+
+Исходный код элемента. 
+ <textarea class=postview>area2</textarea>
+
+Всё.
+</pre>
+</body>
+</html>

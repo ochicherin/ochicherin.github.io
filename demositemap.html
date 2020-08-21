@@ -1,0 +1,84 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <h1>Как устроена карта сайта.</h1>
+
+<pre>
+ 
+Устроена она очень просто. 
+Есть конфигурационный файл, содержащий перечень всех страниц сайта.
+Если изменяется структура сайта, добавляются страницы, или меняются разделы,
+я вношу изменения только в этот файл.
+По нему генерируются все элементы навигации по сайту.
+
+Файл выглядит так
+
+<textarea class=sample>sitemap.xml</textarea>
+
+</pre>
+
+<hr>
+
+<h1>Меню сайта.</h1>
+Это то, что вы видите в верхней панели страницы. Представляет собой горизонтальный список.
+Состоит из элементов верхнего уровня.
+<span id=area1>
+  <div style="background :#FfFfc0" class=sitemap_top>sitemap.xml</div>
+</span>
+
+Исходный код
+<textarea class=preview>area1</textarea>
+
+<hr>
+
+<h1>Список страниц раздела.</h1>
+Это то, что вы видите на левой панели. Представляет собой вертикальный одноуровневый список.
+Состоит из элементов того же уровня, что и текущая страница. Плюс заголовок со ссылкой на родительскую страницу.
+<span id=area2>
+  <div style="background :#FfFfc0" class=sitemap_current>sitemap.xml</div>
+</span>
+
+Исходный код
+<textarea class=preview>area2</textarea>
+
+<hr>
+
+<h1>Список дочерних страниц следующего уровня.</h1>
+Это содержимое текущего раздела. Состоит из дочерних страниц следующего уровня.
+<span id=area3>
+  <div style="background :#FfFfc0" class=sitemap_child>sitemap.xml</div>
+</span>
+
+Исходный код
+<textarea class=preview>area3</textarea>
+
+<hr>
+
+<h1>Список всех дочерних страниц следующего уровня.</h1>
+Это тоже содержимое текущего раздела. Но в отличии от предидущего примера состоит из всех дочерних страниц.
+<span id=area4>
+  <div style="background :#FfFfc0" class=sitemap_tree>sitemap.xml</div>
+</span>
+
+Исходный код
+<textarea class=preview>area4</textarea>
+
+<hr>
+
+<h1>Глобальное меню сайта.</h1>
+Содержит перечень всех страниц сайта. Практически, это содержимое страницы <a href="/sitemap.html">Карта сайта</a>.
+<span id=area5>
+  <div style="background :#FfFfc0" class=sitemap_total>sitemap.xml</div>
+</span>
+
+Исходный код
+<textarea class=preview>area5</textarea>
+
+<hr>
+</BODY>
+</HTML>

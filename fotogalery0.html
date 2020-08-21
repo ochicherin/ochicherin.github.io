@@ -1,0 +1,165 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<head>
+<title>#list_title#</title>
+<LINK REL=StyleSheet TYPE=text/css HREF=index_files/style.css>
+  <script>
+
+
+    function ChangeImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast) {
+      img.src=list.options[list.selectedIndex].value;
+      if (btnTitle) {
+        btnTitle.value = list.options[list.selectedIndex].text;
+      }
+      if (btnPrev) {
+        btnPrev.disabled = list.selectedIndex==0;
+//        btnPrev.value = (list.selectedIndex==0)?"<":list.options[list.selectedIndex-1].text;
+      }
+      if (btnNext) {
+        btnNext.disabled = list.selectedIndex==list1.length-1;
+//        btnNext.value = (list.selectedIndex==list1.length-1)?">":list.options[list.selectedIndex+1].text;
+      }
+      if (btnFirst) {
+        btnFirst.disabled = list.selectedIndex==0;
+//        btnFirst.value = list.options[0].text;
+      }
+      if (btnLast) {
+       btnLast.disabled = list.selectedIndex==list.length-1;
+//       btnLast.value = list.options[list.length-1].text;
+      }
+    }
+
+    function FirstImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast) {
+      list.selectedIndex = 0;
+      ChangeImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast);
+    }
+
+    function PrevImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast) {
+      if (list.selectedIndex>0) list.selectedIndex = list.selectedIndex-1;
+      ChangeImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast);
+    }
+
+    function NextImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast) {
+      if (list.selectedIndex<list.length-1) list.selectedIndex = list.selectedIndex+1;
+      ChangeImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast);
+    }
+
+    function LastImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast) {
+      list.selectedIndex = list.length-1;
+      ChangeImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast);
+    }
+
+    function NavImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast) {
+      switch(event.keyCode)
+      {
+        case 37: // left
+        case 38: // up
+                PrevImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast);
+                break;
+        case 39: // rigth
+        case 40: // down
+                NextImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast);
+                break;
+        case 36: // Home
+                FirstImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast);
+                break;
+        case 35: // End
+                LastImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast);
+                break;
+      }
+    }
+
+    function AddNavigation(list,img,mode) {
+    var a;
+    var e = document.createElement("span");
+    var list_id = "document.getElementById('"+list.id+"')";
+    var img_id  = "document.getElementById('"+img.id+"')";
+    switch(mode) {
+      case 1:
+        a = list_id+','+img_id+','+list.id+'_prev,'+list.id+'_next,'+list.id+'_title,'+list.id+'_first,'+list.id+'_last';
+        e.innerHTML = '<input type=submit value="|<" style="width:30px"  id='+list.id+'_first onclick="FirstImage('+a+');">'
+                    + '<input type=submit value="<"  style="width:30px"  id='+list.id+'_prev   onclick="PrevImage('+a+');">'
+                    + '<input type=submit value="."  style="width:120px" id='+list.id+'_title  onclick="">'
+                    + '<input type=submit value=">"  style="width:30px"  id='+list.id+'_next   onclick="NextImage('+a+');">'
+                    + '<input type=submit value=">|" style="width:30px"  id='+list.id+'_last   onclick="LastImage('+a+');">'
+                    ;
+        break;
+      case 2:
+        a = list_id+','+img_id+','+list.id+'_prev,'+list.id+'_next,null,null,null';
+        e.innerHTML = '<input type=submit value="<"  style="width:30px"  id='+list.id+'_prev   onclick="PrevImage('+a+');">'
+                    + '<input type=submit value=">"  style="width:30px"  id='+list.id+'_next   onclick="NextImage('+a+');">'
+                    ;
+        break;
+    }
+    e.onkeydown = new Function('NavImage('+a+');');
+    list.parentNode.insertBefore(e,list);  
+    list.onchange = new Function('ChangeImage('+a+');');
+    list.style.display = "none";   
+    eval('ChangeImage('+a+');');
+    }
+
+var SeqCounter = 0;
+
+function SetSeqId(item) {
+  if (item) {
+    if (!item.id) {
+      SeqCounter++;
+      item.id = 'SEQ'+SeqCounter; 
+    }
+  }
+}
+
+function ScanTT() {
+  var list = document.getElementsByTagName("SELECT");
+  for (i=0; i<list.length; i++) {
+    if (list[i].className=="galery" || list[i].className=="galery_external") {
+      if (list[i].className=="galery_external") list[i].innerHTML = GetFile(list[i].innerHTML);
+      SetSeqId(list[i]);
+      var v = list[i];
+      while(v) { 
+        v = v.previousSibling;
+        if (v.tagName=="IMG") {  
+          if (v.className=="galery_max") {
+            SetSeqId(v);
+            AddNavigation(list[i],v,1);
+            break;
+          }
+          if (v.className=="galery_min") {
+            SetSeqId(v);
+            AddNavigation(list[i],v,2);
+            break;
+          }
+        }
+      }
+    }
+  }
+}    
+//AddNavigation(list1,img1);AddNavigation(list2,img2);
+  </script>
+</head>
+<body id=body1 onLoad="ScanTT();">
+<img width=300 height=200 border=1 class=galery_min><br> 
+<SELECT id="list1" class=galery>
+  <OPTION VALUE="sat1.jpg">Один</option>
+  <OPTION VALUE="sat2.jpg">Два</option>
+  <OPTION VALUE="sat3.jpg">три</option>
+  <OPTION VALUE="sat4.jpg">четыре</option>
+  <OPTION VALUE="sat1.jpg">30 марта 19:00</option>
+  <OPTION VALUE="sat2.jpg">30 марта 18:00</option>
+  <OPTION VALUE="sat3.jpg">30 марта 17:00</option>
+  <OPTION VALUE="sat4.jpg">30 марта 16:00</option>
+</SELECT><br>
+<img width=300 height=200 border=1 class=galery_max id=qqq><br> 
+<img width=300 height=200 border=1 class=nogalery><br> 
+<SELECT class=galery>
+  <OPTION VALUE="sat1.jpg">Один</option>
+  <OPTION VALUE="sat2.jpg">Два</option>
+  <OPTION VALUE="sat3.jpg">три</option>
+  <OPTION VALUE="sat4.jpg">четыре</option>
+  <OPTION VALUE="sat1.jpg">5</option>
+  <OPTION VALUE="sat2.jpg">6</option>
+  <OPTION VALUE="sat3.jpg">7</option>
+  <OPTION VALUE="sat4.jpg">8</option>
+</SELECT><br>
+</body>
+</html>

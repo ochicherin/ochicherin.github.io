@@ -1,0 +1,112 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Фотогалерея.</H1>
+
+<pre>
+
+Фотогалерея - это пара "умных" элементов img и select.
+
+У img значение class может принимать значения 
+galery_min - в этом случае будет всего 2 кнопки навигации
+или
+galery_max - в этом случае будет всего 4 кнопки навигации и подпись под изображением.
+или
+galery_live - в этом случае навигации не будет, а картинки будут 
+самостоятельно меняться с интервалом 2.5 сек
+или
+galery_show - Навигации так же не будет, будет выведена раскадровка.
+
+У select значение class может принимать значения 
+galery - в value содержится url картинки, в тексте подпись к ней 
+или
+galery_external - в этом случае список содержится во внешнем файле.
+
+
+<b>Это пример с минимальной навигацией и локальным списком фотографий.</b>
+
+<span id=area1>
+<img width=300 height=200 border=1 class=galery_min><br> 
+<SELECT id="list1" class=galery>
+  <OPTION VALUE="sat1.jpg">Один</option>
+  <OPTION VALUE="sat2.jpg">Два</option>
+  <OPTION VALUE="sat3.jpg">три</option>
+  <OPTION VALUE="sat4.jpg">четыре</option>
+</SELECT>
+</span>
+
+Здесь текст исходного кода.
+<textarea class="preview">area1</textarea>
+
+
+<b>Это пример с максимальной навигацией и внешним списком фотографий.</b>
+
+<span id=area2>
+<img border=1 class=galery_max style="width : 560px"><br> 
+<SELECT class=galery_external><option value="fotogalery.xml"></option></SELECT>
+</span>
+
+Здесь текст исходного кода.
+<textarea class="preview">area2</textarea>
+
+
+<b>Это пример слайдшоу и локальным списком фотографий.</b> 
+
+Изображения обновляются автоматически с интервалом 2.5 сек.
+
+<span id=area3>
+<img width=300 height=200 border=1 class=galery_live><br> 
+<SELECT id="list3" class=galery>
+  <OPTION VALUE="sat1.jpg">Один</option>
+  <OPTION VALUE="sat2.jpg">Два</option>
+  <OPTION VALUE="sat3.jpg">три</option>
+  <OPTION VALUE="sat4.jpg">четыре</option>
+</SELECT>
+</span>
+
+Здесь текст исходного кода.
+<textarea class="preview">area3</textarea>
+
+
+<b>Это пример показа в режиме раскадровки.</b> 
+
+Необходим чтобы легко сохранить на локальном диске массив фоторгафий. 
+<span id=area4>
+<img width=300 height=200 border=1 class=galery_show><br> 
+<SELECT id="list4" class=galery>
+  <OPTION VALUE="sat1.jpg">Один</option>
+  <OPTION VALUE="sat2.jpg">Два</option>
+  <OPTION VALUE="sat3.jpg">три</option>
+  <OPTION VALUE="sat4.jpg">четыре</option>
+</SELECT>
+</span>
+
+Здесь текст исходного кода.
+<textarea class="preview">area4</textarea>
+
+
+<b>Это пример подготовки конфигурационного файла для flash читалки.</b>
+
+Вроде бы ерунда, но если каждый день добавлять по 10 ссылок,
+как в случае с Фукусимой...
+<span id=area5>
+<img width=300 height=200 border=1 class=galery_flash><br> 
+<SELECT id="list5" class=galery>
+  <OPTION VALUE="sat1.jpg">Один</option>
+  <OPTION VALUE="sat2.jpg">Два</option>
+  <OPTION VALUE="sat3.jpg">три</option>
+  <OPTION VALUE="sat4.jpg">четыре</option>
+</SELECT>
+</span>
+
+Здесь текст исходного кода.
+<textarea class="preview">area5</textarea>
+
+Всё.
+</body>
+</html>

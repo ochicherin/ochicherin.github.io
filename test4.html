@@ -1,0 +1,48 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<head>
+<title>#list_title#</title>
+<LINK REL=StyleSheet TYPE=text/css HREF=index_files/style.css>
+<script>
+
+function GetFileAvail(file_url) {
+  var xmlhttp=null;
+  if(!xmlhttp) try {
+    xmlhttp=new ActiveXObject('Msxml2.XMLHTTP');
+  } catch (e){}
+  if(!xmlhttp) try {
+    xmlhttp=new ActiveXObject('Microsoft.XMLHTTP');
+  } catch (e){}
+  if(!xmlhttp) try {
+    xmlhttp=new XMLHttpRequest();
+  } catch (e){}   
+  var path = location.pathname.split("/");
+  for (var i=path.length-1; i>0; i--) {
+    xmlhttp.open("GET", path.slice(0,i).join("/")+"/"+file_url, false);
+alert(path.slice(0,i).join("/")+"/"+file_url);
+    xmlhttp.send(null);
+alert(xmlhttp.status);
+    if (xmlhttp.status==200) return xmlhttp.responseText;
+  }
+alert('NULL');
+  return null;
+}
+
+
+function test() {
+ alert(location.pathname);
+ var text = GetFileAvail('top.txt');
+}
+
+</script>
+</head>
+<body onload="alert('load'); test();">
+
+<h1>Оглавление.</h1>
+<div id=book_title></div>
+<div id=book_author></div>
+<div id=book_toc></div>
+<div id=res></div>
+
+</body>
+</html>

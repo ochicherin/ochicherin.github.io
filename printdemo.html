@@ -1,0 +1,56 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Пример печати области страницы.</H1>
+
+<h3>Этот текст не будет напечатан</h3> 
+
+<div id="Area1">
+<h3>Состав и пропорции бетона из цемента М-400, песка и щебня, таблица</h3> 
+ 
+<table border=0 cellpadding=2> 
+ <tr> 
+  <th width=100> Марка бетона </th> 
+  <th width=100> Массовый состав, Ц:П:Щ, кг </th> 
+  <th width=100> Объемный состав на 10 л цемента, П:Щ, л </th> 
+  <th width=100> Количество бетона из 10 л цемента, л </th> 
+ </tr> 
+ <tr align=center> 
+  <td>100</td><td> 1 : 4,6 : 7,0 </td><td> 41 : 61 </td><td> 78 </td> 
+ </tr> 
+ <tr align=center> 
+  <td>150</td><td> 1 : 3,5 : 5,7 </td><td> 32 : 50 </td><td> 64 </td> 
+ </tr> 
+ <tr align=center>
+  <td>200 </td><td> 1 : 2,8 : 4,8 </td><td> 25 : 42 </td><td> 54 </td> 
+ </tr> 
+ <tr align=center> 
+  <td>250</td><td> 1 : 2,1 : 3,9 </td><td> 19 : 34 </td><td> 43 </td> 
+ </tr> 
+ <tr align=center> 
+  <td>300</td><td> 1 : 1,9 : 3,7 </td><td> 17 : 32 </td><td> 41 </td> 
+ </tr> 
+ <tr align=center>
+  <td> 400 </td><td> 1 : 1,2 : 2,7 </td><td> 11 : 24 </td><td> 31 </td> 
+ </tr> 
+ <tr align=center> 
+  <td> 450 </td><td> 1 : 1,1 : 2,5 </td><td> 10 : 22 </td><td> 29 </td> 
+ </tr> 
+</table> 
+</div>
+ 
+<h3>Этот текст не будет напечатан</h3> 
+ 
+<ul>
+<li><a href="#1" onClick="PrintContent('Area1');">Печать без CSS</a>
+<li><a href="#1" onClick="PrintContent('Area1','index_files/style.css');">Печать с использованием CSS</a>
+</ul>
+ 
+ 
+</BODY>
+</HTML>

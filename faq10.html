@@ -1,0 +1,117 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Как сделать создать Java сервлет в XDB</H1>
+
+<pre>
+Оригинал <a href="http://citforum.ru/database/oracle/servlets_db/">здесь</a>. Слегка модифицируем его.
+
+
+Коннектимся к БД как SCOTT.
+
+Создаем собственно сервлет.
+</pre>
+<textarea class="example">
+create or replace and compile java source named XMLDBServlet as
+import java.io.PrintWriter;
+import java.io.IOException;
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.ServletException;
+
+public class XMLDBServlet extends GenericServlet {
+
+  public void service (
+              ServletRequest  request
+            , ServletResponse response
+  )
+  throws ServletException, IOException {
+
+    String s = request.getParameter ( "rex" );
+
+    response.setContentType ( "text/xml" );
+
+    PrintWriter out = response.getWriter ( );
+    out.println ( "<?xml version=\"1.0\"?>" );
+    out.println ( "<html><head>" );
+    out.println ( "<title>My XMLDBServlet servlet demo</title>" );
+    out.println ( "</head><body>" );
+    out.println ( "<h2>Ave, " + s + " !</h2>" );
+    out.println ( "</body></html>" );
+    out.close ( );
+  }
+}
+</textarea>
+<pre>
+
+Регистрируем его в XBD.
+</pre>
+<textarea class="example">
+DECLARE
+  servlet_name VARCHAR2 (32) := 'XMLDBServletPrimer';
+  BEGIN
+    DBMS_XDB.deleteservletmapping (servlet_name);
+    DBMS_XDB.deleteservlet (servlet_name);
+    DBMS_XDB.addservlet (NAME => servlet_name,
+                         LANGUAGE => 'Java',
+                         dispname => 'Oracle XML DB Servlet Primer',
+                         descript => 'Oracle XML DB Servlet Primer',
+                         class => 'XMLDBServlet',
+                         SCHEMA => 'SCOTT'
+    );
+    DBMS_XDB.addservletsecrole (servname => servlet_name,
+                                rolename => 'XDB_WEBSERVICES',
+                                rolelink => 'XDB_WEBSERVICES'
+    );
+    DBMS_XDB.addservletmapping (pattern => '/xdbserv', NAME => servlet_name);
+  END;
+</textarea>
+<pre>
+
+Смотрим, что получилось в <i>/xdbconfig.xml</i>.
+</pre>
+<textarea class="example">
+ <servlet xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
+                <servlet-name>XMLDBServletPrimer</servlet-name>
+                <servlet-language>Java</servlet-language>
+                <display-name>Oracle XML DB Servlet Primer</display-name>
+                <description>Oracle XML DB Servlet Primer</description>
+                <servlet-class>XMLDBServlet</servlet-class>
+                <servlet-schema>SCOTT</servlet-schema>
+                <security-role-ref xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
+                  <description/>
+                  <role-name>XDB_WEBSERVICES</role-name>
+                  <role-link>XDB_WEBSERVICES</role-link>
+                </security-role-ref>
+              </servlet></textarea>
+<pre>
+
+Вызываем его через браузер 
+
+<b>http://localhost:8080/xdbserv?rex=Oleg</b>
+</pre>
+<textarea class="example">
+<?xml version="1.0" ?> 
+ <html>
+  <head>
+   <title>My XMLDBServlet servlet demo</title> 
+  </head>
+  <body>
+   <h2>Ave, Oleg !</h2> 
+  </body>
+ </html>
+</textarea>
+<pre>
+
+
+Всё.
+</pre>
+
+</BODY>
+</HTML>

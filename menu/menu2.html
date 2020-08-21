@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<head>
+<title>¬ертикальное раскрывающиес€ menu</title>
+<script type="text/javascript">
+function allClose(){
+	var list = document.getElementById("menu").getElementsByTagName("ul");
+	for(var i=0;i<list.length;i++){
+		list[i].style.display = "none";
+	}
+}
+function openMenu(node){
+	var subMenu = node.parentNode.getElementsByTagName("ul")[0];
+	subMenu.style.display == "none" ? subMenu.style.display = "block" : subMenu.style.display = "none";
+}
+</script>
+<!--<style type="text/css">
+#menu{background:#81A192;width:200px;list-style-type:none;padding:0;margin:0}
+#menu li{border-bottom:1px solid #fff;padding:3px}
+#menu li a{color:#fff;font-family:verdana,arial,sans-serif;text-decoration:none}
+#menu li ul{border-top:1px solid #fff;padding:0;margin:0;list-style-type:square;list-style-position:inside}
+#menu li ul li{border:0;list-style-type:square;color:#fff;list-style-position:inside}
+</style>-->
+</head>
+<body onload="allClose()">
+<div>
+<ul id="menu">
+  <li><a href="#" onclick="openMenu(this);return false">menu 1</a> 
+      <ul>
+          <li><a href="#">sub menu 1</a></li>
+          <li><a href="#">sub menu 2</a></li>
+          <li><a href="#">sub menu 3</a></li>
+          <li><a href="#">sub menu 4</a></li>
+          <li><a href="#">sub menu 5</a></li>
+          <li><a href="#">sub menu 6</a></li>
+          <li><a href="#">sub menu 7</a></li>
+      </ul>
+  </li>
+  <li><a href="#" onclick="openMenu(this);return false">menu 2</a>
+      <ul>
+          <li><a href="#">sub menu 1</a></li>
+          <li><a href="#">sub menu 2</a></li>
+          <li><a href="#">sub menu 3</a></li>
+          <li><a href="#">sub menu 4</a></li>
+          <li><a href="#">sub menu 5</a></li>
+          <li><a href="#">sub menu 6</a></li>
+          <li><a href="#">sub menu 7</a></li>
+     </ul>
+  </li>
+  <li><a href="#" onclick="openMenu(this);return false">menu 3</a>
+     <ul>
+          <li><a href="#">sub menu 1</a></li>
+          <li><a href="#">sub menu 2</a></li>
+          <li><a href="#">sub menu 3</a></li>
+          <li><a href="#">sub menu 4</a></li>
+          <li><a href="#">sub menu 5</a></li>
+          <li><a href="#">sub menu 6</a></li>
+          <li><a href="#">sub menu 7</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="openMenu(this);return false">menu 4</a>
+    <ul>
+    	  <li><a href="#">sub menu 1</a></li>
+          <li><a href="#">sub menu 2</a></li>
+          <li><a href="#">sub menu 3</a></li>
+          <li><a href="#">sub menu 4</a></li>
+          <li><a href="#">sub menu 5</a></li>
+          <li><a href="#">sub menu 6</a></li>
+          <li><a href="#">sub menu 7</a></li>
+    </ul>
+ </li>
+ <li><a href="#" onclick="openMenu(this);return false">menu 5</a>
+    <ul>
+          <li><a href="#">sub menu 1</a></li>
+          <li><a href="#">sub menu 2</a></li>
+          <li><a href="#">sub menu 3</a></li>
+		  <li><a href="#">sub menu 4</a></li>
+		  <li><a href="#">sub menu 5</a></li>
+		  <li><a href="#">sub menu 6</a></li>
+          <li><a href="#">sub menu 7</a></li>
+	</ul>
+  </li>
+<li><a href="#" onclick="openMenu(this);return false">menu 6</a>
+    <ul>
+         <li><a href="#">sub menu 1</a></li>
+         <li><a href="#">sub menu 2</a></li>
+         <li><a href="#">sub menu 3</a></li>
+         <li><a href="#">sub menu 4</a></li>
+         <li><a href="#">sub menu 5</a></li>
+         <li><a href="#">sub menu 6</a></li>
+         <li><a href="#">sub menu 7</a></li>
+   </ul>
+</li>
+<li><a href="#" onclick="openMenu(this);return false">menu 7</a>
+    <ul>
+         <li><a href="#">sub menu 1</a></li>
+         <li><a href="#">sub menu 2</a></li>
+         <li><a href="#">sub menu 3</a></li>
+         <li><a href="#">sub menu 4</a></li>
+         <li><a href="#">sub menu 5</a></li>
+         <li><a href="#">sub menu 6</a></li>
+         <li><a href="#">sub menu 7</a></li>
+   </ul>
+</li>
+<li><a href="#" onclick="openMenu(this);return false">menu 8</a>
+     <ul>
+         <li><a href="#">sub menu 1</a></li>
+         <li><a href="#">sub menu 2</a></li>
+         <li><a href="#">sub menu 3</a></li>
+         <li><a href="#">sub menu 4</a></li>
+         <li><a href="#">sub menu 5</a></li>
+         <li><a href="#">sub menu 6</a></li>
+         <li><a href="#">sub menu 7</a></li>
+      </ul>
+</li>
+</ul>
+</div>
+<p style="margin-top:60px;clear:both"><a href="/articles/make-up/menu-css-javascript/">к статье</a></p>
+</body>
+</html>

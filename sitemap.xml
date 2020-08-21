@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<xml title="Корень">
+  <item title="Главная" url="/index.html"/> 
+  <item title="Новости" url="/news.html"/> 
+  <item title="Ссылки" url="/links.html"/> 
+  <item title="Галерея" url="/galery.html" desc="Галерея"> 
+    <item title="Зима. Дорога на работу. 25.01.2007" url="/reader/25.01.2007.html"/> 
+    <item title="Дача" url="/reader/5.html"/> 
+    <item title="Архив фотографий с веб камеры АЭС Фукусима." url="/fukushima.html"/> 
+    <item title="Локальный архив фотографий с веб камеры АЭС Фукусима." url="/reader/fukushima2.html"/> 
+  </item>
+  <item title="Примеры" url="/examples.html" desc="Примеры"> 
+    <item title="Использование xslt преобразований." url="/xslt_demo.html"/> 
+    <item title="Календарик" url="/calendar.html"/> 
+    <item title="Выпадающий список" url="/lov_main.html"/> 
+    <item title="Телетайп" url="/tty.html"/> 
+    <item title="Куки" url="/cookie.html"/> 
+    <item title="Вертикальное меню" url="/menu_v.html"/> 
+    <item title="Горизонтальное меню" url="/menu_h.html"/> 
+    <item title="Windows подобное меню(*)" url="/menu_n.html"/> 
+    <item title="Параметры(*)" url="/param.html"/> 
+    <item title="Парсим xml" url="/parse_xml.html"/> 
+    <item title="Импорт таблицы из CSV" url="/csv.html"/> 
+    <item title="Пример печати области страницы." url="/printdemo.html"/> 
+    <item title="Пример copy, paste, печать текста." url="/clipdemo.html"/> 
+    <item title="Фотогалерея." url="/fotogalery.html"/> 
+    <item title="Просмотр исходного кода." url="/viewcode.html"/> 
+    <item title="Combobox загружаемый из внешнего файла." url="/extcombo.html"/> 
+    <item title="Автоматическое оглавление." url="/tocdemo.html"/> 
+    <item title="Читалка FB2." url="/fb2reader.html"/> 
+    <item title="Варианты карт сайта." url="/demositemap.html"> 
+      <item title="Дочерний узел 1 вариантов карт сайта." url="/demositemap.html"> 
+        <item title="Дочерний узел 1.1 вариантов карт сайта." url="/demositemap.html"/> 
+        <item title="Дочерний узел 1.2. Без ссылки, только заголовок." url="/demositemap.html"> 
+          <item title="Дочерний узел 1.2.1 вариантов карт сайта." url="/demositemap.html"/> 
+          <item title="Дочерний узел 1.2.2 вариантов карт сайта." url="/demositemap.html"/> 
+        </item>
+      </item>
+      <item title="Дочерний узел 2 вариантов карт сайта." url="/demositemap.html"> 
+        <item title="Дочерний узел 2.1 вариантов карт сайта." url="/demositemap.html"/> 
+      </item>
+      <item title="Дочерний узел 3 вариантов карт сайта." url="/demositemap.html"/> 
+    </item>
+    <item title="Часы." url="/democlock.html"/> 
+    <item title="Наследование дизайна." url="/demoframe/demoframe.html"> 
+      <item title="Наследование дизайна из корня." url="/demoframe/demoframe.html"/> 
+      <item title="Локальный зеленый дизайн." url="/demoframe/a/demoframe.html"/> 
+      <item title="Наследование зеленого дизайна." url="/demoframe/a/b/demoframe.html"/> 
+      <item title="Локальный желтый дизайн." url="/demoframe/a/b/c/demoframe.html"/> 
+    </item>
+    <item title="Использование нестандартных шрифтов" url="/demofont.html"/> 
+    <item title="Использование двумерных штрихкодов" url="/demobarcode.html"/> 
+  </item>
+  <item title="Библиотека" url="/lib.html" desc="Библиотека"> 
+    <item title="Правила устройства электроустановок" url="/lib/pue.pdf"/> 
+    <item title="3 Поросенка" url="/reader/3.html"/> 
+    <item title="Русская колонизация туркистана" url="/reader/tyrk.html"/> 
+    <item title="Электросчетчик фотоальбом" url="/reader/cnt.html"/> 
+    <item title="Проблемы управления" url="/management.html" desc="Проблемы управления"> 
+      <item title="Про гребцов" url="/mgt04.html"/> 
+      <item title="Про муравья" url="/mgt05.html"/> 
+      <item title="Дж. Ханк Рейнвотер. Как пасти котов. (fb2)" url="/Reinvoter_Dch.Hank__Kak_pasti_kotov._Nastavlenie_dlya_programmistov_rukovodyashih_drugimi_programmistami_www.Litru.ru_90031.html"/> 
+      <item title="Джейсон Фрайд, Дэвид Хайнемайер Ханссон. Бизнес без предрассудков. (fb2)" url="/Hensson_Rework_biznes_bez_predrassudkov.204544.html"/> 
+      <item title="Диагноз - выученная беспомощность." url="/mgt01.html"/> 
+      <item title="Типовые вопросы для взаимодействия с разработчиками." url="/mgt02.html"/> 
+      <item title="Сверхурочные? Теперь у вас две проблемы!" url="/mgt03.html"/> 
+    </item>
+  </item>
+  <item title="FAQ" url="/faq.html" desc="В этом разделе лежат памятки на тему 'Как сделать элементарные вещи, которые делаешь очень редко'"> 
+    <item title="Как обжать витую пару" url="/faq1.html"/> 
+    <item title="Как запустить telnet на NAS сервере" url="/faq2.html"/> 
+    <item title="Как сделать из pl/sql процедуры Web Service и вызвать его" url="/faq3.html"/> 
+    <item title="Как вызвать web serivce из javascript(не закончено)" url="/faq4.html"/> 
+    <item title="Как расчитать направление на спутник при помощи Google(не закончено)." url="/faq5.html"/> 
+    <item title="Найти книгу в библиотеке(не начато)" url="/faq6.html"/> 
+    <item title="Состав и пропорции бетона." url="/faq7.html"/> 
+    <item title="Ошибка подсветки русских слов в Oracle Text." url="/faq8.html"/> 
+    <item title="Как настроить мотоподвес." url="/faq9.html"/> 
+    <item title="Как сделать создать Java сервлет в XDB." url="/faq10.html"/> 
+    <item title="Как сделать 'прозрачную' авторизацию при помощи Apache." url="/faq11.html"/> 
+    <item title="Кортежи, отношения и основные нормальные формы." url="/faq12.html"/> 
+    <item title="Перехватить страницу, сгенерированую при помощи HTP/HTF." url="/faq13.html"/> 
+    <item title="Acorp WR-G." url="/faq14.html"/> 
+    <item title="Индикатор для маршрутника DI15G" url="/faq15.html"/> 
+    <item title="Технологическое меню Ericsson." url="/faq16.html"/> 
+    <item title="Новый диск в Linux." url="/faq17.html"/> 
+    <item title="Диапазоны УКВ." url="/faq18.html"/> 
+    <item title="Штрихкоды и мобильный телефон." url="/faq19.html"/> 
+    <item title="Коды пород и окрасов кошек." url="/faq20.html"/> 
+  </item>
+  <item title="Резюме" url="/resume.html"/> 
+  <item title="Контакты" url="/contacts.html"/> 
+  <item title="Прочее" url="/other.html" desc="Здесь самое главное'"> 
+    <item title="RSS лента" url="/rss.xml"/> 
+    <item title="Карта сайта" url="/sitemap.html"/> 
+    <item title="География посещений" url="/geostat.html"/> 
+  </item>
+</xml>

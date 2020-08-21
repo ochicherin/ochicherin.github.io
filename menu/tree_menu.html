@@ -1,0 +1,39 @@
+<HTML><HEAD> 
+
+<SCRIPT language="JavaScript"> 
+var source; 
+var stylesheet; 
+var result; 
+
+// Инициализация 
+function init() 
+{ 
+source = new ActiveXObject("Microsoft.XMLDOM"); 
+source.async = false; 
+source.load('source.xml'); 
+
+stylesheet = new ActiveXObject("Microsoft.XMLDOM"); 
+stylesheet.async = false; 
+stylesheet.load('stylesheet.xsl'); 
+
+document.all['result'].innerHTML = source.transformNode(stylesheet); 
+return true; 
+} 
+
+// Раскрытие ветки 
+function expand(nodes) 
+{ // Получаем ссылку на атрибут select объявления параметра current 
+var attSelect = stylesheet.selectSingleNode( 
+"/xsl:stylesheet/xsl:param[@name='nodes']/@select"); 
+
+attSelect.nodeValue = "'" + nodes + "'"; 
+
+document.all['result'].innerHTML = source.transformNode(stylesheet); 
+} 
+</SCRIPT> 
+</HEAD> 
+<BODY onLoad="init()"> 
+<A href="javascript:expand('')">Menu</A> 
+<DIV id="result"></DIV> 
+</BODY> 
+</HTML>

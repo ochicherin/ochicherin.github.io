@@ -1,0 +1,36 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Заголовок первый</H1>
+  <H1>Примеры формирования списков</H1>
+
+<form name=test_form>
+
+
+<label>Простое поле А</label><INPUT TYPE="TEXT" NAME="a" VALUE="aa" alt="sssss"> <br>
+<label>Простое поле Б</label><INPUT TYPE="TEXT" NAME="b" VALUE="bbb" alt="sssss"> <br> 
+
+<label>Заполняемый по команде список из внутреннего ресурса</label>
+<select name=list2 size=1></select>
+<a href="javascript:fill_list('http://ochicherin.narod.ru/satlist.xml',test_form.list2);">
+<img src="index_files/calendar.gif" border="0"></a><br>
+
+<label>Заполняемый по команде список из внешнего ресурса</label>
+<select name=list1 size=5></select>
+<a href="javascript:fill_list('http://10.32.1.156:8080/oleg/z3950client.lov?total=100&name=p1003&mask=Лермо',test_form.list1);">
+<img src="index_files/calendar.gif" border="0"></a><br>
+
+<label>Поле с выпадающим списком</label>
+<INPUT TYPE="TEXT" NAME="REPORT_text" VALUE="Лермо" alt="sssss"> 
+<!--a href="javascript:alert(test_form.REPORT_text.alt);"-->
+<a href="javascript:list_of_values(test_form.REPORT_text,'http://10.32.1.156:8080/oleg/z3950client.lov?total=100&name=p1003&mask=#REPORT_text#','Выберите','Выбор автора');">
+<img src="index_files/calendar.gif" border="0"></a><br>
+
+</form> 
+</BODY>
+</HTML>

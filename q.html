@@ -1,0 +1,168 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<head>
+<script type="text/javascript">
+
+function emptyXML(text) {
+  if (text==null) text = '<?xml version="1.0"?><xml></xml>';
+  if (window.DOMParser) {
+    parser=new DOMParser();
+    xmlDoc=parser.parseFromString(text,"text/xml");
+  }
+  else { // Internet Explorer
+    xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+    xmlDoc.async="false";
+    xmlDoc.loadXML(text); 
+  } 
+  return xmlDoc;
+}
+
+function GetFile(file_url) {
+  var xmlhttp=null;
+  if(!xmlhttp) try {
+    xmlhttp=new ActiveXObject('Msxml2.XMLHTTP');
+  } catch (e){}
+  if(!xmlhttp) try {
+    xmlhttp=new ActiveXObject('Microsoft.XMLHTTP');
+  } catch (e){}
+  if(!xmlhttp) try {
+    xmlhttp=new XMLHttpRequest();
+  } catch (e){}   
+  xmlhttp.open("GET",file_url,false);
+  xmlhttp.send(null);
+  return xmlhttp.responseText;
+}
+
+function loadXML(fileName) {     
+    var xmlFile = null;
+    if (window.ActiveXObject) { // IE
+        xmlFile = new ActiveXObject("Microsoft.XMLDOM");
+    } else if (document.implementation 
+            && document.implementation.createDocument) { // Mozilla, Firefox, Opera, etc.
+        xmlFile = document.implementation.createDocument("","",null);
+        if (!xmlFile.load) { // Safari, Chrome
+            parser=new DOMParser();
+            xmlFile=parser.parseFromString(GetFile(fileName),"text/xml");
+            return xmlFile;
+        } 
+    } else {
+        alert('Your browser cannot create XML DOM Documents');
+    }
+    xmlFile.async = false;
+    try {
+        xmlFile.load(fileName);
+    } catch(e) {
+        alert('an error occured while loading XML file ' + fileName);
+    }
+    return(xmlFile);
+}
+
+function MakeXSLT(xmlContent, xslFileName) { 
+    var xslContent = loadXML(xslFileName);
+    if (window.ActiveXObject) { // IE
+alert('IE');
+    try {
+        return xmlContent.transformNode(xslContent);        
+  } catch(e) {
+   alert(e.description);
+  }
+    } else if (window.XSLTProcessor) { // Mozilla, Firefox, Opera, Safari, Chrome
+alert('not IE');
+    try {
+        var xsltProcessor=new XSLTProcessor();
+        xsltProcessor.importStylesheet(xslContent);
+        var resultDocument = xsltProcessor.transformToDocument(xmlContent);
+        var xmls = new XMLSerializer();   
+        return xmls.serializeToString(resultDocument);
+  } catch(e) {
+   alert(e.description);
+  }
+    }
+alert('not NORMAL');
+    try {
+alert(xmlContent.transformNode(xslContent));
+        var xsltProcessor=new XSLTProcessor();
+alert('create object');
+        xsltProcessor.importStylesheet(xslContent);
+alert('set xsl');
+        var resultDocument = xsltProcessor.transformToDocument(xmlContent);
+alert('transform');
+        var xmls = new XMLSerializer();   
+alert('created ser');
+        return xmls.serializeToString(resultDocument);
+  } catch(e) {
+   alert(e.description+' and error');
+  }
+}
+
+function test() {
+
+document.getElementById("info").innerHTML=
+'appCodeName='+navigator.appCodeName+'<br>'+
+'appName='+navigator.appName+'<br>'+
+'appVersion='+navigator.appVersion+'<br>'+
+'platform='+navigator.platform+'<br>'+
+'userAgent='+navigator.userAgent+'<br>';
+
+  var xmlhttp=null;
+  if(!xmlhttp) try {
+    xmlhttp=new ActiveXObject('Msxml2.XMLHTTP');
+  } catch (e){}
+  if(!xmlhttp) try {
+    xmlhttp=new ActiveXObject('Microsoft.XMLHTTP');
+  } catch (e){}
+  if(!xmlhttp) try {
+    try { document.domain="";netscape.security.PrivilegeManager.enablePrivilege ("UniversalBrowserRead");} 
+        catch (e){alert("Permission UniversalBrowserRead denied.");} 
+    xmlhttp=new XMLHttpRequest();
+  } catch (e){}   
+  xmlhttp.open("GET","note.xml",false);
+  xmlhttp.send(null);
+//alert(xmlhttp.responseText);
+
+alert(xmlhttp.responseText);
+  try {
+   var xmlDoc = emptyXML(xmlhttp.responseText);
+  }
+  catch(e) {
+   alert(e.description+" - это не xml");
+  }
+  var xmlDoc = xmlhttp.responseXML;
+
+document.getElementById("to").innerHTML='aaa';
+
+document.getElementById("to").innerHTML=
+xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+
+document.getElementById("from").innerHTML=
+xmlDoc.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+
+document.getElementById("message").innerHTML=
+xmlDoc.getElementsByTagName("description")[0].childNodes[0].nodeValue;
+
+try {
+alert('start xslt');
+if (window.XSLTProcessor) alert('SUPPORT');
+document.getElementById("menu").innerHTML= MakeXSLT(xmlDoc,'simple.xsl');
+  } catch(e) {
+   alert('fill item' + e.description);
+  }
+
+}
+
+</script>
+
+</head>
+<body onload="alert('load');test();">
+
+<h1>Оглавление.</h1>
+<div>
+<b>To:</b> <span id="to"></span><br />
+<b>From:</b> <span id="from"></span><br />
+<b>Message:</b> <span id="message"></span>
+</div>
+<div id=menu>
+</div>
+<div id=info></div>
+</body>
+</html>

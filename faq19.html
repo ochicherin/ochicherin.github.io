@@ -1,0 +1,117 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Штрихкоды и мобильный телефон</H1>
+
+<pre>
+В мобильник трудно вводить большие объемы данных.
+Эту проблему решили при помощи генерации двухмерного штрихкода и приложений, 
+которые этот код считывают. Как всегда есть проблемы с русским языком.
+
+Сайты генерирующие код
+ - <a href="http://mobilecodes.nokia.com/create.jsp">Nokia</a>
+ - <a href="http://www.i-nigma.com/CreateBarcodes.html">i-nigma</a>
+ - <a href="http://datamatrix.kaywa.com/">kaywa(работает русский язык)</a>
+ 
+
+Программы считывания кода 
+ - <a href="http://mobilecodes.nokia.com/scan.htm">Nokia Barcode Reader</a>
+ - <a href="http://www.upc.fi/en/upcode/instructions/download">Upcode</a>
+
+Примеры:
+RSS лента РБК "Главные новости"
+<img src="http://datamatrix.kaywa.com/img.php?s=4&d=http%3A%2F%2Fstatic.feed.rbc.ru%2Frbc%2Finternal%2Frss.rbc.ru%2Frbc.ru%2Fmainnews.rss" alt="RSS лента РБК Главные новости"  />
+
+RSS лента NEWSru.com "Все новости"
+<img src="http://datamatrix.kaywa.com/img.php?s=4&d=http%3A%2F%2Ffeeds.newsru.com%2Fcom%2Fwww%2Fnews%2Fall">
+
+RSS лента lenta.ru
+<img src="http://datamatrix.kaywa.com/img.php?s=4&d=http%3A%2F%2Flenta.ru%2Frss%2F">
+
+
+Плоский английский текст
+<img src="http://datamatrix.kaywa.com/img.php?s=4&d=Select%20what%20information%20you%20want%20to%20encode%3A%20a%20website%20link%2C%20some%20text%2C%20or%20a%20phone%20number%20to%20dial">
+
+
+Плоский русский текст
+<img src="http://datamatrix.kaywa.com/img.php?s=4&d=%D0%92%20%D1%87%D0%B0%D1%89%D0%B0%D1%85%20%D1%8E%D0%B3%D0%B0%20%D0%B6%D0%B8%D0%BB%20%D0%B1%D1%8B%20%D1%84%D0%B8%D0%BA%D1%83%D1%81%3F%20%D0%B4%D0%B0%20%D0%BD%D0%BE%20%D1%84%D0%B0%D0%BB%D1%8C%D1%88%D0%B8%D0%B2%D1%8B%D0%B9%20%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80">
+
+При этом телефон поддерживает не только произвольный текст, 
+но и специальные форматы, позволяющие вводить контакты, смс, ссылки и тд
+
+Шаблон СМС.
+
+Формат сообщения
+SMSTO:[номер телефона]:[текст сообщения]
+
+Пример
+SMSTO:84951234567:Поздравляем. Вы выиграли в лотерею Ауди А6.
+<img src="http://datamatrix.kaywa.com/img.php?s=5&d=SMSTO%3A84951234567%3A%D0%9F%D0%BE%D0%B7%D0%B4%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D0%B5%D0%BC.%20%D0%92%D1%8B%20%D0%B2%D1%8B%D0%B8%D0%B3%D1%80%D0%B0%D0%BB%D0%B8%20%D0%B2%20%D0%BB%D0%BE%D1%82%D0%B5%D1%80%D0%B5%D1%8E%20%D0%90%D1%83%D0%B4%D0%B8%20%D0%906.">
+
+Телефон
+
+Формат сообщения
+TEL:[номер телефона]
+
+Пример
+TEL:84951234567
+<img src="http://datamatrix.kaywa.com/img.php?s=4&d=TEL%3A84951234567">
+
+
+Интернет ссылка
+
+Формат сообщения
+[URL]
+
+Пример
+http://ochicherin.narod.ru/faq19.html
+<img src="http://datamatrix.kaywa.com/img.php?s=4&d=http%3A%2F%2Fochicherin.narod.ru%2Ffaq19.html">
+
+
+Визитка vCard
+
+Примерный формат сообщения
+BEGIN:VCARD
+VERSION:2.1
+N:[Фамилия];[Имя];;;
+ORG:[Организация]
+TITLE:[Должность]
+TEL;CELL:[Сотовый телефон]
+TEL:[Телефон]
+TEL;FAX:[Факс]
+EMAIL;INTERNET:[Электронная почта]
+URL:[Адрес сайта]
+END:VCARD
+
+Подробнее о тегах можно прочитать
+ - <a href="http://ru.wikipedia.org/wiki/VCard"> http://ru.wikipedia.org/wiki/VCard </a>
+ - <a href="http://tools.ietf.org/html/rfc2426"> http://tools.ietf.org/html/rfc2426 </a>
+
+Есть проблема с русским языком.
+Поля содержащие русский текст надо кодировать и указывать кодовую страницу.
+Метод кодировки указывается параметром ENCODING и может принимать значения 
+QUOTED-PRINTABLE или BASE64. Если используется BASE64 надо в конце строки 
+добавлять дополнительный перевод строки.
+Кодовая страница указывается в параметре CHARSET, проверялись следующие 
+значения UTF-8 и WINDOWS-1251.
+
+Пример.
+
+BEGIN:VCARD
+N;ENCODING=BASE64;CHARSET=windows-1251:1+j35fDo7TvO6+XjO83o6u7r4OXi6Pc7Ow==
+
+TEL;CELL:+74950000000
+TEL;FAX:+74959999999
+EMAIL:OChicherin@yandex.ru
+END:VCARD
+
+<img src="http://datamatrix.kaywa.com/img.php?s=4&d=BEGIN%3AVCARD%0D%0AN%3BENCODING%3DBASE64%3BCHARSET%3Dwindows-1251%3A1%2Bj35fDo7TvO6%2BXjO83o6u7r4OXi6Pc7Ow%3D%3D%0D%0A%0D%0ATEL%3BCELL%3A%2B74950000000%0D%0ATEL%3BFAX%3A%2B74959999999%0D%0AEMAIL%3AOChicherin%40yandex.ru%0D%0AEND%3AVCARD%0D%0A">
+</pre>
+
+</BODY>
+</HTML>

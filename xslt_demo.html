@@ -1,0 +1,21 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Примеры xslt преобразований</H1>
+<label>XML файл</label><input type=text id=xml_file value="menu.xml"><br>
+<input type=hidden id=xslt_file value="menu.xslt">
+<label>XSLT преобразование</label><select id=xslt_list>
+<option id="menu.xslt">"menu.xslt"</option>
+<option id="menu_h.xslt">"menu_h.xslt"</option>
+</select><br>
+<label>Преобразовать</label><input type=submit name="Go" onClick="xslt_file.value=xslt_list.options[xslt_list.selectedIndex].id;xml_result.innerHTML=MakeXSLT(loadXML(xml_file.value),xslt_file.value);return false;">
+<hr>
+<div id=xml_result></div>
+<hr>
+</BODY>
+</HTML>

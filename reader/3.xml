@@ -1,0 +1,11 @@
+<content width="533" height="400" bgcolor="cccccc" loadercolor="ffffff" bgimage="2" panelcolor="5d5d61" buttoncolor="5d5d61" textcolor="ffffff" fullscreen="true">
+	<page src="/lib/3/pages/3/p1.jpg"/>
+	<page src="/lib/3/pages/3/p2.jpg"/>
+	<page src="/lib/3/pages/3/p3.jpg"/>
+	<page src="/lib/3/pages/3/p4.jpg"/>
+	<page src="/lib/3/pages/3/p5.jpg"/>
+	<page src="/lib/3/pages/3/p6.jpg"/>
+	<page src="/lib/3/pages/3/p7.jpg"/>
+	<page src="/lib/3/pages/3/p8.jpg"/>
+	<page src="/lib/3/pages/3/p9.jpg"/>
+</content>

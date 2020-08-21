@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="windows-1251" ?> 
+<xml>
+<select>
+<option id="s1800" value="180">180.0E Intelsat 701</option> 
+<option id="s1781" value="178.1">178.1E Inmarsat 3-F3</option> 
+<option id="s1779" value="177.9">177.9E Intelsat 602</option> 
+<option id="s1720" value="172">172.0E AMC 23</option> 
+<option id="s1690" value="169">169.0E Intelsat 2, 5</option> 
+<option id="s1660" value="166">166.0E Intelsat 8</option> 
+<option id="s1640" value="164">164.0E Optus B3</option> 
+<option id="s1620" value="162">162.0E Superbird 4</option> 
+<option id="s1600" value="160">160.0E Optus D1</option> 
+<option id="s1560" value="156">156.0E Optus C1</option> 
+<option id="s1540" value="154">154.0E JCSAT 8</option> 
+<option id="s1520" value="152">152.0E Optus D2</option> 
+<option id="s1500" value="150">150.0E JCSAT 4</option> 
+<option id="s1480" value="148">148.0E Measat 2</option> 
+<option id="s1460" value="146">146.0E Agila 2 | Kiku 8</option> 
+<option id="s1450" value="145">145.0E MTSat 2</option> 
+<option id="s1440" value="144">144.0E MBSat | Superbird 7, C</option> 
+<option id="s1435" value="143.5">143.5E Inmarsat 4-F1</option> 
+<option id="s1430" value="143">143.0E Kizuna (Winds)</option> 
+<option id="s1419" value="141.9">141.9E Apstar 1</option> 
+<option id="s1400" value="140">140.0E Beidou 1A | Express-AM 3 | Himawari 6</option> 
+<option id="s1380" value="138">138.0E Apstar 5 (Telstar 18)</option> 
+<option id="s1360" value="136">136.0E N-Star C</option> 
+<option id="s1340" value="134">134.0E Apstar 6</option> 
+<option id="s1320" value="132">132.0E JCSAT 9 | Vinasat 1</option> 
+<option id="s1300" value="130">130.0E Apstar 1A</option> 
+<option id="s1280" value="128">128.0E JCSAT 10</option> 
+<option id="s1250" value="125">125.0E Sinosat 3</option> 
+<option id="s1240" value="124">124.0E JCSAT 6</option> 
+<option id="s1235" value="123.5">123.5E Fengyun 2E</option> 
+<option id="s1230" value="123">123.0E Garuda 1</option> 
+<option id="s1222" value="122.2">122.2E Asiasat 4</option> 
+<option id="s1200" value="120">120.0E Thaicom 1</option> 
+<option id="s1195" value="119.5">119.5E Thaicom 4</option> 
+<option id="s1180" value="118">118.0E Telkom 2</option> 
+<option id="s1165" value="116.5">116.5E Koreasat 2</option> 
+<option id="s1160" value="116">116.0E Koreasat 3</option> 
+<option id="s1155" value="115.5">115.5E Zhongxing 6B</option> 
+<option id="s1130" value="113">113.0E Koreasat 5 | Palapa C2</option> 
+<option id="s1105" value="110.5">110.5E Beidou 1C | Sinosat 1 (Xinnuo 1)</option> 
+<option id="s1100" value="110">110.0E BS-3N | BSat 1A, 2A, 2C, 3A | Nsat 110</option> 
+<option id="s1090" value="109">109.0E Inmarsat 2-F4</option> 
+<option id="s1080" value="108">108.0E NSS 11 | Telkom 1</option> 
+<option id="s1077" value="107.7">107.7E Indostar 1</option> 
+<option id="s1055" value="105.5">105.5E Asiasat 3S</option> 
+<option id="s1050" value="105">105.0E Asiastar</option> 
+<option id="s1042" value="104.2">104.2E Fengyun 2C</option> 
+<option id="s1030" value="103">103.0E Express 2A | Kazsat 1 | Zhongxing 22A</option> 
+<option id="s1005" value="100.5">100.5E Asiasat 2</option> 
+<option id="s1000" value="100">100.0E Leasat 5</option> 
+<option id="s0985" value="98.5">98.5E ProtoStar 1 | Thuraya 3</option> 
+<option id="s0980" value="98">98.0E Zhongxing 22 | Zhongxing-20</option> 
+<option id="s0965" value="96.5">96.5E Express-AM 33</option> 
+<option id="s0950" value="95">95.0E NSS 6</option> 
+<option id="s0935" value="93.5">93.5E Insat 3A, 4B</option> 
+<option id="s0922" value="92.2">92.2E Chinasat 9</option> 
+<option id="s0915" value="91.5">91.5E Measat 3</option> 
+<option id="s0908" value="90.8">90.8E Kodama (DRTS)</option> 
+<option id="s0900" value="90">90.0E Yamal 102, 201</option> 
+<option id="s0893" value="89.3">89.3E TDRS 8</option> 
+<option id="s0880" value="88">88.0E ST-1</option> 
+<option id="s0875" value="87.5">87.5E Chinastar 1</option> 
+<option id="s0867" value="86.7">86.7E Fengyun 2D</option> 
+<option id="s0854" value="85.4">85.4E Raduga-1 7</option> 
+<option id="s0852" value="85.2">85.2E Intelsat 709</option> 
+<option id="s0845" value="84.5">84.5E Beidou G2 | TDRS 3</option> 
+<option id="s0830" value="83">83.0E Insat 2E, 3B, 4A</option> 
+<option id="s0804" value="80.4">80.4E Beidou 1B</option> 
+<option id="s0803" value="80.3">80.3E Cosmos 2440</option> 
+<option id="s0800" value="80">80.0E Express-Am 2 | Express-MD1</option> 
+<option id="s0785" value="78.5">78.5E Thaicom 2, 5</option> 
+<option id="s0782" value="78.2">78.2E Cosmos 2085, 2371</option> 
+<option id="s0775" value="77.5">77.5E Luch 1</option> 
+<option id="s0770" value="77">77.0E Esiafi 1 | Tian Lian I</option> 
+<option id="s0765" value="76.5">76.5E Cosmos 2133 | Telstar 10 (Apstar 2R)</option> 
+<option id="s0756" value="75.6">75.6E Raduga 32</option> 
+<option id="s0750" value="75">75.0E ABS 1</option> 
+<option id="s0744" value="74.4">74.4E Insat 1D</option> 
+<option id="s0740" value="74">74.0E Edusat | Insat 3C, 4CR | Kalpana 1 (Metsat 1)</option> 
+<option id="s0720" value="72">72.0E Intelsat 4</option> 
+<option id="s0705" value="70.5">70.5E Eutelsat W5</option> 
+<option id="s0700" value="70">70.0E Raduga-1M 1</option> 
+<option id="s0691" value="69.1">69.1E Cosmos 2350</option> 
+<option id="s0685" value="68.5">68.5E Intelsat 10, 7</option> 
+<option id="s0675" value="67.5">67.5E Meteosat 6</option> 
+<option id="s0660" value="66">66.0E Intelsat 702, 704</option> 
+<option id="s0645" value="64.5">64.5E Inmarsat 3-F1</option> 
+<option id="s0642" value="64.2">64.2E Intelsat 906</option> 
+<option id="s0620" value="62">62.0E Intelsat 902</option> 
+<option id="s0600" value="60">60.0E Intelsat 904</option> 
+<option id="s0575" value="57.5">57.5E Meteosat 7</option> 
+<option id="s0570" value="57">57.0E NSS 703</option> 
+<option id="s0560" value="56">56.0E Bonum 1</option> 
+<option id="s0550" value="55">55.0E Insat 3E</option> 
+<option id="s0548" value="54.8">54.8E Intelsat 706</option> 
+<option id="s0530" value="53">53.0E Express-AM 22</option> 
+<option id="s0528" value="52.8">52.8E Skynet 5B</option> 
+<option id="s0508" value="50.8">50.8E Galaxy 26</option> 
+<option id="s0490" value="49">49.0E Yamal 202</option> 
+<option id="s0480" value="48">48.0E GSat 2</option> 
+<option id="s0476" value="47.6">47.6E Intelsat 601</option> 
+<option id="s0470" value="47">47.0E Syracuse 3A</option> 
+<option id="s0460" value="46">46.0E Africasat 1 (Measat 1)</option> 
+<option id="s0450" value="45">45.0E Intelsat 12</option> 
+<option id="s0440" value="44">44.0E Thuraya-2</option> 
+<option id="s0420" value="42">42.0E Turksat 2A, 3A</option> 
+<option id="s0400" value="40">40.0E Eurobird 9 | Express-AM 1</option> 
+<option id="s0390" value="39">39.0E Hellas-Sat 2</option> 
+<option id="s0380" value="38">38.0E Paksat 1</option> 
+<option id="s0360" value="36">36.0E Eutelsat W4 | Sesat 1</option> 
+<option id="s0353" value="35.3">35.3E Skynet 4E</option> 
+<option id="s0350" value="35">35.0E Nato 4B</option> 
+<option id="s0345" value="34.5">34.5E AMC 14</option> 
+<option id="s0330" value="33">33.0E Eurobird 3 | Galaxy 11 | Intelsat 802</option> 
+<option id="s0315" value="31.5">31.5E Astra 1D, 2C</option> 
+<option id="s0310" value="31">31.0E Turksat 1C</option> 
+<option id="s0305" value="30.5">30.5E Arabsat 2B | Badr 3 (Arabsat 3A)</option> 
+<option id="s0290" value="29">29.0E Xtar-Eur</option> 
+<option id="s0285" value="28.5">28.5E Eurobird 1</option> 
+<option id="s0282" value="28.2">28.2E Astra 2A, 2B, 2D</option> 
+<option id="s0260" value="26">26.0E Badr 4 (Arabsat 4B) | Badr 6</option> 
+<option id="s0255" value="25.5">25.5E Eurobird 2</option> 
+<option id="s0250" value="25">25.0E Inmarsat 3-F5, 4-F2</option> 
+<option id="s0235" value="23.5">23.5E Astra 1E, 1G, 3A</option> 
+<option id="s0216" value="21.6">21.6E Artemis | Eutelsat W6</option> 
+<option id="s0210" value="21">21.0E Afristar</option> 
+<option id="s0192" value="19.2">19.2E Astra 1F, 1H, 1KR, 1L, 1M</option> 
+<option id="s0166" value="16.6">16.6E Raduga-1 8</option> 
+<option id="s0163" value="16.3">16.3E Sicral 1</option> 
+<option id="s0160" value="16">16.0E Atlantic Bird 4 | Eutelsat W2</option> 
+<option id="s0133" value="13.3">13.3E Skynet 4C</option> 
+<option id="s0130" value="13">13.0E Hot Bird 6, 8, 9</option> 
+<option id="s0118" value="11.8">11.8E Cosmos 2379 | Sicral 1B</option> 
+<option id="s0100" value="10">10.0E Eutelsat W1</option> 
+<option id="s0094" value="9.4">9.4E Meteosat 8</option> 
+<option id="s0090" value="9">9.0E Eurobird 9A</option> 
+<option id="s0070" value="7">7.0E Eutelsat W3A</option> 
+<option id="s0050" value="5">5.0E Thor 2</option> 
+<option id="s0048" value="4.8">4.8E Sirius 3, 4</option> 
+<option id="s0040" value="4">4.0E Eurobird 4</option> 
+<option id="s0037" value="3.7">3.7E Eutelsat W2M</option> 
+<option id="s0030" value="3">3.0E Telecom 2C</option> 
+<option id="s0028" value="2.8">2.8E Rascom-QAF 1</option> 
+<option id="s0020" value="2">2.0E Astra 1C</option> 
+<option id="s0000" value="0">0.0E Meteosat 9</option> 
+<option id="s3592" value="-0.8">0.8W Thor 3, 5</option> 
+<option id="s3590" value="-1">1.0W Intelsat 10-02</option> 
+<option id="s3589" value="-1.1">1.1W Skynet 5A</option> 
+<option id="s3585" value="-1.5">1.5W Amos 1</option> 
+<option id="s3560" value="-4">4.0W Amos 2, 3</option> 
+<option id="s3550" value="-5">5.0W Atlantic Bird 3 | Syracuse 3B</option> 
+<option id="s3530" value="-7">7.0W Nilesat 101, 102</option> 
+<option id="s3528" value="-7.2">7.2W Atlantic Bird 4A</option> 
+<option id="s3524" value="-7.6">7.6W Cosmos 2224</option> 
+<option id="s3520" value="-8">8.0W Atlantic Bird 2 | Telecom 2D</option> 
+<option id="s3490" value="-11">11.0W Express A3 | Express-AM 44</option> 
+<option id="s3475" value="-12.5">12.5W Atlantic Bird 1</option> 
+<option id="s3464" value="-13.6">13.6W Gorizont 32</option> 
+<option id="s3460" value="-14">14.0W Express 4A</option> 
+<option id="s3450" value="-15">15.0W Telstar 12</option> 
+<option id="s3445" value="-15.5">15.5W Inmarsat 3-F2</option> 
+<option id="s3423" value="-17.7">17.7W Skynet 5C</option> 
+<option id="s3420" value="-18">18.0W Intelsat 901</option> 
+<option id="s3400" value="-20">20.0W Intelsat 603</option> 
+<option id="s3380" value="-22">22.0W NSS 7</option> 
+<option id="s3355" value="-24.5">24.5W Intelsat 905</option> 
+<option id="s3325" value="-27.5">27.5W Intelsat 907</option> 
+<option id="s3300" value="-30">30.0W Hispasat 1C, 1D | Spainsat</option> 
+<option id="s3285" value="-31.5">31.5W Intelsat 801</option> 
+<option id="s3261" value="-33.9">33.9W Skynet 4F</option> 
+<option id="s3255" value="-34.5">34.5W Intelsat 903</option> 
+<option id="s3225" value="-37.5">37.5W NSS-10 (AMC 12) | Telstar 11N</option> 
+<option id="s3195" value="-40.5">40.5W NSS 806</option> 
+<option id="s3192" value="-40.8">40.8W TDRS 10</option> 
+<option id="s3170" value="-43">43.0W Intelsat 11, 3R</option> 
+<option id="s3150" value="-45">45.0W Intelsat 1R</option> 
+<option id="s3142" value="-45.8">45.8W TDRS 4</option> 
+<option id="s3111" value="-48.9">48.9W TDRS 1</option> 
+<option id="s3100" value="-50">50.0W Intelsat 705</option> 
+<option id="s3070" value="-53">53.0W Intelsat 707</option> 
+<option id="s3060" value="-54">54.0W Inmarsat 3-F4</option> 
+<option id="s3045" value="-55.5">55.5W Intelsat 805</option> 
+<option id="s3020" value="-58">58.0W Intelsat 9</option> 
+<option id="s3000" value="-60">60.0W GOES 10</option> 
+<option id="s2990" value="-61">61.0W Amazonas</option> 
+<option id="s2985" value="-61.5">61.5W Echostar 12, 3</option> 
+<option id="s2978" value="-62.2">62.2W TDRS 9</option> 
+<option id="s2970" value="-63">63.0W Estrela Do Sul</option> 
+<option id="s2950" value="-65">65.0W Star One C1</option> 
+<option id="s2920" value="-68">68.0W Brasilsat B1</option> 
+<option id="s2900" value="-70">70.0W Star One C2</option> 
+<option id="s2880" value="-72">72.0W AMC 6 | Nahuel 1A</option> 
+<option id="s2875" value="-72.5">72.5W DirecTV 1R | Echostar 6</option> 
+<option id="s2860" value="-74">74.0W Horizons 2</option> 
+<option id="s2850" value="-75">75.0W Brasilsat B3</option> 
+<option id="s2842" value="-75.8">75.8W GOES 12</option> 
+<option id="s2830" value="-77">77.0W Echostar 4, 8</option> 
+<option id="s2820" value="-78">78.0W Venesat 1</option> 
+<option id="s2810" value="-79">79.0W AMC 5 | Satcom C3</option> 
+<option id="s2790" value="-81">81.0W Galaxy 9</option> 
+<option id="s2780" value="-82">82.0W DirecTV 3 | Nimiq 4</option> 
+<option id="s2770" value="-83">83.0W AMC 9</option> 
+<option id="s2760" value="-84">84.0W Brasilsat B4</option> 
+<option id="s2750" value="-85">85.0W AMC 16</option> 
+<option id="s2749" value="-85.1">85.1W XM 1 (Roll), 2 (Rock), 3 (Rhythm)</option> 
+<option id="s2730" value="-87">87.0W AMC 3</option> 
+<option id="s2710" value="-89">89.0W Galaxy 28</option> 
+<option id="s2690" value="-91">91.0W Galaxy 17 | Nimiq 1, 2</option> 
+<option id="s2680" value="-92">92.0W Brasilsat B2</option> 
+<option id="s2672" value="-92.8">92.8W ICO G1</option> 
+<option id="s2669" value="-93.1">93.1W Galaxy 25</option> 
+<option id="s2650" value="-95">95.0W Galaxy 3C | Spaceway 3</option> 
+<option id="s2630" value="-97">97.0W Galaxy 19</option> 
+<option id="s2624" value="-97.6">97.6W Inmarsat 4-F3</option> 
+<option id="s2620" value="-98">98.0W Inmarsat 2-F2</option> 
+<option id="s2610" value="-99">99.0W Galaxy 16</option> 
+<option id="s2608" value="-99.2">99.2W DirecTV 11 | Spaceway 2</option> 
+<option id="s2590" value="-101">101.0W AMC 2, 4 | DirecTV 8</option> 
+<option id="s2589" value="-101.1">101.1W DirecTV 4S, 9S</option> 
+<option id="s2587" value="-101.3">101.3W AMSC 1 | Solidaridad 1</option> 
+<option id="s2572" value="-102.8">102.8W DirecTV 10 | Spaceway 1</option> 
+<option id="s2570" value="-103">103.0W AMC 1</option> 
+<option id="s2550" value="-105">105.0W AMC 15, 18 | Satcom C5</option> 
+<option id="s2551" value="-105">105.0W GOES 13 | Les 9</option> 
+<option id="s2548" value="-105.2">105.2W Gstar 1</option> 
+<option id="s2542" value="-105.8">105.8W Acts</option> 
+<option id="s2540" value="-106">106.0W Gstar 3</option> 
+<option id="s2535" value="-106.5">106.5W MSat M1</option> 
+<option id="s2527" value="-107.3">107.3W Anik F1, F1R</option> 
+<option id="s2500" value="-110" selected="selected">110.0W DirecTV 5 | Echostar 10, 11</option> 
+<option id="s2489" value="-111.1">111.1W Anik F2 | Wildblue 1</option> 
+<option id="s2470" value="-113">113.0W Satmex 6</option> 
+<option id="s2451" value="-114.9">114.9W Solidaridad 2</option> 
+<option id="s2450" value="-115">115.0W XM 4 (Blues)</option> 
+<option id="s2432" value="-116.8">116.8W Satmex 5</option> 
+<option id="s2413" value="-118.7">118.7W Anik F3</option> 
+<option id="s2410" value="-119">119.0W DirecTV 7S | Echostar 7</option> 
+<option id="s2390" value="-121">121.0W Galaxy 23</option> 
+<option id="s2370" value="-123">123.0W Galaxy 12, 18</option> 
+<option id="s2350" value="-125">125.0W AMC 21 | Galaxy 14</option> 
+<option id="s2330" value="-127">127.0W Galaxy 13 (Horizons-1)</option> 
+<option id="s2310" value="-129">129.0W Ciel 2 | Galaxy 27</option> 
+<option id="s2290" value="-131">131.0W AMC 11</option> 
+<option id="s2270" value="-133">133.0W Galaxy 15</option> 
+<option id="s2250" value="-135">135.0W AMC 10 | GOES 11</option> 
+<option id="s2230" value="-137">137.0W AMC 7</option> 
+<option id="s2210" value="-139">139.0W AMC 8</option> 
+<option id="s2180" value="-142">142.0W Inmarsat 2-F1</option> 
+<option id="s2120" value="-148">148.0W Echostar 1</option> 
+<option id="s2093" value="-150.7">150.7W TDRS 7</option> 
+<option id="s1922" value="-167.8">167.8W TDRS 5</option> 
+<option id="s1892" value="-170.8">170.8W TDRS 6</option> 
+<option id="s1830" value="-177">177.0W NSS 9</option> 
+<option id="s1825" value="-177.5">177.5W GOES 7</option> 
+<option id="s1820" value="-178">178.0W Cosmos 2319</option>
+</select>
+</xml>
+ 

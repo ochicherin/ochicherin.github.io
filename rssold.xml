@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<rss version="2.0">
+     <channel>
+          <title>Чичерин Олег Николаевич. Новостная лента.</title>
+          <link>news.html</link>
+          <description>
+               Новостные ленты
+          </description>
+          <language>en-us</language>
+          <lastBuildDate>Thu, 31 Mar 2011 23:00:01 +0400</lastBuildDate>
+          <docs>http://ochicherin.narod.ru/rss.xml</docs>
+          <category>Главное</category>
+          <item>
+               <title>Сайт зарегистрирован</title>
+               <link>news.html#1</link>
+               <description>
+                    Зарегистрировал сайт, писать нечего
+               </description>
+               <pubDate>5 Feb 2003 12:00:01 +0300</pubDate>
+               <author>ochicherin@yandex.ru</author>
+          </item>
+          <item>
+               <title>Яндекс закрыл сайт</title>
+               <link>news.html#2</link>
+               <description>
+Мы обнаружили, что в течение 4 последних месяцев ваш сайт никто не посещал 
+и информация на нем не обновлялась. В соответствии c пунктом 9 Пользовательского соглашения, Ваш сайт подлежит удалению.
+
+Если Вы все же хотите сохранить свой сайт, пожалуйста, обновите информацию
+на нем. Сейчас доступ к сайту по HTTP закрыт, но через мастерскую и по FTP
+возможен.
+
+Просим Вас обратить внимание, что, если Вы не предприняли никаких действий
+по решению возникшей проблемы, закрытый сайт удаляется автоматически через
+месяц с момента закрытия и восстановлению не подлежит.
+
+С уважением,
+
+Служба поддержки Яндекса
+               </description>
+               <pubDate>11 Mar 2009 12:00:01 +0300</pubDate>
+               <author>ochicherin@yandex.ru</author>
+          </item>
+          <item>
+               <title>Изменен дизайн</title>
+               <link>news.html#3</link>
+               <description>
+                    Из-за того, что надо обновлять контент, пришлось обновить дизайн
+               </description>
+               <pubDate>11 Mar 2009 12:00:01 +0300</pubDate>
+               <author>ochicherin@yandex.ru</author>
+          </item>
+          <item>
+               <title>Сделал RSS ленту</title>
+               <link>news.html#1</link>
+               <description>
+                    Сделал RSS ленту
+               </description>
+               <pubDate>22 Mar 2009 12:00:01 +0300</pubDate>
+               <author>ochicherin@yandex.ru</author>
+          </item>
+          <item>
+               <title>Книжка научилась читать RSS ленту</title>
+               <link>news.html#1</link>
+               <description>
+                    Моя элекнронная книга научилась читать RSS ленту.
+                    Осталось научиться туда писать :)
+               </description>
+               <pubDate>11 Mar 2011 12:00:01 +0300</pubDate>
+               <author>ochicherin@yandex.ru</author>
+          </item>
+          <item>
+               <title>Фотографии Фукусимы</title>
+               <link>fukushima.html</link>
+               <description>
+		    Добавил веб фотографии Фукусимы.
+		    Стриница содержит ссылки на веб архив TEPCO.
+		    Фото берется с их сайта.     
+               </description>
+               <pubDate>22 Mar 2011 12:00:01 +0300</pubDate>
+               <author>ochicherin@yandex.ru</author>
+          </item>
+          <item>
+               <title>Изменилась структура сайта</title>
+               <link>other.html</link>
+               <description>
+		    Появился раздел прочее.
+		    Туда отправилось все, что не влезло в главное меню.
+               </description>
+               <pubDate>22 Mar 2011 12:00:01 +0300</pubDate>
+               <author>ochicherin@yandex.ru</author>
+          </item>
+          <item>
+               <title>Пример Фотогалереи</title>
+               <link>fotogalery.html</link>
+               <description>
+		    Добавил пример построения фотогалереи на javascript
+               </description>
+               <pubDate>Thu, 31 Mar 2011 12:00:01 +0400</pubDate>
+               <author>ochicherin@yandex.ru</author>
+          </item>
+          <item>
+               <title>Пример Внешний список</title>
+               <link>fotogalery.html</link>
+               <description>
+		    Добавил пример как загружать выпадающий список из внешнего файла. 
+                    Конечно ничего особенного в этом нет, но уменьшает объем страницы и спасает от copy/paste.
+               </description>
+               <pubDate>Thu, 31 Mar 2011 12:00:01 +0400</pubDate>
+               <author>ochicherin@yandex.ru</author>
+          </item>
+          <item>
+               <title>Пример Исходный код</title>
+               <link>fotogalery.html</link>
+               <description>
+		    Добавил пример как отображать исходный код на странице.
+                    Вроде ерунда, можно и так посмотреть. С другой стороны не надо копаться в коде.
+                    Показывается то, что должно показываться.  
+               </description>
+               <pubDate>Thu, 31 Mar 2011 12:00:01 +0400</pubDate>
+               <author>ochicherin@yandex.ru</author>
+          </item>
+     </channel>
+</rss>

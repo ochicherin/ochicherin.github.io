@@ -1,0 +1,59 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Как сделать "прозрачную" авторизацию при помощи Apache</H1>
+
+<pre>
+ В некоторых случаях много чего требуется делать за клиента, чего он не хочет
+или объективно не может. 
+Например требуется авторизоваться за клиента, модифицировать отдаваемый контент
+а так же просто добавлять в заголовок запроса некоторые переменные.
+
+Пример - "костыль" для Oracle XDB: 
+ - Oracle XML DB Web Services не может работать анонимно и всегда требует авторизацию.
+ - С другой стороны клиент СМЭВ не поддерживает Basic авторизацию.
+ - Кроме того, если клиент явно не указывает кодировку, в которой требуется ответ,
+   Oracle XML DB возвращает результат в кодировке базы данных.
+
+Для решения проблемы используем модули mod_rewrite и mod_ext_filter.
+mod_ext_filter решит проблему фильтрации отдаваемого контента,
+а mod_rewrite проксирование запроса.
+
+Редактируем httpd.conf 
+</pre>
+<textarea class="example">
+ExtFilterDefine fixwsdl mode=output intype=text/xml \
+  cmd="/bin/sed s/http:\\\/\\\/10.32.1.156:8080/http:\\\/\\\/10.32.1.156/g"
+<Location /orawsv>
+  SetOutputFilter fixwsdl
+</Location>
+RewriteEngine on
+RewriteLogLevel	9
+RewriteLog	/logs/rewrite.log
+RequestHeader append Authorization "Basic cHVicGd1OnB1YnBndQ=="
+RequestHeader append Accept-Charset "UTF-8"
+RewriteRule ^/orawsv(.*) http://10.32.1.156:8080/orawsv$1 [P]
+</textarea>
+<pre>
+Что делают команды:
+ - Определяем фильтр. в качестве фильтра выступает sed, делающий глобальную замену.
+   Для того, чтобы в команде замены указать / надо написать \\\/
+ - Определяем область действия фильтра.
+ - Включается механизм перезаписи url.
+ - Задается режим отладки. Чтобы отключить, надо поставить 0
+ - Задается путь, куда писать журнал.
+ - Добавляется заголовок авторизации.
+ - Добавляется заголовок определяющий кодировку ответа.
+ - Задается правило трансформации url с передачей запроса через прокси.
+
+Всё.
+</pre>
+
+
+</BODY>
+</HTML>

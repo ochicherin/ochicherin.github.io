@@ -1,0 +1,24 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Примеры работы с куками и передаваемыми в URL параметрами</H1>
+
+Кука "username" <input type=text name="username" value="">
+<input type=Submit value="Загрузить" onClick="username.value=getCookie('username');" > 
+<input type=Submit value="Сохранить" onClick="setCookie('username',username.value,365);" > 
+<hr>
+<div id=form class=include>form1.html</div>
+<input type=Submit value="Очистить" onClick="ClearForm('form1');" > 
+<input type=Submit value="Загрузить" onClick="LoadForm('form1');" > 
+<input type=Submit value="Сохранить" onClick="SaveForm('form1');" > 
+<input type=Submit value="Считать URL" onClick="QueryForm('form1');" > 
+<hr>
+<input type=Submit value="Показать все куки" onClick="alert(document.cookie);" > 
+
+</body>
+</html>

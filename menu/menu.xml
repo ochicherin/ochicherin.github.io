@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<MenuItems>
+<Item1>
+<SubItem>FirstSubItem1</SubItem>
+<SubItem>FirstSubItem2</SubItem>
+<SubItem>FirstSubItem3</SubItem>
+</Item1>
+<Item2>
+<SubItem>SecondSubItem1</SubItem>
+<SubItem>SecondSubItem2</SubItem>
+<SubItem>SecondSubItem3</SubItem>
+</Item2>
+<Item3>
+<SubItem>ThirdSubItem1</SubItem>
+<SubItem>ThirdSubItem2</SubItem>
+<SubItem>ThirdSubItem3</SubItem>
+</Item3>
+<Item4>
+<SubItem>ForthSubItem1</SubItem>
+<SubItem>ForthSubItem2</SubItem>
+<SubItem>ForthSubItem3</SubItem>
+</Item4>
+</MenuItems>

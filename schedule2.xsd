@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://xmlns.oracle.com/xdb" version="1.0">
+
+<xs:element name="SCHEDULE" type="schedule_one_type" xdb:defaultTable="SCHEDULE_ONE">
+ <xs:annotation>
+  <xs:documentation>Команда на загрузку данных</xs:documentation>
+ </xs:annotation>
+</xs:element>
+
+<xs:complexType name="schedule_one_type" xdb:SQLType="SCHEDULE_ONE_TYPE">
+ <xs:annotation>
+  <xs:documentation>Команда на загрузку данных</xs:documentation>
+ </xs:annotation>
+ <xs:sequence>
+  <xs:element name="ISS_ID" minOccurs="1" maxOccurs="1" xdb:SQLName="ISS_ID" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Уникальный идентификатор сеанса загрузки</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="127"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="PART_SCRIPT" minOccurs="1" maxOccurs="1" xdb:SQLName="PART_SCRIPT" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Имя скрипта загрузки</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="PART_COMMAND" minOccurs="0" maxOccurs="1" xdb:SQLName="PART_SCRIPT" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Имя скрипта загрузки</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="SECTION" minOccurs="0" maxOccurs="1" type="schedule_section_type" xdb:SQLType="SCHEDULE_SECTION_TYPE"/>
+ </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="schedule_section_type" xdb:SQLType="SCHEDULE_SECTION_TYPE">
+ <xs:annotation>
+  <xs:documentation>Раздел команды на загрузку данных</xs:documentation>
+ </xs:annotation>
+ <xs:sequence>
+  <xs:element name="PART_URL" minOccurs="0" maxOccurs="1" xdb:SQLName="PART_URL" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Имя скрипта загрузки</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="1024"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="PART_DEPTH" minOccurs="0" maxOccurs="1" xdb:SQLName="PART_DEPTH" xdb:SQLType="NUMBER">
+   <xs:annotation>
+    <xs:documentation>Глубина обхода дерева</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+     <xs:fractionDigits value="0" /> 
+     <xs:totalDigits value="5" /> 
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="PART_RULE" minOccurs="0" maxOccurs="1" xdb:SQLName="PART_RULE" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Правило филитрации url в виде регулярного выражения</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="1024"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="ISS_NUMBER" minOccurs="0" maxOccurs="1" xdb:SQLName="ISS_NUMBER" xdb:SQLType="VARCHAR2">
+   <xs:annotation>
+    <xs:documentation>Дата выпуска (для газет)</xs:documentation>
+   </xs:annotation>
+   <xs:simpleType>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="31"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:element>
+  <xs:element name="ISS_DATE" minOccurs="0" maxOccurs="1" type="xs:date" xdb:SQLName="ISS_DATE" xdb:SQLType="DATE">
+   <xs:annotation>
+    <xs:documentation>Дата выпуска (для газет)</xs:documentation>
+   </xs:annotation>
+  </xs:element>
+ </xs:sequence>
+</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<xml>
+      <item title="Главная" url="index.html"/> 
+      <item title="Новости" url="news.html"/> 
+      <item title="Обо мне" url="about.html"/> 
+      <item title="Ссылки" url="links.html"/> 
+      <item title="Галерея" url="galery.html"/> 
+      <item title="Примеры" url="examples.html"/> 
+      <item title="Библиотека" url="lib.html"/> 
+      <item title="FAQ" url="faq.html"/> 
+      <item title="Резюме" url="resume.html"/> 
+      <item title="Контакты" url="contacts.html"/> 
+      <item title="RSS" url="rss.xml"/> 
+</xml>

@@ -1,0 +1,203 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+
+<H1>Error highlighting Russian words in Oracle Text.</H1>
+<pre>
+Database :
+<i>Oracle Database 11g Enterprise Edition Release 11.1.0.7.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options</i>
+
+Operating system : Oracle Enterprise Linux
+<i>Linux ws698.xxxx.ru 2.6.18-92.el5xen #1 SMP Fri May 23 23:49:15 EDT 2008
+x86_64 x86_64 x86_64 GNU/Linux</i>
+
+When using Oracle Text component AUTO_LEXER is buggy
+highlighting words. Using AUTO_LEXER critical, because only
+It is supported by Russian morphology.
+Incorrect results are the procedures
+CTX_DOC.HIGHLIGHT,
+CTX_DOC.MARKUP,
+CTX_DOC.TOKENS,
+CTX_DOC.SNIPPET
+responsible for highlighting the results of full-text query.
+
+The problem is that Oracle Text misinterprets
+Russian letters "Ё" and "Й" as dual characters.
+As a result, unless the text there are the symbols,
+we see the effect of shifting lights, growing at each occurrence
+letters "Ё" and "Й".
+
+Consider an example.
+
+Create a test table.
+Let's fill it with data.
+And construct a full-text index.
+<textarea class="example">
+alter session set nls_language=AMERICAN;
+--alter session set nls_language=RUSSIAN;
+drop table fuzzy_tbl; 
+
+create table fuzzy_tbl(
+id number primary key,
+docs clob);
+insert into fuzzy_tbl values(1,'А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я');
+insert into fuzzy_tbl values(2,'Друг мой эльф! Яшке б свёз птиц южных чащ!');
+insert into fuzzy_tbl values(3,'В чащах юга жил бы цитрус? Да, но фальшивый экземпляр!');
+insert into fuzzy_tbl values(4,'Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства');
+insert into fuzzy_tbl values(5,'Мама ёжика учила, Мама пальчиком грозила:  - Помни правила, малыш! Если красный свет - стоишь! Если желтый - просто жди, На зеленый - проходи! Непослушный пешеход Сделал все наоборот! Ёжик очень торопился И клубочком покатился Прямиком на красный свет! Можно так? Конечно, нет! Завизжали тормоза, И зажмурил ёж глаза. Старый толстый самосвал, Забибикал, зарычал: - Еле я остановился, Чуть с дороги не свалился! Что, не знаешь правил ты?! Ну-ка быстро марш в кусты! Дам тебе я, ёж, совет: Не ходи на красный свет! Еж тихонько пропыхтел: - Извините, не хотел. Рассказал нам светофор: Ёж исправился с тех пор. Лучше всех порядок знает, Ничего не нарушает!'); 
+commit;
+
+exec Ctx_Ddl.Drop_Preference( 'STEM_FUZZY_PREF' ); 
+exec ctx_ddl.drop_preference('MYLEXER');
+
+
+begin 
+  Ctx_Ddl.Create_Preference('STEM_FUZZY_PREF', 'BASIC_WORDLIST'); 
+  ctx_ddl.set_attribute('STEM_FUZZY_PREF','FUZZY_MATCH','AUTO');
+  ctx_ddl.set_attribute('STEM_FUZZY_PREF','STEMMER','AUTO');
+end; 
+/ 
+
+exec ctx_ddl.create_preference('MYLEXER', 'auto_lexer');
+exec ctx_ddl.set_attribute('MYLEXER','LANGUAGE','RUSSIAN');
+exec ctx_ddl.set_attribute('MYLEXER','INDEX_STEMS','YES');
+exec ctx_ddl.set_attribute('MYLEXER','deriv_stems','YES'); 
+--exec Ctx_ddl.set_attribute ('MYLEXER','russian_tagstem_dict', 'std');
+--exec Ctx_ddl.set_attribute ('MYLEXER','russian_tag_dict', 'std');
+--exec Ctx_ddl.set_attribute ('MYLEXER','russian_abbr_dict', 'std');
+--exec Ctx_ddl.set_attribute ('MYLEXER','english_tagstem_dict', 'std'); 
+
+create index fuzzy_idx on fuzzy_tbl ( docs )
+  indextype is ctxsys.CONTEXT
+  parameters ('lexer MYLEXER
+               wordlist STEM_FUZZY_PREF
+               stoplist CTXSYS.EMPTY_STOPLIST');
+</textarea>
+
+More spotlight text says with ctx_doc.snippet
+<textarea class="example">
+SQL> select ctx_doc.snippet('fuzzy_idx','3', 'но') from dual;
+
+В чащах юга жил бы цитрус? Да, <b>но</b> фальшивый экземпляр!
+
+SQL> select ctx_doc.snippet('fuzzy_idx','3', 'фальшивый') from dual;
+
+В чащах юга жил бы цитрус? Да, но <b>фальшивый </b>экземпляр!
+
+SQL> select ctx_doc.snippet('fuzzy_idx','3', 'экземпляр') from dual;
+
+В чащах юга жил бы цитрус? Да, но фальшивый э<b>кземпляр!</b>
+</textarea>
+
+The first and second requests have worked correctly.
+In the third query incorrectly determine the length of the word because 
+of the presence of the symbol "Й".
+In the fourth Inquiry incorrectly identified the initial position of word.
+
+Let us make a more systematic test.
+The test line contains all the letters of the Russian alphabet.
+We will highlight them in turn. This will reveal all the letters that influence
+correct illumination.
+<textarea class="example">
+SQL> declare
+  2   s varchar2(128):= 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя';
+  3  begin
+  4  for i in 1..length(s) loop
+  5   dbms_output.put_line(to_char(i,'099')||' '||substr(s,i,1)||': '||ctx_doc.snippet('fuzzy_idx','1', substr(s,i,1)));
+  6  end loop;
+  7  end;
+  8  /
+001 А: <b>А</b> Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а <b>б</b> в г д е ё
+002 Б: А <b>Б</b> В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б <b>в</b> г д е ё
+003 В: А Б <b>В</b> Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в <b>г</b> д е ё
+004 Г: А Б В <b>Г</b> Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г <b>д</b> е ё
+005 Д: А Б В Г <b>Д</b> Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д <b>е</b> ё
+006 Е: А Б В Г Д <b>Е</b> Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е <b>ё</b>
+007 Ё: А Б В Г Д Е <b>Ё </b>Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё <b>ж <
+008 Ж: А Б В Г Д Е Ё Ж<b> </b>З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з<b>
+009 З: А Б В Г Д Е Ё Ж З<b> </b>И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и<
+010 И: А Б В Г Д Е Ё Ж З И<b> </b>Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+011 Й: А Б В Г Д Е Ё Ж З И Й<b> К</b> Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+012 К: А Б В Г Д Е Ё Ж З И Й К <b>Л</b> М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+013 Л: А Б В Г Д Е Ё Ж З И Й К Л <b>М</b> Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+014 М: А Б В Г Д Е Ё Ж З И Й К Л М <b>Н</b> О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+015 Н: А Б В Г Д Е Ё Ж З И Й К Л М Н <b>О</b> П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+016 О:  И Й К Л М Н О <b>П</b> Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п <b>р
+017 П:  Й К Л М Н О П <b>Р</b> С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р <b>с
+018 Р:  К Л М Н О П Р <b>С</b> Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с <b>т
+019 С:  К Л М Н О П Р С <b>Т</b> У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т <b
+020 Т: Л М Н О П Р С Т <b>У</b> Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у <b
+021 У: М Н О П Р С Т У <b>Ф</b> Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф <b
+022 Ф: Н О П Р С Т У Ф <b>Х</b> Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х <b
+023 Х: О П Р С Т У Ф Х <b>Ц</b> Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц <b
+024 Ц: П Р С Т У Ф Х Ц <b>Ч</b> Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч <b
+025 Ч: Р С Т У Ф Х Ц Ч <b>Ш</b> Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш <b
+026 Ш: С Т У Ф Х Ц Ч Ш <b>Щ</b> Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ <b
+027 Щ: Т У Ф Х Ц Ч Ш Щ <b>Ъ</b> Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ <b
+028 Ъ: У Ф Х Ц Ч Ш Щ Ъ <b>Ы</b> Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы <b
+029 Ы: Ф Х Ц Ч Ш Щ Ъ Ы <b>Ь</b> Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь <b
+030 Ь: Х Ц Ч Ш Щ Ъ Ы Ь <b>Э</b> Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э <b
+031 Э: Ц Ч Ш Щ Ъ Ы Ь Э <b>Ю</b> Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю <b
+032 Ю: Ч Ш Щ Ъ Ы Ь Э Ю <b>Я</b> а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я
+033 Я: Ш Щ Ъ Ы Ь Э Ю Я <b>а</b> б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я
+034 а: <b>А</b> Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а <b>б</b> в г д е ё
+035 б: А <b>Б</b> В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б <b>в</b> г д е ё
+036 в: А Б <b>В</b> Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в <b>г</b> д е ё
+037 г: А Б В <b>Г</b> Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г <b>д</b> е ё
+038 д: А Б В Г <b>Д</b> Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д <b>е</b> ё
+039 е: А Б В Г Д <b>Е</b> Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е <b>ё</b>
+040 ё: А Б В Г Д Е <b>Ё </b>Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё <b>ж <
+041 ж: А Б В Г Д Е Ё Ж<b> </b>З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з<b>
+042 з: А Б В Г Д Е Ё Ж З<b> </b>И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и<
+043 и: А Б В Г Д Е Ё Ж З И<b> </b>Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+044 й: А Б В Г Д Е Ё Ж З И Й<b> К</b> Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+045 к: А Б В Г Д Е Ё Ж З И Й К <b>Л</b> М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+046 л: А Б В Г Д Е Ё Ж З И Й К Л <b>М</b> Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+047 м: А Б В Г Д Е Ё Ж З И Й К Л М <b>Н</b> О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+048 н: А Б В Г Д Е Ё Ж З И Й К Л М Н <b>О</b> П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и 
+049 о:  И Й К Л М Н О <b>П</b> Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п <b>р
+050 п:  Й К Л М Н О П <b>Р</b> С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р <b>с
+051 р:  К Л М Н О П Р <b>С</b> Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с <b>т
+052 с:  К Л М Н О П Р С <b>Т</b> У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т <b
+053 т: Л М Н О П Р С Т <b>У</b> Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у <b
+054 у: М Н О П Р С Т У <b>Ф</b> Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф <b
+055 ф: Н О П Р С Т У Ф <b>Х</b> Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х <b
+056 х: О П Р С Т У Ф Х <b>Ц</b> Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц <b
+057 ц: П Р С Т У Ф Х Ц <b>Ч</b> Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч <b
+058 ч: Р С Т У Ф Х Ц Ч <b>Ш</b> Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш <b
+059 ш: С Т У Ф Х Ц Ч Ш <b>Щ</b> Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ <b
+060 щ: Т У Ф Х Ц Ч Ш Щ <b>Ъ</b> Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ <b
+061 ъ: У Ф Х Ц Ч Ш Щ Ъ <b>Ы</b> Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы <b
+062 ы: Ф Х Ц Ч Ш Щ Ъ Ы <b>Ь</b> Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь <b
+063 ь: Х Ц Ч Ш Щ Ъ Ы Ь <b>Э</b> Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э <b
+064 э: Ц Ч Ш Щ Ъ Ы Ь Э <b>Ю</b> Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю <b
+065 ю: Ч Ш Щ Ъ Ы Ь Э Ю <b>Я</b> а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я
+066 я: Ш Щ Ъ Ы Ь Э Ю Я <b>а</b> б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я
+
+PL/SQL procedure successfully completed.
+</textarea>
+
+As seen from the example. Starting with the letter "А" to the letter "Е" and lighting works properly.
+The letter "Ё" is defined as a double symbol.
+Next to the letters "Й", the observed shift lights for 1 symbol.
+The letter "Й" is defined as a dual symbol.
+Next, observe the shift lights to 2 characters.
+
+This bug makes it virtually impossible to use backlighting applications.
+This is well illustrated by the following example.
+<textarea class="example">
+SQL> select ctx_doc.snippet('fuzzy_idx','5', '$красный') from dual;
+
+розила:  - Помни правила, малыш! Если к<b>расный с</b>вет - стоишь! Если желтый - просто жди, На<b>...</b>ом на красны<b>й св
+</textarea>
+
+</pre>
+
+</BODY>
+</HTML>

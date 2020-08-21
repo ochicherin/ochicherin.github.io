@@ -1,0 +1,65 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+  <script>
+
+function test_xml2() {
+  var xmlDoc = loadXML('sitemap.xml');
+  x = findNodeByAttr(xmlDoc, "item", "url", location.pathname); 
+  if (x.parentNode.nodeName=="xml") {
+    xml_result.innerHTML=xml_result.innerHTML+MakeXSLT(x.parentNode,'sitemap_row.xslt');
+  }
+  else {
+    var parsed = emptyXML();
+    copyChild(x.parentNode, parsed.documentElement);
+    xml_result.innerHTML=xml_result.innerHTML+MakeXSLT(parsed,'sitemap_row.xslt');
+  }
+}
+
+/*   function test_xml() {
+     alert(location.pathname);
+     var xmlDoc = loadXML('sitemap.xml');
+alert(x1[i].nodeName + ' ' +
+      x1[i].attributes.getNamedItem("title").value + ' ' +
+      x1[i].attributes.getNamedItem("url").value); 
+    if (location.pathname==x1[i].attributes.getNamedItem("url").value)
+     {
+       alert('ONO');
+       if (x1[i].parentNode.nodeName=="xml") {
+         var parsed = x1[i].parentNode;
+         alert(parsed.xml);
+         xml_result.innerHTML=xml_result.innerHTML+MakeXSLT(parsed,'sitemap_line.xslt');
+       }
+       else
+       {
+var parsed = emptyXML();
+alert('1');
+x=parsed.getElementsByTagName("xml")[0];
+alert('2');
+        x2 = x1[i].parentNode.childNodes;
+for (j=0;j<x2.length;j++)
+{
+       cloneNode=x2[j].cloneNode(true);
+       x.appendChild(cloneNode);
+}
+       alert(parsed.xml);
+       xml_result.innerHTML=xml_result.innerHTML+MakeXSLT(parsed,'sitemap_tree.xslt');
+       }
+     }
+    } 
+   }
+*/
+
+
+  </script>
+</HEAD>
+<BODY onLoad="initBody();test_xml2();">
+  <H1>Заголовок первый</H1>
+<div id=xml_result></div>
+
+</form> 
+</BODY>
+</HTML>

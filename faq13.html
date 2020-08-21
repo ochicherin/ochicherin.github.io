@@ -1,0 +1,70 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Перехватить страницу, сгенерированую при помощи HTP/HTF</H1>
+
+<pre>
+Собственно то же самое делает mod_plsql для того, чтобы отрисовать сгенерированный html.
+</pre>
+<textarea class="example">
+declare 
+  TYPE env_type IS TABLE OF VARCHAR2(1024) INDEX BY VARCHAR2(64);
+  env env_type;
+  cr varchar2(7) := chr(10);
+  vc owa.vc_arr;
+  c  clob;
+  n  number;
+  p  number;
+  s  varchar2(1024);
+ begin
+   n := owa.initialize;                    -- инициализируем окружение
+   owa.init_cgi_env(vc);                   
+
+   page;                                   -- вызываем страницу
+
+   dbms_lob.createtemporary(c,TRUE);       -- готовим буфер
+   s := owa.get_line(n);                   -- считываем первую строку 
+   while n=1 loop                          -- считываем остальные строки  
+     c := c || s;  
+     s := owa.get_line(n);
+   end loop;
+   p := dbms_lob.instr(c, cr||cr);         -- находим границу между телом и заголовком
+   n := p + length(cr)*2-1;                -- это длинна заголовка с пустой строкой
+   :head := dbms_lob.substr(c, n-length(cr)); -- получаем заголовок без пустой строки
+   :body := ' ';
+   dbms_lob.copy(:body, c, dbms_lob.getlength(c) - n, 1, n+1); -- получаем тело ответа
+end;
+</textarea>
+<pre>
+
+А это код, чтобы считать произвольную веб страницу.
+<textarea class="example">
+declare 
+   url varchar2(1024) := 'http://www.google.com';
+   x   utl_http.html_pieces;
+   len pls_integer;
+-- res clob := '';
+  begin
+    utl_http.set_proxy('proxy:3128');
+    x := utl_http.request_pieces(url);
+    len := 0;
+    for i in 1..x.count loop
+      :res := :res || x(i);
+      len := len + length(x(i));
+    end loop;
+--  return res;
+  end; 
+</textarea>
+
+
+Всё.
+</pre>
+
+
+</BODY>
+</HTML>

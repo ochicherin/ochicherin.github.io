@@ -1,0 +1,6 @@
+﻿Название;Расшифровка;Диапазон;Шаг сетки;Мощность;CTCSS;DCS;РФ
+CB;Citizens Band
+LPD;Low Power Device;433.075 МГц - 434.775 Мгц; 25 кГц;0.1 вт;+;+;+
+PMR;Private Mobile Radio;446.00625 - 446.09375 MHz; 12.5 кГц;0.5 вт;+;+;+
+FRS;Family Radio Service;467.5625 - 467.7125 MHz;;0.5 вт;;;-
+GMRS;General Mobile Radio Service;462.5625 - 462.7250 MHz;;0.5-1 вт;;;-

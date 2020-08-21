@@ -1,0 +1,46 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+<H1>Просмотр исходного кода.</H1>
+
+<pre>
+В примерах часто необходимо посмотреть исходный код части страницы.
+Причем как оригинальный код, так и тот, который получается после того,
+как по нему "прошлись" скрипты. 
+Для этого используются два специальных класса textarea. В одну из них попадает
+оригинальный код элемента, в другую код элемента после обработки javascript.
+Это позволяет увидеть, как работают "умные" элементы. 
+
+Например ниже приведена карта сайта, отображаемая слева. 
+<span id=sitemap_area>
+<div class=sitemap_current>sitemap.xml</div>
+</span>
+
+<span id=preview_area>
+В исходном виде текст элемента выглядит так.
+<textarea class=preview>sitemap_area</textarea>
+</span>
+
+<span id=postview_area>
+После обработки вот так.
+<textarea class=postview>sitemap_area</textarea>
+</span>
+
+
+Для того, чтобы достичь этого, в текст добавляется два элемента.
+Так выглядит исходный текст элемента отображающего исходный код.
+<textarea class=preview>preview_area</textarea>
+
+А так исходный текст элемента отображающего результирующий код.
+<textarea class=preview>postview_area</textarea>
+ 
+
+Вот собственно и всё.
+</pre>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Новый диск в Linux</H1>
+
+<pre>
+1. Создаем раздел при помощи FDISK
+Смотрим доступные физические диски и уже созданные разделы на них
+
+# /sbin/fdisk -l
+
+Disk /dev/hda: 21.4 GB, 21474836480 bytes
+255 heads, 63 sectors/track, 2610 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/hda1   *           1          13      104391   83  Linux
+/dev/hda2              14        2610    20860402+  8e  Linux LVM
+
+Disk /dev/hdb: 214.7 GB, 214748364800 bytes
+255 heads, 63 sectors/track, 26108 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+
+   Device Boot      Start         End      Blocks   Id  System
+
+
+Выбираем нужный диск. Создаем на диске партицию 
+
+# /sbin/fdisk /dev/hdb
+
+Создать партицию: n
+Тип партиции: p(или e)
+Начальный цилиндр: 1
+Конечный цилиндр: 26108
+
+Посмотреть что получилось: p
+
+Disk /dev/hdb: 214.7 GB, 214748364800 bytes
+255 heads, 63 sectors/track, 26108 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/hdb1               1       26108   209712478+  83  Linux
+
+Записать изменения: w
+
+2. Создаем в разделе файловую систему
+
+# /sbin/mkfs.ext3 /dev/hdb1
+
+3. Делаем запись в fstab и монтируем диск  
+
+Добавляем в /etc/fstab строку
+/dev/hdb1       /u01    ext3    defaults        1       1
+
+Создаем точку монтирования
+# mkdir /u01
+
+Монтируем партицию
+# mount /u01
+
+Смотрим, что получилось
+# mount
+
+/dev/hdb1 on /u01 type ext3 (rw)
+
+Все.
+</pre>
+
+
+</BODY>
+</HTML>

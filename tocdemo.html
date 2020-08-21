@@ -1,0 +1,64 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <script src="script.js"></script>
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+<h1>Автоматическое оглавление.</h1>
+<pre>
+При отображении большого документа желательно иметь оглавление.
+Больше объем документа и запутанее структура, тем проще ошибиться.
+Данный пример демонстрирует, как сделать автоматическое оглавление.
+Робот находит специальный тег, переходит на родительский и от него 
+пробегает все теги &lt;H&gt; и сам строит список.
+</pre>
+
+<span id=toc_area>
+<div class=toc></div>
+</span>
+
+<span id=h_area>
+<h1>Заголовок уровня 1 в дочернем элементе</h1>
+</span>
+
+<h1>Заголовок уровня 1</h1>
+<h2>Заголовок уровня 2</h2>
+<h3>Заголовок уровня 3</h3>
+<h4>Заголовок уровня 4</h4>
+<h5>Заголовок уровня 5</h5>
+<div class=demo_text></div>
+
+<span>
+<h1>Заголовок того же уровня, но в дочернем элементе</h1>
+<div class=demo_text></div>
+</span>
+
+<h2>Заголовок уровня 2</h2>
+<div class=demo_text></div>
+
+<span><h3>Заголовок уровня 3 в дочернем элементе</h3><div class=demo_text></div><h1>Заголовок уровня 1 в дочернем элементе</h1><div class=demo_text></div></span>
+<div class=demo_text></div>
+
+<h5>Заголовок уровня 5</h5>
+<div class=demo_text></div>
+<h3>Заголовок уровня 3</h3>
+<div class=demo_text></div>
+
+<h1>Как это работает</h1>
+
+<h2>Исходный вид оглавления на странице.</h2>
+<textarea class=preview>toc_area</textarea>
+
+<h2>Исходный вид заголовка на странице.</h2>
+<textarea class=preview>h_area</textarea>
+
+<h2>Конечный вид оглавления после отработки скриптов.</h2>
+<textarea class=postview>toc_area</textarea>
+
+<h2>Конечный вид заголовка после отработки скриптов.</h2>
+<textarea class=postview>h_area</textarea>
+
+</body>
+</html>
