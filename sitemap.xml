@@ -59,13 +59,13 @@
     <item title="Русская колонизация туркистана" url="/reader/tyrk.html"/> 
     <item title="Электросчетчик фотоальбом" url="/reader/cnt.html"/> 
     <item title="Проблемы управления" url="/management.html" desc="Проблемы управления"> 
-      <item title="Про гребцов" url="/mgt04.html"/> 
-      <item title="Про муравья" url="/mgt05.html"/> 
-      <item title="Дж. Ханк Рейнвотер. Как пасти котов. (fb2)" url="/Reinvoter_Dch.Hank__Kak_pasti_kotov._Nastavlenie_dlya_programmistov_rukovodyashih_drugimi_programmistami_www.Litru.ru_90031.html"/> 
-      <item title="Джейсон Фрайд, Дэвид Хайнемайер Ханссон. Бизнес без предрассудков. (fb2)" url="/Hensson_Rework_biznes_bez_predrassudkov.204544.html"/> 
-      <item title="Диагноз - выученная беспомощность." url="/mgt01.html"/> 
-      <item title="Типовые вопросы для взаимодействия с разработчиками." url="/mgt02.html"/> 
-      <item title="Сверхурочные? Теперь у вас две проблемы!" url="/mgt03.html"/> 
+      <item title="Про гребцов" url="/managers/mgt04/mgt04.html"/> 
+      <item title="Про муравья" url="/managers/mgt05/mgt05.html"/> 
+      <item title="Дж. Ханк Рейнвотер. Как пасти котов. (fb2)" url="/managers/Reinvoter_Dch/Reinvoter_Dch.Hank__Kak_pasti_kotov._Nastavlenie_dlya_programmistov_rukovodyashih_drugimi_programmistami_www.Litru.ru_90031.html"/> 
+      <item title="Джейсон Фрайд, Дэвид Хайнемайер Ханссон. Бизнес без предрассудков. (fb2)" url="/managers/Hensson_Rework/Hensson_Rework_biznes_bez_predrassudkov.204544.html"/> 
+      <item title="Диагноз - выученная беспомощность." url="/managers/mgt01/mgt01.html"/> 
+      <item title="Типовые вопросы для взаимодействия с разработчиками." url="/managers/mgt02/mgt02.html"/> 
+      <item title="Сверхурочные? Теперь у вас две проблемы!" url="/managers/mgt03/mgt03.html"/> 
     </item>
   </item>
   <item title="FAQ" url="/faq.html" desc="В этом разделе лежат памятки на тему 'Как сделать элементарные вещи, которые делаешь очень редко'"> 
