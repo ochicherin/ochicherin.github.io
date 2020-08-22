@@ -86,7 +86,7 @@ function GetRequest(username,password,url,text) {
   var xmlhttp=null;
 //alert(username);
 //alert(password);
-alert(url);
+//alert(url);
 //alert(text);
   if(!xmlhttp) try {
     xmlhttp=new ActiveXObject('Msxml2.XMLHTTP');
@@ -483,17 +483,17 @@ function scanMenu() {
       if (list[i].className=="sitemap_child") {
         var sitemap = findChildSitemap(list[i].innerHTML);
         if (sitemap) list[i].innerHTML = MakeXSLT(sitemap,'/sitemap_child.xslt');
-              else list[i].innerHTML = "Страницы нет на карте";
+              else list[i].innerHTML = "РЎС‚СЂР°РЅРёС†С‹ РЅРµС‚ РЅР° РєР°СЂС‚Рµ";
       } else
       if (list[i].className=="sitemap_current") {
         var sitemap = findCurrentSitemap(list[i].innerHTML);
         if (sitemap) list[i].innerHTML = MakeXSLT(sitemap,'/sitemap_column.xslt');
-              else list[i].innerHTML = "Страницы нет на карте";
+              else list[i].innerHTML = "РЎС‚СЂР°РЅРёС†С‹ РЅРµС‚ РЅР° РєР°СЂС‚Рµ";
       } else
       if (list[i].className=="sitemap_tree") {
         var sitemap = findChildSitemap(list[i].innerHTML);
         if (sitemap) list[i].innerHTML = MakeXSLT(sitemap,'/sitemap_tree.xslt');
-              else list[i].innerHTML = "Страницы нет на карте";
+              else list[i].innerHTML = "РЎС‚СЂР°РЅРёС†С‹ РЅРµС‚ РЅР° РєР°СЂС‚Рµ";
       }
 //    }
   }
@@ -624,7 +624,7 @@ function scanTT() {
   for (i=0; i<list.length; i++) {
    if (list[i].className=="demo_text") {
      for (j=0;j<30;j++) 
-       list[i].innerHTML = list[i].innerHTML + 'Ехал Гpека через реку, Видит Гpека - в рeкe рак, Сунул Гpека руку в pеку, Рак за руку Гpеку цап. ';
+       list[i].innerHTML = list[i].innerHTML + 'Р•С…Р°Р» Р“pРµРєР° С‡РµСЂРµР· СЂРµРєСѓ, Р’РёРґРёС‚ Р“pРµРєР° - РІ СЂeРєe СЂР°Рє, РЎСѓРЅСѓР» Р“pРµРєР° СЂСѓРєСѓ РІ pРµРєСѓ, Р Р°Рє Р·Р° СЂСѓРєСѓ Р“pРµРєСѓ С†Р°Рї. ';
    }
   }
   var list = document.getElementsByTagName("DIV");
@@ -697,7 +697,7 @@ function initBody() {
   scanTT();
 //  GetRSS(news_line,'rss.xml','rss_short.xslt');
 //  startclock();
-  document.title="Чичерин Олег Николаевич";
+  document.title="Р§РёС‡РµСЂРёРЅ РћР»РµРі РќРёРєРѕР»Р°РµРІРёС‡";
   scanDestCode();
 }
 
@@ -982,7 +982,7 @@ function QueryForm(form) {
   }
 }
 
-// Превратить CSV текст в матрицу
+// РџСЂРµРІСЂР°С‚РёС‚СЊ CSV С‚РµРєСЃС‚ РІ РјР°С‚СЂРёС†Сѓ
 function parseCSV(csv)
 {
  var i;
@@ -993,7 +993,7 @@ function parseCSV(csv)
  return s;
  }
 
-// Превратить матрицу в html таблицу
+// РџСЂРµРІСЂР°С‚РёС‚СЊ РјР°С‚СЂРёС†Сѓ РІ html С‚Р°Р±Р»РёС†Сѓ
 function getTable(csv,NCol)
 {
  NCol=(NCol)?NCol:1;
@@ -1027,9 +1027,9 @@ function getTable(csv,NCol)
  return tab;
 }
 
-// Печать содержимого элемента
-// prtID - ID Элемента 
-// prtStyle - ссылка на стиль
+// РџРµС‡Р°С‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
+// prtID - ID Р­Р»РµРјРµРЅС‚Р° 
+// prtStyle - СЃСЃС‹Р»РєР° РЅР° СЃС‚РёР»СЊ
 function PrintContent(prtID, prtStyle) {
   prtContent = document.getElementById(prtID);
   if (prtContent) {
@@ -1102,10 +1102,10 @@ function PasteText() {
 }
 
 /////////////////////////////////////
-// Операции для обслуживания галереи
+// РћРїРµСЂР°С†РёРё РґР»СЏ РѕР±СЃР»СѓР¶РёРІР°РЅРёСЏ РіР°Р»РµСЂРµРё
 /////////////////////////////////////
 
-// Отработать изменения combobox 
+// РћС‚СЂР°Р±РѕС‚Р°С‚СЊ РёР·РјРµРЅРµРЅРёСЏ combobox 
 function ChangeImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast) {
   img.src=list.options[list.selectedIndex].value;
   if (btnTitle) {
@@ -1157,7 +1157,7 @@ function CycleImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast) {
   ChangeImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast);
 }
 
-// Отработка нивигаций клавишами
+// РћС‚СЂР°Р±РѕС‚РєР° РЅРёРІРёРіР°С†РёР№ РєР»Р°РІРёС€Р°РјРё
 function NavImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast) {
   switch(event.keyCode)
   {
@@ -1178,7 +1178,7 @@ function NavImage(list,img,btnPrev,btnNext,btnTitle,btnFirst,btnLast) {
   }
 }
 
-// Добавить панель кнопок для навигации. Скрыть combobox
+// Р”РѕР±Р°РІРёС‚СЊ РїР°РЅРµР»СЊ РєРЅРѕРїРѕРє РґР»СЏ РЅР°РІРёРіР°С†РёРё. РЎРєСЂС‹С‚СЊ combobox
 function AddNavigation(list,img,mode) {
   var a;
   var e = document.createElement("span");
