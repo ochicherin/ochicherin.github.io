@@ -22,7 +22,7 @@
     <TD class=newsLine bgColor=#c96300 width=160><!--div class=rss_short>rss.xml</div--><div class=sitemap_current>/sitemap.xml</div>
       <div align="center"><br><br>
         <a href="/geostat.html">
-          <img src="http://www2.clustrmaps.com/counter/index2.php?url=http://ochicherin.narod.ru" width="100" style="border:0px;">
+          <img src="http://www2.clustrmaps.com/counter/index2.php?url=https://ochicherin.github.com" width="100" style="border:0px;">
         </a>
       </div>
     </TD>
