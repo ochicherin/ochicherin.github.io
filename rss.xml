@@ -13,6 +13,15 @@
       <height>72</height>
    </image>
    
+   <item>
+      <title>Сайт переехал на GitHub.</title>
+      <link>http://ochicherin.github.io</link>
+      <description>Сайт переехал на GitHub. Кодировка изменилась на utf-8.</description>
+      <pubDate>Sat, 22 Aug 2020 11:00:01 +0300</pubDate>
+      <category>Примеры</category>
+      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+   </item>
+
     <item>
         <title>Гус Хиддинк возглавил сборную Кюрасао</title>
         <pubDate>Sat, 22 Aug 2020 11:13:16 +0300</pubDate>
