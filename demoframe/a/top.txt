@@ -15,9 +15,6 @@
     <TD bgColor=#0063ñ9 width=160 align=left valign=top>
       <div class=sitemap_current>/sitemap.xml</div>
       <div align="center"><br><br>
-        <a href="/geostat.html">
-          <img src="http://www2.clustrmaps.com/counter/index2.php?url=http://ochicherin.narod.ru" width="100" style="border:0px;">
-        </a>
       </div>
     </TD>
     <TD bgColor=#f0f0f0 width=10 height=16 align=center></TD>
