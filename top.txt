@@ -3,7 +3,7 @@
 <TABLE cellSpacing=0 cellPadding=0 width=779 align=center border=0>
   <TR>
     <TD width=160><IMG height=115 alt="" src="/index_files/t1-1.jpg"></TD>
-    <TD width=274 align=center><h1>Чичерин Олег Николаевич</h1> </TD>
+    <TD width=274 align=center><h1>Р§РёС‡РµСЂРёРЅ РћР»РµРі РќРёРєРѕР»Р°РµРІРёС‡</h1> </TD>
     <TD><IMG height=115 alt="" src="/index_files/t1-3.jpg" width=345></TD>
   </TR>
   <TR>
