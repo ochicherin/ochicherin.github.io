@@ -12,7 +12,7 @@
     <TD align=right bgColor=#333333 class="footer">Чичерин О.Н., Москва, 2009&nbsp;&nbsp;</TD>
   </TR> -->
   <TR>
-    <TD bgColor=#c96300 align=center width=160 height=23><img src="http://www.narod.ru/counter.xhtml" alt="" width=50 height=14 /><img src="http://mc.yandex.ru/watch/1723305" alt="" /></TD>
+    <TD bgColor=#c96300 align=center width=160 height=23>Counter</TD>
     <TD align=right bgColor=#333333 class="footer">&nbsp;&nbsp;Чичерин О.Н., Москва, 2009&nbsp;&nbsp;</TD>
   </TR>
 </TABLE>
