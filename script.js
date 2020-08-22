@@ -697,7 +697,8 @@ function initBody() {
   scanTT();
 //  GetRSS(news_line,'rss.xml','rss_short.xslt');
 //  startclock();
-  document.title="Чичерин Олег Николаевич";
+//  document.title="Чичерин Олег Николаевич";
+  document.title="Chicherin Oleg";
   scanDestCode();
 }
 

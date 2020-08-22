@@ -3,7 +3,7 @@
 <xsl:template match="/s:collection">
 <hr/>
 <table>
-<tr><td></td><td></td><th>Автор</th><th>Заголовок</th><!--th>Изд-во</th--><th>Год издания</th><th>Место издания</th><!--th>ISBN</th--><th>Объем</th><th colspan="3">Местонахождение</th></tr>
+<tr><td></td><td></td><th>РђРІС‚РѕСЂ</th><th>Р—Р°РіРѕР»РѕРІРѕРє</th><!--th>РР·Рґ-РІРѕ</th--><th>Р“РѕРґ РёР·РґР°РЅРёСЏ</th><th>РњРµСЃС‚Рѕ РёР·РґР°РЅРёСЏ</th><!--th>ISBN</th--><th>РћР±СЉРµРј</th><th colspan="3">РњРµСЃС‚РѕРЅР°С…РѕР¶РґРµРЅРёРµ</th></tr>
 	<xsl:for-each select="s:outdata/s:record">
 <tr>
 <td width="10">
@@ -12,7 +12,7 @@
   <a>
     <xsl:attribute name="href"><xsl:value-of select="s:url"/></xsl:attribute>
     <xsl:attribute name="target">_blank</xsl:attribute>
-  К
+  Рљ
   </a>
  </xsl:when>
 </xsl:choose>
@@ -23,7 +23,7 @@
   <a>
     <xsl:attribute name="href"><xsl:value-of select="s:preview"/></xsl:attribute>
     <xsl:attribute name="target">_blank</xsl:attribute>
-   О
+   Рћ
   </a>
  </xsl:when>
 </xsl:choose>
@@ -43,7 +43,7 @@
 	</xsl:for-each>
 </table>
 <hr/>
-Найдено <b><xsl:value-of select="s:debugdata/s:rows"/></b> строк. <br/>
-Затрачено <b><xsl:value-of select="s:debugdata/s:elapsed"/></b> сек.
+РќР°Р№РґРµРЅРѕ <b><xsl:value-of select="s:debugdata/s:rows"/></b> СЃС‚СЂРѕРє. <br/>
+Р—Р°С‚СЂР°С‡РµРЅРѕ <b><xsl:value-of select="s:debugdata/s:elapsed"/></b> СЃРµРє.
   </xsl:template>
 </xsl:stylesheet>
