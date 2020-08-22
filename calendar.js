@@ -3,7 +3,7 @@ function show_list(str_target) {
 	"<html>\n"+
 	"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1251\">\n"+
 	"<head>\n"+
-	"<title>Выбор Списка</title>\n"+
+	"<title>Р’С‹Р±РѕСЂ РЎРїРёСЃРєР°</title>\n"+
        "<LINK REL=StyleSheet TYPE=text/css HREF=index_files/style.css>\n"+
 	"</head>\n"+
       "<body>\n"+
@@ -12,12 +12,12 @@ function show_list(str_target) {
 //        "<INPUT TYPE=\"TEXT\" NAME=\"list_text\" VALUE=\""+eval(str_target+".value")+"\"><br>\n"+ 
         "<INPUT TYPE=\"TEXT\" NAME=\"list_text\" VALUE=\""+str_target.value+"\"><br>\n"+ 
         "<SELECT size=5 name=\"List_list\" onChange=\"list_text.value=this.options[this.selectedIndex].text\">\n"+
-        "<OPTION VALUE=\"158\">Газпром</option>\n"+
-        "<OPTION VALUE=\"34\">Газпром КИП</option>\n"+
-        "<OPTION VALUE=\"495\">Гидропресс</option>\n"+
+        "<OPTION VALUE=\"158\">Р“Р°Р·РїСЂРѕРј</option>\n"+
+        "<OPTION VALUE=\"34\">Р“Р°Р·РїСЂРѕРј РљРРџ</option>\n"+
+        "<OPTION VALUE=\"495\">Р“РёРґСЂРѕРїСЂРµСЃСЃ</option>\n"+
         "</SELECT><br>\n"+
-        "<INPUT TYPE=\"SUBMIT\" VALUE=\"Изменить\">\n"+
-        "<INPUT TYPE=\"RESET\" VALUE=\"Сбросить\"><br> \n"+
+        "<INPUT TYPE=\"SUBMIT\" VALUE=\"РР·РјРµРЅРёС‚СЊ\">\n"+
+        "<INPUT TYPE=\"RESET\" VALUE=\"РЎР±СЂРѕСЃРёС‚СЊ\"><br> \n"+
         "</form>\n"+ 
         "</body>\n"+
         "</html>");
@@ -33,14 +33,14 @@ function show_list(str_target) {
 }
 
 function show_calendar(str_target, str_date, str_type) {
-	var arr_months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-		"Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
-	var week_days = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+	var arr_months = ["РЇРЅРІР°СЂСЊ", "Р¤РµРІСЂР°Р»СЊ", "РњР°СЂС‚", "РђРїСЂРµР»СЊ", "РњР°Р№", "РСЋРЅСЊ",
+		"РСЋР»СЊ", "РђРІРіСѓСЃС‚", "РЎРµРЅС‚СЏР±СЂСЊ", "РћРєС‚СЏР±СЂСЊ", "РќРѕСЏР±СЂСЊ", "Р”РµРєР°Р±СЂСЊ"];
+	var week_days = ["Р’СЃ", "РџРЅ", "Р’С‚", "РЎСЂ", "Р§С‚", "РџС‚", "РЎР±"];
 	var n_weekstart = 1; 
 
 	if (str_date != null && str_date != "") {
 		if (str2dt2(str_date, str_type) == false) {
-		 	alert("Неверный формат даты"+(str_type == 1 ? "/времени" : "")+": '"+str_date+"'");
+		 	alert("РќРµРІРµСЂРЅС‹Р№ С„РѕСЂРјР°С‚ РґР°С‚С‹"+(str_type == 1 ? "/РІСЂРµРјРµРЅРё" : "")+": '"+str_date+"'");
 			return;
 		}
 	}
@@ -66,19 +66,19 @@ function show_calendar(str_target, str_date, str_type) {
 		"<html>\n"+
 		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1251\">\n"+
 		"<head>\n"+
-		"	<title>Выбор даты</title>\n"+
+		"	<title>Р’С‹Р±РѕСЂ РґР°С‚С‹</title>\n"+
         "<LINK REL=StyleSheet TYPE=text/css HREF=/adm/css/css.css>\n"+
 		"</head>\n"+
         "<body bgcolor=\"#fafafa\" text=\"#000000\" alink=\"#660000\" link=\"#000000\" vlink=\"#000000\" marginwidth=\"10\" marginheight=\"10\" topmargin=\"10\" bottommargin=\"10\" leftmargin=\"10\" rightmargin=\"10\">\n"+
 		"<table align=center cellspacing=\"0\" cellpadding=\"1\" border=\"0\" width=200>\n"+
-		"<tr bgcolor=\"#c3dbd3\">\n<td align=center><a title=\"Предыдущий месяц\" style=\"text-decoration: none; color:#000000; font-size:9pt; font-family: arial\" href=\"javascript:window.opener.show_calendar('"+
+		"<tr bgcolor=\"#c3dbd3\">\n<td align=center><a title=\"РџСЂРµРґС‹РґСѓС‰РёР№ РјРµСЃСЏС†\" style=\"text-decoration: none; color:#000000; font-size:9pt; font-family: arial\" href=\"javascript:window.opener.show_calendar('"+
 		str_target+"', '"+ dt2dtstr2(dt_prev_month)+
 		(str_type == 1 ? " '+document.TimeForm.hours.options[document.TimeForm.hours.selectedIndex].value+':'+document.TimeForm.minutes.options[document.TimeForm.minutes.selectedIndex].value, 1" : "'")+
 		");\">"+
 		"<b>&lt;</b></a></td>\n"+
 		"<td colspan=\"5\" align=center ><font style=\"color:#000000; font-size:9pt; font-family: arial\">"
 		+arr_months[dt_date.getMonth()]+" "+dt_date.getFullYear()+"</font></td>\n"+
-		"<td align=\"center\" ><a title=\"Следующий месяц\" style=\"text-decoration: none; color:#000000; font-size:9pt; font-family: arial\" href=\"javascript:window.opener.show_calendar('"+
+		"<td align=\"center\" ><a title=\"РЎР»РµРґСѓСЋС‰РёР№ РјРµСЃСЏС†\" style=\"text-decoration: none; color:#000000; font-size:9pt; font-family: arial\" href=\"javascript:window.opener.show_calendar('"+
 		str_target+"', '"+dt2dtstr2(dt_next_month)+
 		(str_type == 1 ? " '+document.TimeForm.hours.options[document.TimeForm.hours.selectedIndex].value+':'+document.TimeForm.minutes.options[document.TimeForm.minutes.selectedIndex].value, 1" : "'")+
 		");\">"+
@@ -127,12 +127,12 @@ function show_calendar(str_target, str_date, str_type) {
 		str_buffer += "</tr>\n";
 	}
 
-	// форма "часы/минуты"
+	// С„РѕСЂРјР° "С‡Р°СЃС‹/РјРёРЅСѓС‚С‹"
 	if (str_type == 1) {
 		str_buffer +=
 			"<tr>\n\t<td colspan=\"7\"><hr size=\"1\"><\/td>\n<\/tr>\n" +
 			"<tr>\n\t<form name=\"TimeForm\">\n\t<td colspan=\"7\" align=\"center\">" +
-			"<font style=\"color:#b22222; font-size:9pt; font-family: arial\">время<\/font>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+			"<font style=\"color:#b22222; font-size:9pt; font-family: arial\">РІСЂРµРјСЏ<\/font>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
 			"<select name=\"hours\" onChange=\"dt_date.setHours(this.options[this.selectedIndex].value)\">";
 		for (hrs = 0; hrs < 24; hrs++) {
 			str_buffer +=
@@ -141,7 +141,7 @@ function show_calendar(str_target, str_date, str_type) {
 				(hrs.toString().length == 1 ? "0" : "") + hrs;
 		}
 		str_buffer +=
-			"<\/select> ч. " +
+			"<\/select> С‡. " +
 			"<select name=\"minutes\" onChange=\"dt_date.setMinutes(this.options[this.selectedIndex].value)\">";
 		for (mns = 0; mns < 60; mns++) {
 			str_buffer +=
@@ -150,7 +150,7 @@ function show_calendar(str_target, str_date, str_type) {
 				(mns.toString().length == 1 ? "0" : "")+mns;
 		}
 		str_buffer +=
-			"<\/select> мин." +
+			"<\/select> РјРёРЅ." +
 			"<\/td>\n\t<\/form>\n<\/tr>\n";
 	}
 
