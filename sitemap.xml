@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <xml title="Корень">
-  <item title="Главная" url="/index.html"/> 
+  <item title="Главная" url="/index.html"> 
+    <item title="Основные принципы построения сайта" url="/about.html"/> 
+  </item>
   <item title="Новости" url="/news.html"/> 
   <item title="Ссылки" url="/links.html"/> 
   <item title="Галерея" url="/galery.html" desc="Галерея"> 
