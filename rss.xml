@@ -1,8 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
    <title>Чичерин Олег Николаевич. Новостная лента.</title>
    <link>http://ochicherin.github.io/</link>
+    <description>Все новости сайта.</description>
+    <lastBuildDate>Sat, 22 Aug 2020 12:43:53 +0300</lastBuildDate>
    <image>
       <url>http://ochicherin.github.io/index_files/t1-1.jpg</url>
       <title>Чичерин Олег Николаевич. Новостная лента.</title>
