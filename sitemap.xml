@@ -68,25 +68,25 @@
   </item>
   <item title="FAQ" url="/faq.html" desc="В этом разделе лежат памятки на тему 'Как сделать элементарные вещи, которые делаешь очень редко'"> 
     <item title="Как обжать витую пару" url="/faq/faq1/faq1.html"/> 
-    <item title="Как запустить telnet на NAS сервере" url="/faq2.html"/> 
-    <item title="Как сделать из pl/sql процедуры Web Service и вызвать его" url="/faq3.html"/> 
-    <item title="Как вызвать web serivce из javascript(не закончено)" url="/faq4.html"/> 
-    <item title="Как расчитать направление на спутник при помощи Google(не закончено)." url="/faq5.html"/> 
-    <item title="Найти книгу в библиотеке(не начато)" url="/faq6.html"/> 
-    <item title="Состав и пропорции бетона." url="/faq7.html"/> 
-    <item title="Ошибка подсветки русских слов в Oracle Text." url="/faq8.html"/> 
-    <item title="Как настроить мотоподвес." url="/faq9.html"/> 
-    <item title="Как сделать создать Java сервлет в XDB." url="/faq10.html"/> 
-    <item title="Как сделать 'прозрачную' авторизацию при помощи Apache." url="/faq11.html"/> 
-    <item title="Кортежи, отношения и основные нормальные формы." url="/faq12.html"/> 
-    <item title="Перехватить страницу, сгенерированую при помощи HTP/HTF." url="/faq13.html"/> 
-    <item title="Acorp WR-G." url="/faq14.html"/> 
-    <item title="Индикатор для маршрутника DI15G" url="/faq15.html"/> 
-    <item title="Технологическое меню Ericsson." url="/faq16.html"/> 
-    <item title="Новый диск в Linux." url="/faq17.html"/> 
-    <item title="Диапазоны УКВ." url="/faq18.html"/> 
-    <item title="Штрихкоды и мобильный телефон." url="/faq19.html"/> 
-    <item title="Коды пород и окрасов кошек." url="/faq20.html"/> 
+    <item title="Как запустить telnet на NAS сервере" url="/faq/faq2/faq2.html"/> 
+    <item title="Как сделать из pl/sql процедуры Web Service и вызвать его" url="/faq/faq3/faq3.html"/> 
+    <item title="Как вызвать web serivce из javascript(не закончено)" url="/faq/faq4/faq4.html"/> 
+    <item title="Как расчитать направление на спутник при помощи Google(не закончено)." url="/faq/faq5/faq5.html"/> 
+    <item title="Найти книгу в библиотеке(не начато)" url="/faq/faq6/faq6.html"/> 
+    <item title="Состав и пропорции бетона." url="/faq/faq7/faq7.html"/> 
+    <item title="Ошибка подсветки русских слов в Oracle Text." url="/faq/faq8/faq8.html"/> 
+    <item title="Как настроить мотоподвес." url="/faq/faq9/faq9.html"/> 
+    <item title="Как сделать создать Java сервлет в XDB." url="/faq/faq10/faq10.html"/> 
+    <item title="Как сделать 'прозрачную' авторизацию при помощи Apache." url="/faq/faq11/faq11.html"/> 
+    <item title="Кортежи, отношения и основные нормальные формы." url="/faq/faq12/faq12.html"/> 
+    <item title="Перехватить страницу, сгенерированую при помощи HTP/HTF." url="/faq/faq13/faq13.html"/> 
+    <item title="Acorp WR-G." url="/faq/faq14/faq14.html"/> 
+    <item title="Индикатор для маршрутника DI15G" url="/faq/faq15/faq15.html"/> 
+    <item title="Технологическое меню Ericsson." url="/faq/faq16/faq16.html"/> 
+    <item title="Новый диск в Linux." url="/faq/faq17/faq17.html"/> 
+    <item title="Диапазоны УКВ." url="/faq/faq18/faq18.html"/> 
+    <item title="Штрихкоды и мобильный телефон." url="/faq/faq19/faq19.html"/> 
+    <item title="Коды пород и окрасов кошек." url="/faq/faq20/faq20.html"/> 
   </item>
   <item title="Резюме" url="/resume.html"/> 
   <item title="Контакты" url="/contacts.html"/> 
