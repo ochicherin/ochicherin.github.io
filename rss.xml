@@ -24,7 +24,7 @@
 
     <item>
         <title>Добавлен пример использования нестандартных шрифтов</title>
-        <pubDate>Thu, 14 Apr 2011 16:00:01 +0400</pubDate>
+        <pubDate>Sat, 22 Aug 2020 10:00:01 +0300</pubDate>
         <link>http://ochicherin.github.io/demofont.html</link>
         <description>Все началось с проблемы, как нарисовать почтовый конверт.</description>
         <category>Примеры</category>
@@ -33,9 +33,18 @@
 
    <item>
       <title>Добавлен пример использования двумерных штрихкодов.</title>
-      <pubDate>Fri, 15 Apr 2011 19:00:01 +0400</pubDate>
+      <pubDate>Sat, 22 Aug 2020 11:00:01 +0300</pubDate>
       <link>http://ochicherin.github.io/demobarcode.html</link>
       <description>Пример практического использования штрихкодов на сайте.</description>
+      <category>Примеры</category>
+      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+   </item>
+
+   <item>
+      <title>Обновлен пример Внешний список</title>
+      <link>http://ochicherin.github.io/extcombo.html</link>
+      <description>Теперь список может формироваться из нескольких файлов. Имя файла записывается в атрибуте value. Соответственно изменился и пример Фотогалерея.</description>
+      <pubDate>Sat, 22 Aug 2020 11:00:01 +0300</pubDate>
       <category>Примеры</category>
       <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
    </item>
