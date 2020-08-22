@@ -67,7 +67,7 @@
     </item>
   </item>
   <item title="FAQ" url="/faq.html" desc="В этом разделе лежат памятки на тему 'Как сделать элементарные вещи, которые делаешь очень редко'"> 
-    <item title="Как обжать витую пару" url="/faq1.html"/> 
+    <item title="Как обжать витую пару" url="/faq/faq1/faq1.html"/> 
     <item title="Как запустить telnet на NAS сервере" url="/faq2.html"/> 
     <item title="Как сделать из pl/sql процедуры Web Service и вызвать его" url="/faq3.html"/> 
     <item title="Как вызвать web serivce из javascript(не закончено)" url="/faq4.html"/> 
