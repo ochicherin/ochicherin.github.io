@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="windows-1251" ?>
+п»ї<?xml version="1.0" encoding="utf-8" ?>
 <xml>
-      <item title="Главная" url="index.html"/> 
-      <item title="Новости" url="news.html"/> 
-      <item title="Обо мне" url="about.html"/> 
-      <item title="Ссылки" url="links.html"/> 
-      <item title="Галерея" url="galery.html"/> 
-      <item title="Примеры" url="examples.html"/> 
-      <item title="Библиотека" url="lib.html"/> 
+      <item title="Р“Р»Р°РІРЅР°СЏ" url="index.html"/> 
+      <item title="РќРѕРІРѕСЃС‚Рё" url="news.html"/> 
+      <item title="РћР±Рѕ РјРЅРµ" url="about.html"/> 
+      <item title="РЎСЃС‹Р»РєРё" url="links.html"/> 
+      <item title="Р“Р°Р»РµСЂРµСЏ" url="galery.html"/> 
+      <item title="РџСЂРёРјРµСЂС‹" url="examples.html"/> 
+      <item title="Р‘РёР±Р»РёРѕС‚РµРєР°" url="lib.html"/> 
       <item title="FAQ" url="faq.html"/> 
-      <item title="Резюме" url="resume.html"/> 
-      <item title="Контакты" url="contacts.html"/> 
+      <item title="Р РµР·СЋРјРµ" url="resume.html"/> 
+      <item title="РљРѕРЅС‚Р°РєС‚С‹" url="contacts.html"/> 
       <item title="RSS" url="rss.xml"/> 
 </xml>

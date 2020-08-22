@@ -1,22 +1,22 @@
-<HTML>
+п»ї<HTML>
   <HEAD>
-  <TITLE id=title>Чичерин Олег</TITLE>
-  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <TITLE id=title>Р§РёС‡РµСЂРёРЅ РћР»РµРі</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
   <script src="script.js"></script>
   <LINK href="index_files/style.css" type=text/css rel=stylesheet>
 </HEAD>
 <BODY onLoad="initBody();">
-  <H1>Как сделать из pl/sql процедуры Web Service и вызвать его 
-      из того же pl/sql</H1>
+  <H1>РљР°Рє СЃРґРµР»Р°С‚СЊ РёР· pl/sql РїСЂРѕС†РµРґСѓСЂС‹ Web Service Рё РІС‹Р·РІР°С‚СЊ РµРіРѕ 
+      РёР· С‚РѕРіРѕ Р¶Рµ pl/sql</H1>
 
 <pre>
-Сначало настраиваем XDB. 
-Настройка описана в документе <b>OracleR XML DB Developer's Guide 11g Release 1 (11.1)</b> 
-в разделе <b>33 Using Native Oracle XML DB Web Services</b>.
+РЎРЅР°С‡Р°Р»Рѕ РЅР°СЃС‚СЂР°РёРІР°РµРј XDB. 
+РќР°СЃС‚СЂРѕР№РєР° РѕРїРёСЃР°РЅР° РІ РґРѕРєСѓРјРµРЅС‚Рµ <b>OracleR XML DB Developer's Guide 11g Release 1 (11.1)</b> 
+РІ СЂР°Р·РґРµР»Рµ <b>33 Using Native Oracle XML DB Web Services</b>.
 
-Открываем порты для http и https. В примере будет использоваться порт 8888 для http.
+РћС‚РєСЂС‹РІР°РµРј РїРѕСЂС‚С‹ РґР»СЏ http Рё https. Р’ РїСЂРёРјРµСЂРµ Р±СѓРґРµС‚ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ РїРѕСЂС‚ 8888 РґР»СЏ http.
 
-Затем инсталируем сервлет.
+Р—Р°С‚РµРј РёРЅСЃС‚Р°Р»РёСЂСѓРµРј СЃРµСЂРІР»РµС‚.
 </pre>
 <textarea class="example">
 DECLARE
@@ -40,13 +40,13 @@ END;
 
 <pre>
 
-Назначаем пользователю БД роли
+РќР°Р·РЅР°С‡Р°РµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ Р‘Р” СЂРѕР»Рё
  - XDB_WEBSERVICES
  - XDB_WEBSERVICES_OVER_HTTP - Enable use of Web services over HTTP (not just HTTPS).
  - XDB_WEBSERVICES_WITH_PUBLIC - Enable access, using Web services, 
                                  to database objects that are accessible to PUBLIC.
 
-Создаем тестовую таблицу
+РЎРѕР·РґР°РµРј С‚РµСЃС‚РѕРІСѓСЋ С‚Р°Р±Р»РёС†Сѓ
 </pre>
 
 <textarea class="example">
@@ -58,35 +58,35 @@ create table SMI_SOURCE
   SRC_ICON VARCHAR2(127)
 )
 ;
-comment on table SMI_SOURCE is 'Издания';
-comment on column SMI_SOURCE.SRC_ID  is 'Сурогатный ключ';
-comment on column SMI_SOURCE.SRC_NAME  is 'Наименование издания';
-comment on column SMI_SOURCE.SRC_TYPE  is 'Тип издания';
-comment on column SMI_SOURCE.SRC_ICON  is 'url иконки';
+comment on table SMI_SOURCE is 'РР·РґР°РЅРёСЏ';
+comment on column SMI_SOURCE.SRC_ID  is 'РЎСѓСЂРѕРіР°С‚РЅС‹Р№ РєР»СЋС‡';
+comment on column SMI_SOURCE.SRC_NAME  is 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ РёР·РґР°РЅРёСЏ';
+comment on column SMI_SOURCE.SRC_TYPE  is 'РўРёРї РёР·РґР°РЅРёСЏ';
+comment on column SMI_SOURCE.SRC_ICON  is 'url РёРєРѕРЅРєРё';
 alter table SMI_SOURCE  add constraint SMI_SOURCE_PK primary key (SRC_ID);
 
 insert into SMI_SOURCE values 
-(3, 'Московский комсомолец', 'internet', 'images/siteIcons/mk.png');
-insert into SMI_SOURCE values (4, 'ЖЖ', 'blog', 'images/siteIcons/livejournal.png');
-insert into SMI_SOURCE values (6, 'Газета Ру', 'internet', 'images/siteIcons/gazeta.png');
-insert into SMI_SOURCE values (11, 'АПН', 'internet', 'images/siteIcons/internet.png');
-insert into SMI_SOURCE values (12, 'inoСМИ.ru', 'internet', 'images/siteIcons/inosmi.png');
-insert into SMI_SOURCE values (13, 'интерфакс', 'internet', 'images/siteIcons/interfax.png');
-insert into SMI_SOURCE values (14, 'Труд', 'internet', 'images/siteIcons/trud.png');
+(3, 'РњРѕСЃРєРѕРІСЃРєРёР№ РєРѕРјСЃРѕРјРѕР»РµС†', 'internet', 'images/siteIcons/mk.png');
+insert into SMI_SOURCE values (4, 'Р–Р–', 'blog', 'images/siteIcons/livejournal.png');
+insert into SMI_SOURCE values (6, 'Р“Р°Р·РµС‚Р° Р Сѓ', 'internet', 'images/siteIcons/gazeta.png');
+insert into SMI_SOURCE values (11, 'РђРџРќ', 'internet', 'images/siteIcons/internet.png');
+insert into SMI_SOURCE values (12, 'inoРЎРњР.ru', 'internet', 'images/siteIcons/inosmi.png');
+insert into SMI_SOURCE values (13, 'РёРЅС‚РµСЂС„Р°РєСЃ', 'internet', 'images/siteIcons/interfax.png');
+insert into SMI_SOURCE values (14, 'РўСЂСѓРґ', 'internet', 'images/siteIcons/trud.png');
 insert into SMI_SOURCE values 
-(1, 'Комсомольская правда', 'internet', 'images/siteIcons/kp.png');
-insert into SMI_SOURCE values (2, 'Лента Ру', 'internet', 'images/siteIcons/lenta.png');
-insert into SMI_SOURCE values (9, 'ПРАВДА', 'internet', 'images/siteIcons/internet.png');
-insert into SMI_SOURCE values (10, 'Известия', 'internet', 'images/siteIcons/internet.png');
-insert into SMI_SOURCE values (5, 'Наука', 'internet', 'images/siteIcons/internet.png');
-insert into SMI_SOURCE values (7, 'полит.ру', 'internet', 'images/siteIcons/polit.png');
-insert into SMI_SOURCE values (8, 'росбалт', 'internet', 'images/siteIcons/rosbalt.png');
+(1, 'РљРѕРјСЃРѕРјРѕР»СЊСЃРєР°СЏ РїСЂР°РІРґР°', 'internet', 'images/siteIcons/kp.png');
+insert into SMI_SOURCE values (2, 'Р›РµРЅС‚Р° Р Сѓ', 'internet', 'images/siteIcons/lenta.png');
+insert into SMI_SOURCE values (9, 'РџР РђР’Р”Рђ', 'internet', 'images/siteIcons/internet.png');
+insert into SMI_SOURCE values (10, 'РР·РІРµСЃС‚РёСЏ', 'internet', 'images/siteIcons/internet.png');
+insert into SMI_SOURCE values (5, 'РќР°СѓРєР°', 'internet', 'images/siteIcons/internet.png');
+insert into SMI_SOURCE values (7, 'РїРѕР»РёС‚.СЂСѓ', 'internet', 'images/siteIcons/polit.png');
+insert into SMI_SOURCE values (8, 'СЂРѕСЃР±Р°Р»С‚', 'internet', 'images/siteIcons/rosbalt.png');
 commit;                                                       
 </textarea>
 <pre>
 
 
-Создаем тестовую процедуру
+РЎРѕР·РґР°РµРј С‚РµСЃС‚РѕРІСѓСЋ РїСЂРѕС†РµРґСѓСЂСѓ
 
 </pre>
 
@@ -102,10 +102,10 @@ end get_src_name;
 </textarea>
 <pre>
 
-Запрашиваем wsdl. Регистр имеет значение!
+Р—Р°РїСЂР°С€РёРІР°РµРј wsdl. Р РµРіРёСЃС‚СЂ РёРјРµРµС‚ Р·РЅР°С‡РµРЅРёРµ!
 http://localhost:8888/orawsv/NEW_SMI/GET_SRC_NAME?wsdl
 
-Получаем в ответ.
+РџРѕР»СѓС‡Р°РµРј РІ РѕС‚РІРµС‚.
 
 </pre>
 
@@ -175,7 +175,7 @@ http://localhost:8888/orawsv/NEW_SMI/GET_SRC_NAME?wsdl
 <pre>
 
 
-Пробуем вызвать процедуру. 
+РџСЂРѕР±СѓРµРј РІС‹Р·РІР°С‚СЊ РїСЂРѕС†РµРґСѓСЂСѓ. 
 
 </pre>
 <textarea class="example">
@@ -198,7 +198,7 @@ declare
 </soap:Body>
 </soap:Envelope>';
     http_req := utl_http.begin_request(url, 'POST','HTTP/1.1');
-    utl_http.set_body_charset(http_req, 'windows-1251'); -- UTF-8
+    utl_http.set_body_charset(http_req, 'utf-8'); -- UTF-8
 --   utl_http.set_proxy('proxy:80', NULL);
 --   utl_http.set_persistent_conn_support(TRUE);
    UTL_HTTP.set_authentication(http_req, 'new_smi', 'viewsonic', 'Basic', false );
@@ -218,7 +218,7 @@ declare
 </textarea>
 <pre>
 
-Получаем результат
+РџРѕР»СѓС‡Р°РµРј СЂРµР·СѓР»СЊС‚Р°С‚
 
 </pre>
 <textarea class="example">
@@ -226,15 +226,15 @@ declare
 <soap:Envelope xmlns:soap="http://www.w3.org/2002/06/soap-envelope">
   <soap:Body>
     <GET_SRC_NAMEOutput xmlns="http://xmlns.oracle.com/orawsv/NEW_SMI/GET_SRC_NAME">
-      <P_SRC_NAME>Комсомольская правда</P_SRC_NAME>
+      <P_SRC_NAME>РљРѕРјСЃРѕРјРѕР»СЊСЃРєР°СЏ РїСЂР°РІРґР°</P_SRC_NAME>
     </GET_SRC_NAMEOutput>
   </soap:Body>
 </soap:Envelope>
 </textarea>
 <pre>
 
-Теперь пробуем запросить таблицу напрямую.
-Выбрать все строки, у которых ИД меньше 5.
+РўРµРїРµСЂСЊ РїСЂРѕР±СѓРµРј Р·Р°РїСЂРѕСЃРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ РЅР°РїСЂСЏРјСѓСЋ.
+Р’С‹Р±СЂР°С‚СЊ РІСЃРµ СЃС‚СЂРѕРєРё, Сѓ РєРѕС‚РѕСЂС‹С… РР” РјРµРЅСЊС€Рµ 5.
 
 </pre>
 <textarea class="example">
@@ -262,7 +262,7 @@ declare
  </env:Body>
 </env:Envelope>';
     http_req := utl_http.begin_request(url, 'POST','HTTP/1.1');
-    utl_http.set_body_charset(http_req, 'windows-1251'); -- UTF-8
+    utl_http.set_body_charset(http_req, 'utf-8'); -- UTF-8
 --   utl_http.set_proxy('proxy:80', NULL);
 --   utl_http.set_persistent_conn_support(TRUE);
    UTL_HTTP.set_authentication(http_req, 'new_smi', 'viewsonic', 'Basic', false );
@@ -282,7 +282,7 @@ declare
 </textarea>
 <pre>
 
-Получаем в результате
+РџРѕР»СѓС‡Р°РµРј РІ СЂРµР·СѓР»СЊС‚Р°С‚Рµ
 
 </pre>
 <textarea class="example">
@@ -293,25 +293,25 @@ declare
    <smi_sources>
     <row>
      <SRC_ID>3</SRC_ID>
-     <SRC_NAME>Московский комсомолец</SRC_NAME>
+     <SRC_NAME>РњРѕСЃРєРѕРІСЃРєРёР№ РєРѕРјСЃРѕРјРѕР»РµС†</SRC_NAME>
      <SRC_TYPE>internet</SRC_TYPE>
      <SRC_ICON>images/siteIcons/mk.png</SRC_ICON>
     </row>
     <row>
      <SRC_ID>4</SRC_ID>
-     <SRC_NAME>ЖЖ</SRC_NAME>
+     <SRC_NAME>Р–Р–</SRC_NAME>
      <SRC_TYPE>blog</SRC_TYPE>
      <SRC_ICON>images/siteIcons/livejournal.png</SRC_ICON>
     </row>
     <row>
      <SRC_ID>1</SRC_ID>
-     <SRC_NAME>Комсомольская правда</SRC_NAME>
+     <SRC_NAME>РљРѕРјСЃРѕРјРѕР»СЊСЃРєР°СЏ РїСЂР°РІРґР°</SRC_NAME>
      <SRC_TYPE>internet</SRC_TYPE>
      <SRC_ICON>images/siteIcons/kp.png</SRC_ICON>
     </row>
     <row>
      <SRC_ID>2</SRC_ID>
-     <SRC_NAME>Лента Ру</SRC_NAME>
+     <SRC_NAME>Р›РµРЅС‚Р° Р Сѓ</SRC_NAME>
      <SRC_TYPE>internet</SRC_TYPE>
      <SRC_ICON>images/siteIcons/lenta.png</SRC_ICON>
     </row>
@@ -322,10 +322,10 @@ declare
 </textarea>
 <pre>
 
-Теперь по авторизацию. 
-Авторизация не отключается. Максимум, что можно сделать, получить анонимный доступ к wsdl.
-Для этого необходимо добавить в <i>/xdbconfig.xml</i> тег allow-repository-anonymous-access. 
-Далее надо разлочить аккаунт пользователя anonymous.
+РўРµРїРµСЂСЊ РїРѕ Р°РІС‚РѕСЂРёР·Р°С†РёСЋ. 
+РђРІС‚РѕСЂРёР·Р°С†РёСЏ РЅРµ РѕС‚РєР»СЋС‡Р°РµС‚СЃСЏ. РњР°РєСЃРёРјСѓРј, С‡С‚Рѕ РјРѕР¶РЅРѕ СЃРґРµР»Р°С‚СЊ, РїРѕР»СѓС‡РёС‚СЊ Р°РЅРѕРЅРёРјРЅС‹Р№ РґРѕСЃС‚СѓРї Рє wsdl.
+Р”Р»СЏ СЌС‚РѕРіРѕ РЅРµРѕР±С…РѕРґРёРјРѕ РґРѕР±Р°РІРёС‚СЊ РІ <i>/xdbconfig.xml</i> С‚РµРі allow-repository-anonymous-access. 
+Р”Р°Р»РµРµ РЅР°РґРѕ СЂР°Р·Р»РѕС‡РёС‚СЊ Р°РєРєР°СѓРЅС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ anonymous.
 </pre>
 <textarea class="example">
   <allow-repository-anonymous-access xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">true</allow-repository-anonymous-access>
@@ -345,9 +345,9 @@ declare
 </textarea>
 <pre>
 
-Авторизация при вызове самой процедуры запрашивется сервером всегда.
-Если все же необходим публичный сервис, можно воспользоваться Apache в качестве прокси.
-Добавляем в httpd.conf следующие строки. Добавлять можно и в VirtualHost
+РђРІС‚РѕСЂРёР·Р°С†РёСЏ РїСЂРё РІС‹Р·РѕРІРµ СЃР°РјРѕР№ РїСЂРѕС†РµРґСѓСЂС‹ Р·Р°РїСЂР°С€РёРІРµС‚СЃСЏ СЃРµСЂРІРµСЂРѕРј РІСЃРµРіРґР°.
+Р•СЃР»Рё РІСЃРµ Р¶Рµ РЅРµРѕР±С…РѕРґРёРј РїСѓР±Р»РёС‡РЅС‹Р№ СЃРµСЂРІРёСЃ, РјРѕР¶РЅРѕ РІРѕСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ Apache РІ РєР°С‡РµСЃС‚РІРµ РїСЂРѕРєСЃРё.
+Р”РѕР±Р°РІР»СЏРµРј РІ httpd.conf СЃР»РµРґСѓСЋС‰РёРµ СЃС‚СЂРѕРєРё. Р”РѕР±Р°РІР»СЏС‚СЊ РјРѕР¶РЅРѕ Рё РІ VirtualHost
 
 </pre>
 <textarea class="example">
@@ -359,11 +359,11 @@ RewriteRule ^/orawsv(.*) http://10.32.1.156:8080/orawsv$1 [P]
 </textarea>
 <pre>
 
-Трансформируем запрос и скармливаем его прокси.
-Авторизация подставляется в заголовок запроса опцией RequestHeader.
-Конструкция вида <i>http://username:password@server:port/orawsv</i> не работает. 
+РўСЂР°РЅСЃС„РѕСЂРјРёСЂСѓРµРј Р·Р°РїСЂРѕСЃ Рё СЃРєР°СЂРјР»РёРІР°РµРј РµРіРѕ РїСЂРѕРєСЃРё.
+РђРІС‚РѕСЂРёР·Р°С†РёСЏ РїРѕРґСЃС‚Р°РІР»СЏРµС‚СЃСЏ РІ Р·Р°РіРѕР»РѕРІРѕРє Р·Р°РїСЂРѕСЃР° РѕРїС†РёРµР№ RequestHeader.
+РљРѕРЅСЃС‚СЂСѓРєС†РёСЏ РІРёРґР° <i>http://username:password@server:port/orawsv</i> РЅРµ СЂР°Р±РѕС‚Р°РµС‚. 
 
-Всё.
+Р’СЃС‘.
 </pre>
 
 </BODY>

@@ -1,7 +1,7 @@
-<HTML>
+п»ї<HTML>
   <HEAD>
-  <TITLE id=title>Чичерин Олег</TITLE>
-  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <TITLE id=title>Р§РёС‡РµСЂРёРЅ РћР»РµРі</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
   <script src="script.js"></script>
   <script src="astro.js"></script>
   <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAS2rtcqjB0Dl-ZwFsAPT80RQFuHzDvnd6VVmNl1G1pcqt8_pOSxSOSmcuu-ddoaS2Y9HUDcRq4QLuaA"
@@ -25,7 +25,7 @@ var nordLine;
 var southLine;
 var sunLine;
 
-// Округление до .12
+// РћРєСЂСѓРіР»РµРЅРёРµ РґРѕ .12
 function frm(n) { return Math.round(n*100)/100; }
 
     function refreshLines() {
@@ -72,8 +72,8 @@ sun_e.innerHTML = frm(sun_elevation(centerPoint.lat(), centerPoint.lng(),
                               d.getFullYear(), d.getMonth()+1, d.getDate(),
                               d.getHours(), d.getMinutes(), d.getTimezoneOffset()/-60));
 var rz = frm(sat_a.innerHTML - sun_a.innerHTML);
-if (rz>0) sat_sun_angle.innerHTML = " правее на "+rz+" гр";
-if (rz<0) sat_sun_angle.innerHTML = " левее на "+ -1*rz +" гр";
+if (rz>0) sat_sun_angle.innerHTML = " РїСЂР°РІРµРµ РЅР° "+rz+" РіСЂ";
+if (rz<0) sat_sun_angle.innerHTML = " Р»РµРІРµРµ РЅР° "+ -1*rz +" РіСЂ";
         satLine = new GPolyline([centerPoint, satPoint], "#00ff00", 2,1,polyOptions);
         nordLine = new GPolyline([southPoint, centerPoint, nordPoint], "#0000ff", 1,1,polyOptions);
         southLine = new GPolyline([centerPoint, southPoint], "#ff0000", 1,1,polyOptions);
@@ -116,14 +116,14 @@ if (rz<0) sat_sun_angle.innerHTML = " левее на "+ -1*rz +" гр";
   <LINK href="index_files/style.css" type=text/css rel=stylesheet>
 </HEAD>
 <BODY onLoad="initBody();initMap();" onunload="GUnload()">
-  <H1>Как расчитать направление на спутник при помощи Google.</H1>
+  <H1>РљР°Рє СЂР°СЃС‡РёС‚Р°С‚СЊ РЅР°РїСЂР°РІР»РµРЅРёРµ РЅР° СЃРїСѓС‚РЅРёРє РїСЂРё РїРѕРјРѕС‰Рё Google.</H1>
 <pre>
-<b>Исходные данные</b>
-Широта установки <span id=latitude></span>
-Долгота установки <span id=longtitude></span>
-Магнитное склонение   <span id=nord></span>
-Текущее время    <span id=clock_date></span> <span id=clock_time></span> <span id=clock_offset></span>
-Спутник <select id=sat onchange="refreshLines();return false">
+<b>РСЃС…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ</b>
+РЁРёСЂРѕС‚Р° СѓСЃС‚Р°РЅРѕРІРєРё <span id=latitude></span>
+Р”РѕР»РіРѕС‚Р° СѓСЃС‚Р°РЅРѕРІРєРё <span id=longtitude></span>
+РњР°РіРЅРёС‚РЅРѕРµ СЃРєР»РѕРЅРµРЅРёРµ   <span id=nord></span>
+РўРµРєСѓС‰РµРµ РІСЂРµРјСЏ    <span id=clock_date></span> <span id=clock_time></span> <span id=clock_offset></span>
+РЎРїСѓС‚РЅРёРє <select id=sat onchange="refreshLines();return false">
 <option id="s1800" value="180">180.0E Intelsat 701</option> 
 <option id="s1781" value="178.1">178.1E Inmarsat 3-F3</option> 
 <option id="s1779" value="177.9">177.9E Intelsat 602</option> 
@@ -384,21 +384,21 @@ if (rz<0) sat_sun_angle.innerHTML = " левее на "+ -1*rz +" гр";
     <div id="map" style="width: 500px; height: 500px"></div> 
 
 <span id=sat_info>
-<b>Параметры спутника</b>
-Геогр. азимут      <span id=sat_a></span>
-Магнитный азимут   <span id=sat_m></span>
-Угол места         <span id=sat_e></span>
-Поворот конвертора <span id=sat_p></span>
-Совпадение с солнцем в <span id=sat_sun_time></span>
-Отклонение от солнца <span id=sat_sun_angle></span>
+<b>РџР°СЂР°РјРµС‚СЂС‹ СЃРїСѓС‚РЅРёРєР°</b>
+Р“РµРѕРіСЂ. Р°Р·РёРјСѓС‚      <span id=sat_a></span>
+РњР°РіРЅРёС‚РЅС‹Р№ Р°Р·РёРјСѓС‚   <span id=sat_m></span>
+РЈРіРѕР» РјРµСЃС‚Р°         <span id=sat_e></span>
+РџРѕРІРѕСЂРѕС‚ РєРѕРЅРІРµСЂС‚РѕСЂР° <span id=sat_p></span>
+РЎРѕРІРїР°РґРµРЅРёРµ СЃ СЃРѕР»РЅС†РµРј РІ <span id=sat_sun_time></span>
+РћС‚РєР»РѕРЅРµРЅРёРµ РѕС‚ СЃРѕР»РЅС†Р° <span id=sat_sun_angle></span>
 </span>
-<b>Параметры антенны</b>
-Наклон антенны  <span id=dish_e></span>
-Смещение отвеса <span id=dish_o></span>
-<b>Параметры солнца</b>
-Геогр. азимут      <span id=sun_a></span>
-Магнитный азимут   <span id=sun_m></span>
-Угол места         <span id=sun_e></span>
+<b>РџР°СЂР°РјРµС‚СЂС‹ Р°РЅС‚РµРЅРЅС‹</b>
+РќР°РєР»РѕРЅ Р°РЅС‚РµРЅРЅС‹  <span id=dish_e></span>
+РЎРјРµС‰РµРЅРёРµ РѕС‚РІРµСЃР° <span id=dish_o></span>
+<b>РџР°СЂР°РјРµС‚СЂС‹ СЃРѕР»РЅС†Р°</b>
+Р“РµРѕРіСЂ. Р°Р·РёРјСѓС‚      <span id=sun_a></span>
+РњР°РіРЅРёС‚РЅС‹Р№ Р°Р·РёРјСѓС‚   <span id=sun_m></span>
+РЈРіРѕР» РјРµСЃС‚Р°         <span id=sun_e></span>
 </pre>
 </BODY>
 </HTML>

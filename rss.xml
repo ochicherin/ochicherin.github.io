@@ -1,247 +1,256 @@
-<?xml version="1.0" encoding="windows-1251"?>
+п»ї<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
 <channel>
-   <title>Чичерин Олег Николаевич. Новостная лента.</title>
-   <link>http://ochicherin.narod.ru/</link>
+   <title>Р§РёС‡РµСЂРёРЅ РћР»РµРі РќРёРєРѕР»Р°РµРІРёС‡. РќРѕРІРѕСЃС‚РЅР°СЏ Р»РµРЅС‚Р°.</title>
+   <link>http://ochicherin.github.io/</link>
    <image>
-      <url>http://ochicherin.narod.ru/index_files/t1-1.jpg</url>
-      <title>Чичерин Олег Николаевич. Новостная лента.</title>
-      <link>http://ochicherin.narod.ru/</link>
+      <url>http://ochicherin.github.io/index_files/t1-1.jpg</url>
+      <title>Р§РёС‡РµСЂРёРЅ РћР»РµРі РќРёРєРѕР»Р°РµРІРёС‡. РќРѕРІРѕСЃС‚РЅР°СЏ Р»РµРЅС‚Р°.</title>
+      <link>http://ochicherin.github.io/</link>
       <width>100</width>
       <height>72</height>
    </image>
    
    <item>
-      <title>Сайт зарегистрирован</title>
-      <link>http://ochicherin.narod.ru/news.html#1</link>
-      <description>Зарегистрировал сайт, писать нечего.</description>
+      <title>РЎР°Р№С‚ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅ</title>
+      <link>http://ochicherin.github.io/news.html#1</link>
+      <description>Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°Р» СЃР°Р№С‚, РїРёСЃР°С‚СЊ РЅРµС‡РµРіРѕ.</description>
       <pubDate>5 Feb 2003 12:00:01 +0300</pubDate>
-      <category>Главное</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>Р“Р»Р°РІРЅРѕРµ</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Яндекс закрыл сайт</title>
-      <link>http://ochicherin.narod.ru/news.html#2</link>
-      <description>Мы обнаружили, что в течение 4 последних месяцев ваш сайт никто не посещал 
-и информация на нем не обновлялась. В соответствии c пунктом 9 Пользовательского соглашения, Ваш сайт подлежит удалению.
+      <title>РЇРЅРґРµРєСЃ Р·Р°РєСЂС‹Р» СЃР°Р№С‚</title>
+      <link>http://ochicherin.github.io/news.html#2</link>
+      <description>РњС‹ РѕР±РЅР°СЂСѓР¶РёР»Рё, С‡С‚Рѕ РІ С‚РµС‡РµРЅРёРµ 4 РїРѕСЃР»РµРґРЅРёС… РјРµСЃСЏС†РµРІ РІР°С€ СЃР°Р№С‚ РЅРёРєС‚Рѕ РЅРµ РїРѕСЃРµС‰Р°Р» 
+Рё РёРЅС„РѕСЂРјР°С†РёСЏ РЅР° РЅРµРј РЅРµ РѕР±РЅРѕРІР»СЏР»Р°СЃСЊ. Р’ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё c РїСѓРЅРєС‚РѕРј 9 РџРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ СЃРѕРіР»Р°С€РµРЅРёСЏ, Р’Р°С€ СЃР°Р№С‚ РїРѕРґР»РµР¶РёС‚ СѓРґР°Р»РµРЅРёСЋ.
 
-Если Вы все же хотите сохранить свой сайт, пожалуйста, обновите информацию
-на нем. Сейчас доступ к сайту по HTTP закрыт, но через мастерскую и по FTP
-возможен.
+Р•СЃР»Рё Р’С‹ РІСЃРµ Р¶Рµ С…РѕС‚РёС‚Рµ СЃРѕС…СЂР°РЅРёС‚СЊ СЃРІРѕР№ СЃР°Р№С‚, РїРѕР¶Р°Р»СѓР№СЃС‚Р°, РѕР±РЅРѕРІРёС‚Рµ РёРЅС„РѕСЂРјР°С†РёСЋ
+РЅР° РЅРµРј. РЎРµР№С‡Р°СЃ РґРѕСЃС‚СѓРї Рє СЃР°Р№С‚Сѓ РїРѕ HTTP Р·Р°РєСЂС‹С‚, РЅРѕ С‡РµСЂРµР· РјР°СЃС‚РµСЂСЃРєСѓСЋ Рё РїРѕ FTP
+РІРѕР·РјРѕР¶РµРЅ.
 
-Просим Вас обратить внимание, что, если Вы не предприняли никаких действий
-по решению возникшей проблемы, закрытый сайт удаляется автоматически через
-месяц с момента закрытия и восстановлению не подлежит.
+РџСЂРѕСЃРёРј Р’Р°СЃ РѕР±СЂР°С‚РёС‚СЊ РІРЅРёРјР°РЅРёРµ, С‡С‚Рѕ, РµСЃР»Рё Р’С‹ РЅРµ РїСЂРµРґРїСЂРёРЅСЏР»Рё РЅРёРєР°РєРёС… РґРµР№СЃС‚РІРёР№
+РїРѕ СЂРµС€РµРЅРёСЋ РІРѕР·РЅРёРєС€РµР№ РїСЂРѕР±Р»РµРјС‹, Р·Р°РєСЂС‹С‚С‹Р№ СЃР°Р№С‚ СѓРґР°Р»СЏРµС‚СЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё С‡РµСЂРµР·
+РјРµСЃСЏС† СЃ РјРѕРјРµРЅС‚Р° Р·Р°РєСЂС‹С‚РёСЏ Рё РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЋ РЅРµ РїРѕРґР»РµР¶РёС‚.
 
-С уважением,
+РЎ СѓРІР°Р¶РµРЅРёРµРј,
 
-Служба поддержки Яндекса</description>
+РЎР»СѓР¶Р±Р° РїРѕРґРґРµСЂР¶РєРё РЇРЅРґРµРєСЃР°</description>
       <pubDate>11 Mar 2009 12:00:01 +0300</pubDate>
-      <category>Главное</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>Р“Р»Р°РІРЅРѕРµ</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Изменен дизайн</title>
-      <link>http://ochicherin.narod.ru/news.html#3</link>
-      <description>Из-за того, что надо обновлять контент, пришлось обновить дизайн</description>
+      <title>РР·РјРµРЅРµРЅ РґРёР·Р°Р№РЅ</title>
+      <link>http://ochicherin.github.io/news.html#3</link>
+      <description>РР·-Р·Р° С‚РѕРіРѕ, С‡С‚Рѕ РЅР°РґРѕ РѕР±РЅРѕРІР»СЏС‚СЊ РєРѕРЅС‚РµРЅС‚, РїСЂРёС€Р»РѕСЃСЊ РѕР±РЅРѕРІРёС‚СЊ РґРёР·Р°Р№РЅ</description>
       <pubDate>11 Mar 2009 12:00:01 +0300</pubDate>
-      <category>Главное</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>Р“Р»Р°РІРЅРѕРµ</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Сделал RSS ленту</title>
-      <link>http://ochicherin.narod.ru/news.html#4</link>
-      <description>Сделал RSS ленту</description>
+      <title>РЎРґРµР»Р°Р» RSS Р»РµРЅС‚Сѓ</title>
+      <link>http://ochicherin.github.io/news.html#4</link>
+      <description>РЎРґРµР»Р°Р» RSS Р»РµРЅС‚Сѓ</description>
       <pubDate>22 Mar 2009 12:00:01 +0300</pubDate>
-      <category>Главное</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>Р“Р»Р°РІРЅРѕРµ</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Книжка научилась читать RSS ленту</title>
-      <link>http://ochicherin.narod.ru/news.html#5</link>
-      <description>Моя элекнронная книга научилась читать RSS ленту. Осталось научиться туда писать :)</description>
+      <title>РљРЅРёР¶РєР° РЅР°СѓС‡РёР»Р°СЃСЊ С‡РёС‚Р°С‚СЊ RSS Р»РµРЅС‚Сѓ</title>
+      <link>http://ochicherin.github.io/news.html#5</link>
+      <description>РњРѕСЏ СЌР»РµРєРЅСЂРѕРЅРЅР°СЏ РєРЅРёРіР° РЅР°СѓС‡РёР»Р°СЃСЊ С‡РёС‚Р°С‚СЊ RSS Р»РµРЅС‚Сѓ. РћСЃС‚Р°Р»РѕСЃСЊ РЅР°СѓС‡РёС‚СЊСЃСЏ С‚СѓРґР° РїРёСЃР°С‚СЊ :)</description>
       <pubDate>11 Mar 2011 12:00:01 +0300</pubDate>
-      <category>Главное</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>Р“Р»Р°РІРЅРѕРµ</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Фотографии Фукусимы</title>
-      <link>http://ochicherin.narod.ru/fukushima.html</link>
-      <description>обавил веб фотографии Фукусимы. Стриница содержит ссылки на веб архив TEPCO. Фото берется с их сайта.</description>
+      <title>Р¤РѕС‚РѕРіСЂР°С„РёРё Р¤СѓРєСѓСЃРёРјС‹</title>
+      <link>http://ochicherin.github.io/fukushima.html</link>
+      <description>РѕР±Р°РІРёР» РІРµР± С„РѕС‚РѕРіСЂР°С„РёРё Р¤СѓРєСѓСЃРёРјС‹. РЎС‚СЂРёРЅРёС†Р° СЃРѕРґРµСЂР¶РёС‚ СЃСЃС‹Р»РєРё РЅР° РІРµР± Р°СЂС…РёРІ TEPCO. Р¤РѕС‚Рѕ Р±РµСЂРµС‚СЃСЏ СЃ РёС… СЃР°Р№С‚Р°.</description>
       <pubDate>22 Mar 2011 12:00:01 +0300</pubDate>
-      <category>Галерея</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>Р“Р°Р»РµСЂРµСЏ</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Изменилась структура сайта</title>
-      <link>http://ochicherin.narod.ru/other.html</link>
-      <description>Появился раздел прочее. Туда отправилось все, что не влезло в главное меню.</description>
+      <title>РР·РјРµРЅРёР»Р°СЃСЊ СЃС‚СЂСѓРєС‚СѓСЂР° СЃР°Р№С‚Р°</title>
+      <link>http://ochicherin.github.io/other.html</link>
+      <description>РџРѕСЏРІРёР»СЃСЏ СЂР°Р·РґРµР» РїСЂРѕС‡РµРµ. РўСѓРґР° РѕС‚РїСЂР°РІРёР»РѕСЃСЊ РІСЃРµ, С‡С‚Рѕ РЅРµ РІР»РµР·Р»Рѕ РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ.</description>
       <pubDate>22 Mar 2011 12:00:01 +0300</pubDate>
-      <category>Главное</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>Р“Р»Р°РІРЅРѕРµ</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Пример Фотогалереи</title>
-      <link>http://ochicherin.narod.ru/fotogalery.html</link>
-      <description>Добавил пример построения фотогалереи на javascript.</description>
+      <title>РџСЂРёРјРµСЂ Р¤РѕС‚РѕРіР°Р»РµСЂРµРё</title>
+      <link>http://ochicherin.github.io/fotogalery.html</link>
+      <description>Р”РѕР±Р°РІРёР» РїСЂРёРјРµСЂ РїРѕСЃС‚СЂРѕРµРЅРёСЏ С„РѕС‚РѕРіР°Р»РµСЂРµРё РЅР° javascript.</description>
       <pubDate>Thu, 31 Mar 2011 12:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Пример Внешний список</title>
-      <link>http://ochicherin.narod.ru/extcombo.html</link>
-      <description>Добавил пример как загружать выпадающий список из внешнего файла. Конечно ничего особенного в этом нет, но уменьшает объем страницы и спасает от copy/paste.</description>
+      <title>РџСЂРёРјРµСЂ Р’РЅРµС€РЅРёР№ СЃРїРёСЃРѕРє</title>
+      <link>http://ochicherin.github.io/extcombo.html</link>
+      <description>Р”РѕР±Р°РІРёР» РїСЂРёРјРµСЂ РєР°Рє Р·Р°РіСЂСѓР¶Р°С‚СЊ РІС‹РїР°РґР°СЋС‰РёР№ СЃРїРёСЃРѕРє РёР· РІРЅРµС€РЅРµРіРѕ С„Р°Р№Р»Р°. РљРѕРЅРµС‡РЅРѕ РЅРёС‡РµРіРѕ РѕСЃРѕР±РµРЅРЅРѕРіРѕ РІ СЌС‚РѕРј РЅРµС‚, РЅРѕ СѓРјРµРЅСЊС€Р°РµС‚ РѕР±СЉРµРј СЃС‚СЂР°РЅРёС†С‹ Рё СЃРїР°СЃР°РµС‚ РѕС‚ copy/paste.</description>
       <pubDate>Thu, 31 Mar 2011 12:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Пример Исходный код</title>
-      <link>http://ochicherin.narod.ru/viewcode.html</link>
+      <title>РџСЂРёРјРµСЂ РСЃС…РѕРґРЅС‹Р№ РєРѕРґ</title>
+      <link>http://ochicherin.github.io/viewcode.html</link>
       <description>
-		    Добавил пример как отображать исходный код на странице.
-                    Вроде ерунда, можно и так посмотреть. С другой стороны не надо копаться в коде.
-                    Показывается то, что должно показываться.  
+		    Р”РѕР±Р°РІРёР» РїСЂРёРјРµСЂ РєР°Рє РѕС‚РѕР±СЂР°Р¶Р°С‚СЊ РёСЃС…РѕРґРЅС‹Р№ РєРѕРґ РЅР° СЃС‚СЂР°РЅРёС†Рµ.
+                    Р’СЂРѕРґРµ РµСЂСѓРЅРґР°, РјРѕР¶РЅРѕ Рё С‚Р°Рє РїРѕСЃРјРѕС‚СЂРµС‚СЊ. РЎ РґСЂСѓРіРѕР№ СЃС‚РѕСЂРѕРЅС‹ РЅРµ РЅР°РґРѕ РєРѕРїР°С‚СЊСЃСЏ РІ РєРѕРґРµ.
+                    РџРѕРєР°Р·С‹РІР°РµС‚СЃСЏ С‚Рѕ, С‡С‚Рѕ РґРѕР»Р¶РЅРѕ РїРѕРєР°Р·С‹РІР°С‚СЊСЃСЏ.  
       </description>
       <pubDate>Thu, 31 Mar 2011 12:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Перенес фото Фукусимы в другой раздел.</title>
-      <link>http://ochicherin.narod.ru/galery.html</link>
-      <description>Перенес фото в галерею. так будет привильней.</description>
+      <title>РџРµСЂРµРЅРµСЃ С„РѕС‚Рѕ Р¤СѓРєСѓСЃРёРјС‹ РІ РґСЂСѓРіРѕР№ СЂР°Р·РґРµР».</title>
+      <link>http://ochicherin.github.io/galery.html</link>
+      <description>РџРµСЂРµРЅРµСЃ С„РѕС‚Рѕ РІ РіР°Р»РµСЂРµСЋ. С‚Р°Рє Р±СѓРґРµС‚ РїСЂРёРІРёР»СЊРЅРµР№.</description>
       <pubDate>Fri, 01 Apr 2011 19:57:59 +0400</pubDate>
-      <category>Галерея</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>Р“Р°Р»РµСЂРµСЏ</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Создан раздел "Проблемы управления".</title>
-      <link>http://ochicherin.narod.ru/management.html</link>
-      <description>Слишком большой поток публикаций на эту тему.</description>
+      <title>РЎРѕР·РґР°РЅ СЂР°Р·РґРµР» "РџСЂРѕР±Р»РµРјС‹ СѓРїСЂР°РІР»РµРЅРёСЏ".</title>
+      <link>http://ochicherin.github.io/management.html</link>
+      <description>РЎР»РёС€РєРѕРј Р±РѕР»СЊС€РѕР№ РїРѕС‚РѕРє РїСѓР±Р»РёРєР°С†РёР№ РЅР° СЌС‚Сѓ С‚РµРјСѓ.</description>
       <pubDate>Fri, 01 Apr 2011 21:07:59 +0400</pubDate>
-      <category>Библиотека</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>Р‘РёР±Р»РёРѕС‚РµРєР°</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Сверхурочные? Теперь у вас две проблемы!</title>
-      <link>http://ochicherin.narod.ru/mgt03.html</link>
-      <description>Неизвестный автор перевел ее с английского. После этого статья массово разошлась по русскому интернету. Добавил ссылку на возможный оригинал.</description>
+      <title>РЎРІРµСЂС…СѓСЂРѕС‡РЅС‹Рµ? РўРµРїРµСЂСЊ Сѓ РІР°СЃ РґРІРµ РїСЂРѕР±Р»РµРјС‹!</title>
+      <link>http://ochicherin.github.io/mgt03.html</link>
+      <description>РќРµРёР·РІРµСЃС‚РЅС‹Р№ Р°РІС‚РѕСЂ РїРµСЂРµРІРµР» РµРµ СЃ Р°РЅРіР»РёР№СЃРєРѕРіРѕ. РџРѕСЃР»Рµ СЌС‚РѕРіРѕ СЃС‚Р°С‚СЊСЏ РјР°СЃСЃРѕРІРѕ СЂР°Р·РѕС€Р»Р°СЃСЊ РїРѕ СЂСѓСЃСЃРєРѕРјСѓ РёРЅС‚РµСЂРЅРµС‚Сѓ. Р”РѕР±Р°РІРёР» СЃСЃС‹Р»РєСѓ РЅР° РІРѕР·РјРѕР¶РЅС‹Р№ РѕСЂРёРіРёРЅР°Р».</description>
       <pubDate>Mon, 04 Apr 2011 15:07:59 +0400</pubDate>
-      <category>Библиотека</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>Р‘РёР±Р»РёРѕС‚РµРєР°</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Обновлен пример Фотогалереи</title>
-      <link>http://ochicherin.narod.ru/fotogalery.html</link>
-      <description>Добавлено еще несколько способов отображения.</description>
+      <title>РћР±РЅРѕРІР»РµРЅ РїСЂРёРјРµСЂ Р¤РѕС‚РѕРіР°Р»РµСЂРµРё</title>
+      <link>http://ochicherin.github.io/fotogalery.html</link>
+      <description>Р”РѕР±Р°РІР»РµРЅРѕ РµС‰Рµ РЅРµСЃРєРѕР»СЊРєРѕ СЃРїРѕСЃРѕР±РѕРІ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ.</description>
       <pubDate>Mon, 4 Apr 2011 18:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Пример автоматического построения оглавления на странице.</title>
-      <link>http://ochicherin.narod.ru/tocdemo.html</link>
-      <description>Добавлен пример как автоматически генерировать оглавление страницы. </description>
+      <title>РџСЂРёРјРµСЂ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРіРѕ РїРѕСЃС‚СЂРѕРµРЅРёСЏ РѕРіР»Р°РІР»РµРЅРёСЏ РЅР° СЃС‚СЂР°РЅРёС†Рµ.</title>
+      <link>http://ochicherin.github.io/tocdemo.html</link>
+      <description>Р”РѕР±Р°РІР»РµРЅ РїСЂРёРјРµСЂ РєР°Рє Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ РѕРіР»Р°РІР»РµРЅРёРµ СЃС‚СЂР°РЅРёС†С‹. </description>
       <pubDate>Wed, 6 Apr 2011 18:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Читалка для fb2.</title>
-      <link>http://ochicherin.narod.ru/fb2reader.html</link>
-      <description>Добавлен пример как встроить в страницу документ в формате FB2. </description>
+      <title>Р§РёС‚Р°Р»РєР° РґР»СЏ fb2.</title>
+      <link>http://ochicherin.github.io/fb2reader.html</link>
+      <description>Р”РѕР±Р°РІР»РµРЅ РїСЂРёРјРµСЂ РєР°Рє РІСЃС‚СЂРѕРёС‚СЊ РІ СЃС‚СЂР°РЅРёС†Сѓ РґРѕРєСѓРјРµРЅС‚ РІ С„РѕСЂРјР°С‚Рµ FB2. </description>
       <pubDate>Thu, 7 Apr 2011 09:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Как устроена карта сайта.</title>
-      <link>http://ochicherin.narod.ru/demositemap.html</link>
-      <description>Добавлен пример, описывающий, как генерируется наполнение элементов навигации. </description>
+      <title>РљР°Рє СѓСЃС‚СЂРѕРµРЅР° РєР°СЂС‚Р° СЃР°Р№С‚Р°.</title>
+      <link>http://ochicherin.github.io/demositemap.html</link>
+      <description>Р”РѕР±Р°РІР»РµРЅ РїСЂРёРјРµСЂ, РѕРїРёСЃС‹РІР°СЋС‰РёР№, РєР°Рє РіРµРЅРµСЂРёСЂСѓРµС‚СЃСЏ РЅР°РїРѕР»РЅРµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РЅР°РІРёРіР°С†РёРё. </description>
       <pubDate>Fri, 8 Apr 2011 18:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Как устроены часы.</title>
-      <link>http://ochicherin.narod.ru/democlock.html</link>
-      <description>Маленький пример, как устроены часы. Заодно исправлена ошибка, когда на страницем могут быть только одни часы. Добалено динамическое обновление исходного кода. </description>
+      <title>РљР°Рє СѓСЃС‚СЂРѕРµРЅС‹ С‡Р°СЃС‹.</title>
+      <link>http://ochicherin.github.io/democlock.html</link>
+      <description>РњР°Р»РµРЅСЊРєРёР№ РїСЂРёРјРµСЂ, РєР°Рє СѓСЃС‚СЂРѕРµРЅС‹ С‡Р°СЃС‹. Р—Р°РѕРґРЅРѕ РёСЃРїСЂР°РІР»РµРЅР° РѕС€РёР±РєР°, РєРѕРіРґР° РЅР° СЃС‚СЂР°РЅРёС†РµРј РјРѕРіСѓС‚ Р±С‹С‚СЊ С‚РѕР»СЊРєРѕ РѕРґРЅРё С‡Р°СЃС‹. Р”РѕР±Р°Р»РµРЅРѕ РґРёРЅР°РјРёС‡РµСЃРєРѕРµ РѕР±РЅРѕРІР»РµРЅРёРµ РёСЃС…РѕРґРЅРѕРіРѕ РєРѕРґР°. </description>
       <pubDate>Fri, 8 Apr 2011 21:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Наследование дизайна страницы.</title>
-      <link>http://ochicherin.narod.ru/demoframe/demoframe.html</link>
-      <description>Добавлен пример, демонстрирующий наследование дизайна. Заодно вылезла куча ошибок.<a href="http://ochicherin.narod.ru/demoframe/demoframe.html"> ссылка </a> </description>
+      <title>РќР°СЃР»РµРґРѕРІР°РЅРёРµ РґРёР·Р°Р№РЅР° СЃС‚СЂР°РЅРёС†С‹.</title>
+      <link>http://ochicherin.github.io/demoframe/demoframe.html</link>
+      <description>Р”РѕР±Р°РІР»РµРЅ РїСЂРёРјРµСЂ, РґРµРјРѕРЅСЃС‚СЂРёСЂСѓСЋС‰РёР№ РЅР°СЃР»РµРґРѕРІР°РЅРёРµ РґРёР·Р°Р№РЅР°. Р—Р°РѕРґРЅРѕ РІС‹Р»РµР·Р»Р° РєСѓС‡Р° РѕС€РёР±РѕРє.<a href="http://ochicherin.github.io/demoframe/demoframe.html"> СЃСЃС‹Р»РєР° </a> </description>
       <pubDate>Mon, 11 Apr 2011 21:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Локальный архив фото АЭС Фукусимы.</title>
-      <link>http://ochicherin.narod.ru/reader/fukushima2.html</link>
-      <description>Выкачал фото с pointscope. Похоже периодически его закрывают или он падает. </description>
+      <title>Р›РѕРєР°Р»СЊРЅС‹Р№ Р°СЂС…РёРІ С„РѕС‚Рѕ РђР­РЎ Р¤СѓРєСѓСЃРёРјС‹.</title>
+      <link>http://ochicherin.github.io/reader/fukushima2.html</link>
+      <description>Р’С‹РєР°С‡Р°Р» С„РѕС‚Рѕ СЃ pointscope. РџРѕС…РѕР¶Рµ РїРµСЂРёРѕРґРёС‡РµСЃРєРё РµРіРѕ Р·Р°РєСЂС‹РІР°СЋС‚ РёР»Рё РѕРЅ РїР°РґР°РµС‚. </description>
       <pubDate>Tue, 12 Apr 2011 18:00:01 +0400</pubDate>
-      <category>Галерея</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>Р“Р°Р»РµСЂРµСЏ</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Коды пород и окрасов кошек.</title>
-      <link>http://ochicherin.narod.ru/faq20.html</link>
-      <description>Коды пород и окрасов кошек. </description>
+      <title>РљРѕРґС‹ РїРѕСЂРѕРґ Рё РѕРєСЂР°СЃРѕРІ РєРѕС€РµРє.</title>
+      <link>http://ochicherin.github.io/faq20.html</link>
+      <description>РљРѕРґС‹ РїРѕСЂРѕРґ Рё РѕРєСЂР°СЃРѕРІ РєРѕС€РµРє. </description>
       <pubDate>Tue, 12 Apr 2011 20:20:01 +0400</pubDate>
       <category>FAQ</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Обновлен пример Внешний список</title>
-      <link>http://ochicherin.narod.ru/extcombo.html</link>
-      <description>Теперь список может формироваться из нескольких файлов. Имя файла записывается в атрибуте value. Соответственно изменился и пример Фотогалерея.</description>
+      <title>РћР±РЅРѕРІР»РµРЅ РїСЂРёРјРµСЂ Р’РЅРµС€РЅРёР№ СЃРїРёСЃРѕРє</title>
+      <link>http://ochicherin.github.io/extcombo.html</link>
+      <description>РўРµРїРµСЂСЊ СЃРїРёСЃРѕРє РјРѕР¶РµС‚ С„РѕСЂРјРёСЂРѕРІР°С‚СЊСЃСЏ РёР· РЅРµСЃРєРѕР»СЊРєРёС… С„Р°Р№Р»РѕРІ. РРјСЏ С„Р°Р№Р»Р° Р·Р°РїРёСЃС‹РІР°РµС‚СЃСЏ РІ Р°С‚СЂРёР±СѓС‚Рµ value. РЎРѕРѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕ РёР·РјРµРЅРёР»СЃСЏ Рё РїСЂРёРјРµСЂ Р¤РѕС‚РѕРіР°Р»РµСЂРµСЏ.</description>
       <pubDate>Wed, 13 Apr 2011 14:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Добавлен пример использования нестандартных шрифтов</title>
-      <link>http://ochicherin.narod.ru/demofont.html</link>
-      <description>Все началось с проблемы, как нарисовать почтовый конверт.</description>
+      <title>Р”РѕР±Р°РІР»РµРЅ РїСЂРёРјРµСЂ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РЅРµСЃС‚Р°РЅРґР°СЂС‚РЅС‹С… С€СЂРёС„С‚РѕРІ</title>
+      <link>http://ochicherin.github.io/demofont.html</link>
+      <description>Р’СЃРµ РЅР°С‡Р°Р»РѕСЃСЊ СЃ РїСЂРѕР±Р»РµРјС‹, РєР°Рє РЅР°СЂРёСЃРѕРІР°С‚СЊ РїРѕС‡С‚РѕРІС‹Р№ РєРѕРЅРІРµСЂС‚.</description>
       <pubDate>Thu, 14 Apr 2011 16:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
    <item>
-      <title>Добавлен пример использования двумерных штрихкодов.</title>
-      <link>http://ochicherin.narod.ru/demobarcode.html</link>
-      <description>Пример практического использования штрихкодов на сайте.</description>
+      <title>Р”РѕР±Р°РІР»РµРЅ РїСЂРёРјРµСЂ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РґРІСѓРјРµСЂРЅС‹С… С€С‚СЂРёС…РєРѕРґРѕРІ.</title>
+      <link>http://ochicherin.github.io/demobarcode.html</link>
+      <description>РџСЂРёРјРµСЂ РїСЂР°РєС‚РёС‡РµСЃРєРѕРіРѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ С€С‚СЂРёС…РєРѕРґРѕРІ РЅР° СЃР°Р№С‚Рµ.</description>
       <pubDate>Fri, 15 Apr 2011 19:00:01 +0400</pubDate>
-      <category>Примеры</category>
-      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
+   </item>
+
+   <item>
+      <title>РЎР°Р№С‚ РїРµСЂРµРµС…Р°Р» РЅР° GitHub.</title>
+      <link>http://ochicherin.github.io</link>
+      <description>РЎР°Р№С‚ РїРµСЂРµРµС…Р°Р» РЅР° GitHub. РљРѕРґРёСЂРѕРІРєР° РёР·РјРµРЅРёР»Р°СЃСЊ РЅР° utf-8.</description>
+      <pubDate>Sat, 22 Aug 2020 11:00:01 +0300</pubDate>
+      <category>РџСЂРёРјРµСЂС‹</category>
+      <author>Р§РёС‡РµСЂРёРЅ РћР»РµРі &lt;ochicherin@yandex.ru&gt;</author>
    </item>
 
 </channel>

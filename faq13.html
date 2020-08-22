@@ -1,15 +1,15 @@
-<HTML>
+п»ї<HTML>
   <HEAD>
-  <TITLE id=title>Чичерин Олег</TITLE>
-  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <TITLE id=title>Р§РёС‡РµСЂРёРЅ РћР»РµРі</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
   <script src="script.js"></script>
   <LINK href="index_files/style.css" type=text/css rel=stylesheet>
 </HEAD>
 <BODY onLoad="initBody();">
-  <H1>Перехватить страницу, сгенерированую при помощи HTP/HTF</H1>
+  <H1>РџРµСЂРµС…РІР°С‚РёС‚СЊ СЃС‚СЂР°РЅРёС†Сѓ, СЃРіРµРЅРµСЂРёСЂРѕРІР°РЅСѓСЋ РїСЂРё РїРѕРјРѕС‰Рё HTP/HTF</H1>
 
 <pre>
-Собственно то же самое делает mod_plsql для того, чтобы отрисовать сгенерированный html.
+РЎРѕР±СЃС‚РІРµРЅРЅРѕ С‚Рѕ Р¶Рµ СЃР°РјРѕРµ РґРµР»Р°РµС‚ mod_plsql РґР»СЏ С‚РѕРіРѕ, С‡С‚РѕР±С‹ РѕС‚СЂРёСЃРѕРІР°С‚СЊ СЃРіРµРЅРµСЂРёСЂРѕРІР°РЅРЅС‹Р№ html.
 </pre>
 <textarea class="example">
 declare 
@@ -22,27 +22,27 @@ declare
   p  number;
   s  varchar2(1024);
  begin
-   n := owa.initialize;                    -- инициализируем окружение
+   n := owa.initialize;                    -- РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РѕРєСЂСѓР¶РµРЅРёРµ
    owa.init_cgi_env(vc);                   
 
-   page;                                   -- вызываем страницу
+   page;                                   -- РІС‹Р·С‹РІР°РµРј СЃС‚СЂР°РЅРёС†Сѓ
 
-   dbms_lob.createtemporary(c,TRUE);       -- готовим буфер
-   s := owa.get_line(n);                   -- считываем первую строку 
-   while n=1 loop                          -- считываем остальные строки  
+   dbms_lob.createtemporary(c,TRUE);       -- РіРѕС‚РѕРІРёРј Р±СѓС„РµСЂ
+   s := owa.get_line(n);                   -- СЃС‡РёС‚С‹РІР°РµРј РїРµСЂРІСѓСЋ СЃС‚СЂРѕРєСѓ 
+   while n=1 loop                          -- СЃС‡РёС‚С‹РІР°РµРј РѕСЃС‚Р°Р»СЊРЅС‹Рµ СЃС‚СЂРѕРєРё  
      c := c || s;  
      s := owa.get_line(n);
    end loop;
-   p := dbms_lob.instr(c, cr||cr);         -- находим границу между телом и заголовком
-   n := p + length(cr)*2-1;                -- это длинна заголовка с пустой строкой
-   :head := dbms_lob.substr(c, n-length(cr)); -- получаем заголовок без пустой строки
+   p := dbms_lob.instr(c, cr||cr);         -- РЅР°С…РѕРґРёРј РіСЂР°РЅРёС†Сѓ РјРµР¶РґСѓ С‚РµР»РѕРј Рё Р·Р°РіРѕР»РѕРІРєРѕРј
+   n := p + length(cr)*2-1;                -- СЌС‚Рѕ РґР»РёРЅРЅР° Р·Р°РіРѕР»РѕРІРєР° СЃ РїСѓСЃС‚РѕР№ СЃС‚СЂРѕРєРѕР№
+   :head := dbms_lob.substr(c, n-length(cr)); -- РїРѕР»СѓС‡Р°РµРј Р·Р°РіРѕР»РѕРІРѕРє Р±РµР· РїСѓСЃС‚РѕР№ СЃС‚СЂРѕРєРё
    :body := ' ';
-   dbms_lob.copy(:body, c, dbms_lob.getlength(c) - n, 1, n+1); -- получаем тело ответа
+   dbms_lob.copy(:body, c, dbms_lob.getlength(c) - n, 1, n+1); -- РїРѕР»СѓС‡Р°РµРј С‚РµР»Рѕ РѕС‚РІРµС‚Р°
 end;
 </textarea>
 <pre>
 
-А это код, чтобы считать произвольную веб страницу.
+Рђ СЌС‚Рѕ РєРѕРґ, С‡С‚РѕР±С‹ СЃС‡РёС‚Р°С‚СЊ РїСЂРѕРёР·РІРѕР»СЊРЅСѓСЋ РІРµР± СЃС‚СЂР°РЅРёС†Сѓ.
 <textarea class="example">
 declare 
    url varchar2(1024) := 'http://www.google.com';
@@ -62,7 +62,7 @@ declare
 </textarea>
 
 
-Всё.
+Р’СЃС‘.
 </pre>
 
 

@@ -1,19 +1,19 @@
-<HTML>
+п»ї<HTML>
   <HEAD>
-  <TITLE id=title>Чичерин Олег</TITLE>
-  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <TITLE id=title>Р§РёС‡РµСЂРёРЅ РћР»РµРі</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
   <script src="script.js"></script>
   <LINK href="index_files/style.css" type=text/css rel=stylesheet>
 </HEAD>
 <BODY onLoad="initBody();">
-  <H1>Примеры xslt преобразований</H1>
-<label>XML файл</label><input type=text id=xml_file value="menu.xml"><br>
+  <H1>РџСЂРёРјРµСЂС‹ xslt РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёР№</H1>
+<label>XML С„Р°Р№Р»</label><input type=text id=xml_file value="menu.xml"><br>
 <input type=hidden id=xslt_file value="menu.xslt">
-<label>XSLT преобразование</label><select id=xslt_list>
+<label>XSLT РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ</label><select id=xslt_list>
 <option id="menu.xslt">"menu.xslt"</option>
 <option id="menu_h.xslt">"menu_h.xslt"</option>
 </select><br>
-<label>Преобразовать</label><input type=submit name="Go" onClick="xslt_file.value=xslt_list.options[xslt_list.selectedIndex].id;xml_result.innerHTML=MakeXSLT(loadXML(xml_file.value),xslt_file.value);return false;">
+<label>РџСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ</label><input type=submit name="Go" onClick="xslt_file.value=xslt_list.options[xslt_list.selectedIndex].id;xml_result.innerHTML=MakeXSLT(loadXML(xml_file.value),xslt_file.value);return false;">
 <hr>
 <div id=xml_result></div>
 <hr>

@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="windows-1251" ?>
+п»ї<?xml version="1.0" encoding="utf-8" ?>
 <xml>
-   <item title="Компьютеры" url="test"> 
-      <item title="Настольные компьютеры" url="test.html"/> 
-      <item title="Серверы"/> 
+   <item title="РљРѕРјРїСЊСЋС‚РµСЂС‹" url="test"> 
+      <item title="РќР°СЃС‚РѕР»СЊРЅС‹Рµ РєРѕРјРїСЊСЋС‚РµСЂС‹" url="test.html"/> 
+      <item title="РЎРµСЂРІРµСЂС‹"/> 
    </item> 
-   <item title="Комплектующие"> 
-      <item title="Процессоры" icon="person.gif"/> 
-      <item title="Материнские платы" icon="person.gif"/> 
+   <item title="РљРѕРјРїР»РµРєС‚СѓСЋС‰РёРµ"> 
+      <item title="РџСЂРѕС†РµСЃСЃРѕСЂС‹" icon="person.gif"/> 
+      <item title="РњР°С‚РµСЂРёРЅСЃРєРёРµ РїР»Р°С‚С‹" icon="person.gif"/> 
    </item> 
-   <item title="Расходные материалы"> 
-      <item title="Картриджи"> 
-         <item title="Картриджи для плоттеров" url="menu_h.html"/> 
-         <item title="Картриджи для принтеров"/> 
+   <item title="Р Р°СЃС…РѕРґРЅС‹Рµ РјР°С‚РµСЂРёР°Р»С‹"> 
+      <item title="РљР°СЂС‚СЂРёРґР¶Рё"> 
+         <item title="РљР°СЂС‚СЂРёРґР¶Рё РґР»СЏ РїР»РѕС‚С‚РµСЂРѕРІ" url="menu_h.html"/> 
+         <item title="РљР°СЂС‚СЂРёРґР¶Рё РґР»СЏ РїСЂРёРЅС‚РµСЂРѕРІ"/> 
       </item> 
-      <item title="Тонеры"/> 
-      <item title="Бумага"/> 
+      <item title="РўРѕРЅРµСЂС‹"/> 
+      <item title="Р‘СѓРјР°РіР°"/> 
    </item> 
 </xml>

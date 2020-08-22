@@ -1,44 +1,44 @@
-<HTML>
+п»ї<HTML>
   <HEAD>
-  <TITLE id=title>Чичерин Олег</TITLE>
-  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <TITLE id=title>Р§РёС‡РµСЂРёРЅ РћР»РµРі</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
   <script src="script.js"></script>
   <LINK href="index_files/style.css" type=text/css rel=stylesheet>
 </HEAD>
 <BODY onLoad="initBody();">
-  <H1>Ищем книгу в библиотеке </H1>
+  <H1>РС‰РµРј РєРЅРёРіСѓ РІ Р±РёР±Р»РёРѕС‚РµРєРµ </H1>
  <input type=hidden id="username_1" value="pubpgu">
  <input type=hidden id="password_1" value="pubpgu">
  <input type=hidden id="url_1" value="http://195.74.82.90:8080/pubpgu/z3950client.service50">
  <input type=hidden id="url_2" value="http://195.74.82.90:8080/pubpgu/z3950client.service51">
  <input type=hidden id="url_lov" value="http://195.74.82.90:8080/pubpgu/z3950client.lov">
 <pre>
-Пока оставляем в стороне проблему кросдоменных запросов.
-Из-за этого пример будет работать только в IE, да и то только в том случае,
-если проделать следующие манипуляции.
-<i>Зайти в меню браузера Tools, выбрать Internet Options...
-Выбрать закладку Security.
-Нажать на иконку Local intranet.
-Нажать кнопку Sites.
-Добавить в список
+РџРѕРєР° РѕСЃС‚Р°РІР»СЏРµРј РІ СЃС‚РѕСЂРѕРЅРµ РїСЂРѕР±Р»РµРјСѓ РєСЂРѕСЃРґРѕРјРµРЅРЅС‹С… Р·Р°РїСЂРѕСЃРѕРІ.
+РР·-Р·Р° СЌС‚РѕРіРѕ РїСЂРёРјРµСЂ Р±СѓРґРµС‚ СЂР°Р±РѕС‚Р°С‚СЊ С‚РѕР»СЊРєРѕ РІ IE, РґР° Рё С‚Рѕ С‚РѕР»СЊРєРѕ РІ С‚РѕРј СЃР»СѓС‡Р°Рµ,
+РµСЃР»Рё РїСЂРѕРґРµР»Р°С‚СЊ СЃР»РµРґСѓСЋС‰РёРµ РјР°РЅРёРїСѓР»СЏС†РёРё.
+<i>Р—Р°Р№С‚Рё РІ РјРµРЅСЋ Р±СЂР°СѓР·РµСЂР° Tools, РІС‹Р±СЂР°С‚СЊ Internet Options...
+Р’С‹Р±СЂР°С‚СЊ Р·Р°РєР»Р°РґРєСѓ Security.
+РќР°Р¶Р°С‚СЊ РЅР° РёРєРѕРЅРєСѓ Local intranet.
+РќР°Р¶Р°С‚СЊ РєРЅРѕРїРєСѓ Sites.
+Р”РѕР±Р°РІРёС‚СЊ РІ СЃРїРёСЃРѕРє
  http://195.74.82.90
  http://ochicherin.narod.ru
-Нажать Close.
-Нажать кнопку Custom Level
-Найти пункт Miscellaneous / Access data sourses across domains
-Установить переключатель в положение Enable.
+РќР°Р¶Р°С‚СЊ Close.
+РќР°Р¶Р°С‚СЊ РєРЅРѕРїРєСѓ Custom Level
+РќР°Р№С‚Рё РїСѓРЅРєС‚ Miscellaneous / Access data sourses across domains
+РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РїРµСЂРµРєР»СЋС‡Р°С‚РµР»СЊ РІ РїРѕР»РѕР¶РµРЅРёРµ Enable.
 </i>
 
 <form id="s" name="s">
-<label>Автор</label> <input type=text name="p1003" value="Чердаков"><a href="javascript:list_of_values(s.p1003,url_lov.value+'?name=p1003&mask=#p1003#','Всплывающий список','Выбор автора',username_1.value,password_1.value);"><img src="index_files/calendar.gif" border="0"></a>
-<label>Заголовок</label> <input type=text name="p4" value=""><a href="javascript:list_of_values(s.p4,url_lov.value+'?name=p4&mask=#p4#','Всплывающий список','Выбор заголовка',username_1.value,password_1.value);"><img src="index_files/calendar.gif" border="0"></a>
-<label>Год издания</label> <input type=text name="p31" value="">
-<label>Место издания</label> <input type=text name="p59" value=""><a href="javascript:list_of_values(s.p59,url_lov.value+'?name=p59&mask=#p59#','Всплывающий список','Выбор Места издания',username_1.value,password_1.value);"><img src="index_files/calendar.gif" border="0"></a>
+<label>РђРІС‚РѕСЂ</label> <input type=text name="p1003" value="Р§РµСЂРґР°РєРѕРІ"><a href="javascript:list_of_values(s.p1003,url_lov.value+'?name=p1003&mask=#p1003#','Р’СЃРїР»С‹РІР°СЋС‰РёР№ СЃРїРёСЃРѕРє','Р’С‹Р±РѕСЂ Р°РІС‚РѕСЂР°',username_1.value,password_1.value);"><img src="index_files/calendar.gif" border="0"></a>
+<label>Р—Р°РіРѕР»РѕРІРѕРє</label> <input type=text name="p4" value=""><a href="javascript:list_of_values(s.p4,url_lov.value+'?name=p4&mask=#p4#','Р’СЃРїР»С‹РІР°СЋС‰РёР№ СЃРїРёСЃРѕРє','Р’С‹Р±РѕСЂ Р·Р°РіРѕР»РѕРІРєР°',username_1.value,password_1.value);"><img src="index_files/calendar.gif" border="0"></a>
+<label>Р“РѕРґ РёР·РґР°РЅРёСЏ</label> <input type=text name="p31" value="">
+<label>РњРµСЃС‚Рѕ РёР·РґР°РЅРёСЏ</label> <input type=text name="p59" value=""><a href="javascript:list_of_values(s.p59,url_lov.value+'?name=p59&mask=#p59#','Р’СЃРїР»С‹РІР°СЋС‰РёР№ СЃРїРёСЃРѕРє','Р’С‹Р±РѕСЂ РњРµСЃС‚Р° РёР·РґР°РЅРёСЏ',username_1.value,password_1.value);"><img src="index_files/calendar.gif" border="0"></a>
 <label>ISBN</label> <input type=text name="p7" value="">
-<label>Все атрибуты</label> <input type=text name="p1016" value="">
+<label>Р’СЃРµ Р°С‚СЂРёР±СѓС‚С‹</label> <input type=text name="p1016" value="">
 </form>
-<label>Везде</label><input type=Submit value="Искать" onClick="res_table.innerHTML=MakeXSLT(httpGet(url_1.value+'?'+FormByName('s'),username_1.value,password_1.value).responseXML,'books.xslt');" > 
-<label>Только в открытых</label><input type=Submit value="Искать" onClick="res_table.innerHTML=MakeXSLT(httpGet(url_2.value+'?'+FormByName('s'),username_1.value,password_1.value).responseXML,'books.xslt');" > 
+<label>Р’РµР·РґРµ</label><input type=Submit value="РСЃРєР°С‚СЊ" onClick="res_table.innerHTML=MakeXSLT(httpGet(url_1.value+'?'+FormByName('s'),username_1.value,password_1.value).responseXML,'books.xslt');" > 
+<label>РўРѕР»СЊРєРѕ РІ РѕС‚РєСЂС‹С‚С‹С…</label><input type=Submit value="РСЃРєР°С‚СЊ" onClick="res_table.innerHTML=MakeXSLT(httpGet(url_2.value+'?'+FormByName('s'),username_1.value,password_1.value).responseXML,'books.xslt');" > 
 <br>
 <div id=res_table></div>
 </pre>

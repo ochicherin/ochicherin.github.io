@@ -1,20 +1,20 @@
-<HTML>
+п»ї<HTML>
   <HEAD>
-  <TITLE id=title>Чичерин Олег</TITLE>
-  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <TITLE id=title>Р§РёС‡РµСЂРёРЅ РћР»РµРі</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
   <script src="script.js"></script>
   <LINK href="index_files/style.css" type=text/css rel=stylesheet>
 </HEAD>
 <BODY onLoad="initBody();">
-  <H1>Вызываем Web сервисы из javascript </H1>
+  <H1>Р’С‹Р·С‹РІР°РµРј Web СЃРµСЂРІРёСЃС‹ РёР· javascript </H1>
 <pre>
-Пока оставляем в стороне проблему кросдоменных запросов.
-Из-за этого пример будет работать только в IE, да и то только в том случае,
-если оба сервера добавить в Local intranet.
+РџРѕРєР° РѕСЃС‚Р°РІР»СЏРµРј РІ СЃС‚РѕСЂРѕРЅРµ РїСЂРѕР±Р»РµРјСѓ РєСЂРѕСЃРґРѕРјРµРЅРЅС‹С… Р·Р°РїСЂРѕСЃРѕРІ.
+РР·-Р·Р° СЌС‚РѕРіРѕ РїСЂРёРјРµСЂ Р±СѓРґРµС‚ СЂР°Р±РѕС‚Р°С‚СЊ С‚РѕР»СЊРєРѕ РІ IE, РґР° Рё С‚Рѕ С‚РѕР»СЊРєРѕ РІ С‚РѕРј СЃР»СѓС‡Р°Рµ,
+РµСЃР»Рё РѕР±Р° СЃРµСЂРІРµСЂР° РґРѕР±Р°РІРёС‚СЊ РІ Local intranet.
 Username <input type=text id="username_1" value="pubpgu">
 Password  <input type=text id="password_1" value="pubpgu">
 URL      <input type=text id="url_1" value="http://195.74.82.90:8080/orawsv">
-Запрос <textarea id="src_1" cols=60 rows=20><?xml version="1.0" ?>
+Р—Р°РїСЂРѕСЃ <textarea id="src_1" cols=60 rows=20><?xml version="1.0" ?>
 <env:Envelope xmlns:env="http://www.w3.org/2002/06/soap-envelope">
  <env:Body>
   <query xmlns="http://xmlns.oracle.com/orawsv">
@@ -28,8 +28,8 @@ URL      <input type=text id="url_1" value="http://195.74.82.90:8080/orawsv">
   </query>
  </env:Body>
 </env:Envelope></textarea>
-Ответ  <textarea id="dest_1" cols=60 rows=10></textarea>
-<input type=Submit value="Запрос" onClick="dest_1.value=GetRequest(username_1.value,password_1.value,url_1.value,src_1.value);alert('!!!');" > 
+РћС‚РІРµС‚  <textarea id="dest_1" cols=60 rows=10></textarea>
+<input type=Submit value="Р—Р°РїСЂРѕСЃ" onClick="dest_1.value=GetRequest(username_1.value,password_1.value,url_1.value,src_1.value);alert('!!!');" > 
 </pre>
 </BODY>
 </HTML>

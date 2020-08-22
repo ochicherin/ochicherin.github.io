@@ -1,7 +1,7 @@
-<HTML>
+п»ї<HTML>
   <HEAD>
-  <TITLE id=title>Чичерин Олег</TITLE>
-  <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+  <TITLE id=title>Р§РёС‡РµСЂРёРЅ РћР»РµРі</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
   <script src="script.js"></script>
   <LINK href="index_files/style.css" type=text/css rel=stylesheet>
   <script>
@@ -10,25 +10,25 @@ var margin;
 function print_node(xml_node) {
   var i;
   margin = margin + '  ';
-  var s = margin + ">>> Узел называется " + xml_node.nodeName + " " ;
-  s = s + "Его тип " + xml_node.nodeType + " \n" ;
-  s = s + margin + "Значение узла ='" + xml_node.nodeValue + "' \n";
+  var s = margin + ">>> РЈР·РµР» РЅР°Р·С‹РІР°РµС‚СЃСЏ " + xml_node.nodeName + " " ;
+  s = s + "Р•РіРѕ С‚РёРї " + xml_node.nodeType + " \n" ;
+  s = s + margin + "Р—РЅР°С‡РµРЅРёРµ СѓР·Р»Р° ='" + xml_node.nodeValue + "' \n";
   if (xml_node.attributes) {
-    s = s + margin + "У него " + xml_node.attributes.length + " атрибутов\n";  
+    s = s + margin + "РЈ РЅРµРіРѕ " + xml_node.attributes.length + " Р°С‚СЂРёР±СѓС‚РѕРІ\n";  
     var x = xml_node.attributes;
     for (i=0;i<x.length;i++) {
-      s = s + margin + " атрибут "+ x[i].nodeName + "='" + x[i].nodeValue + "'\n";
+      s = s + margin + " Р°С‚СЂРёР±СѓС‚ "+ x[i].nodeName + "='" + x[i].nodeValue + "'\n";
     }
   }
   if (xml_node.childNodes) {
     var x = xml_node.childNodes;
-    s = s + margin + "У него " + x.length + " дочерних узлов " + "\n";  
+    s = s + margin + "РЈ РЅРµРіРѕ " + x.length + " РґРѕС‡РµСЂРЅРёС… СѓР·Р»РѕРІ " + "\n";  
     for (i=0;i<x.length;i++) {
       s = s + margin + (i+1)  + "\n";
       s = s + print_node(x[i]);
     }
   }
-  s = s + margin + "<<< Об этом узле все... \n";
+  s = s + margin + "<<< РћР± СЌС‚РѕРј СѓР·Р»Рµ РІСЃРµ... \n";
   margin = margin.substr(2);
   return s;
 }
@@ -40,37 +40,37 @@ function demo_parse(xml_text) {
     var xmlDoc = emptyXML(xml_text);
   }
   catch(e) {
-   alert(e.description+"это не xml");
+   alert(e.description+"СЌС‚Рѕ РЅРµ xml");
   }
   return print_node(xmlDoc.documentElement);
 }
   </script>
 </HEAD>
 <BODY onLoad="initBody();">
-  <H1>Заголовок первый</H1>
-Введите XML <br>
+  <H1>Р—Р°РіРѕР»РѕРІРѕРє РїРµСЂРІС‹Р№</H1>
+Р’РІРµРґРёС‚Рµ XML <br>
 <textarea id=xml_data cols=60 rows=15>
-<?xml version="1.0" encoding="windows-1251" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <xml>
-   <item title="Компьютеры" url="test"> 
-      <item title="Настольные компьютеры" url="test.html"/> 
-      <item title="Серверы"/> 
+   <item title="РљРѕРјРїСЊСЋС‚РµСЂС‹" url="test"> 
+      <item title="РќР°СЃС‚РѕР»СЊРЅС‹Рµ РєРѕРјРїСЊСЋС‚РµСЂС‹" url="test.html"/> 
+      <item title="РЎРµСЂРІРµСЂС‹"/> 
    </item> 
-   <item title="Комплектующие"> 
-      <item title="Процессоры" icon="person.gif"/> 
-      <item title="Материнские платы" icon="person.gif"/> 
+   <item title="РљРѕРјРїР»РµРєС‚СѓСЋС‰РёРµ"> 
+      <item title="РџСЂРѕС†РµСЃСЃРѕСЂС‹" icon="person.gif"/> 
+      <item title="РњР°С‚РµСЂРёРЅСЃРєРёРµ РїР»Р°С‚С‹" icon="person.gif"/> 
    </item> 
-   <item title="Расходные материалы"> 
-      <item title="Картриджи"> 
-         <item title="Картриджи для плоттеров" url="menu_h.html"/> 
-         <item title="Картриджи для принтеров"/> 
+   <item title="Р Р°СЃС…РѕРґРЅС‹Рµ РјР°С‚РµСЂРёР°Р»С‹"> 
+      <item title="РљР°СЂС‚СЂРёРґР¶Рё"> 
+         <item title="РљР°СЂС‚СЂРёРґР¶Рё РґР»СЏ РїР»РѕС‚С‚РµСЂРѕРІ" url="menu_h.html"/> 
+         <item title="РљР°СЂС‚СЂРёРґР¶Рё РґР»СЏ РїСЂРёРЅС‚РµСЂРѕРІ"/> 
       </item> 
-      <item title="Тонеры"/> 
-      <item title="Бумага"/> 
+      <item title="РўРѕРЅРµСЂС‹"/> 
+      <item title="Р‘СѓРјР°РіР°"/> 
    </item> 
 </xml>
 </textarea><br>
-<input type=submit value="Распарсить" onclick="text_data.value=demo_parse(xml_data.value);return false;"><br>
+<input type=submit value="Р Р°СЃРїР°СЂСЃРёС‚СЊ" onclick="text_data.value=demo_parse(xml_data.value);return false;"><br>
 <textarea id=text_data cols=60 rows=15></textarea><br>
 
 <div id=xml_result></div>
