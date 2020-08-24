@@ -589,6 +589,7 @@ function scanTT() {
      if (list[i].className=="galery_external2") {
       //selectOption(list[i]);
       alert(list[i].innerHTML);
+        GetRSS(list[i], list[i].innerHTML, '/img_select.xslt');
      }
      SetSeqId(list[i]);
      var v = list[i];
