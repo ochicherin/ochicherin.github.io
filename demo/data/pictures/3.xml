@@ -1,11 +1,11 @@
 <content width="533" height="400" bgcolor="cccccc" loadercolor="ffffff" bgimage="2" panelcolor="5d5d61" buttoncolor="5d5d61" textcolor="ffffff" fullscreen="true">
-	<page src="/lib/3/pages/3/p1.jpg">Жили три поросенка</page>
-	<page src="/lib/3/pages/3/p2.jpg">Первый построил дом из соломы</page>
-	<page src="/lib/3/pages/3/p3.jpg">Второй построил дом из дерева</page>
-	<page src="/lib/3/pages/3/p4.jpg">Третий занялся добычей глины</page>
-	<page src="/lib/3/pages/3/p5.jpg">Два поросенка весело отдыхали</page>
-	<page src="/lib/3/pages/3/p6.jpg">Третий упорно трудился</page>
-	<page src="/lib/3/pages/3/p7.jpg">Трудился</page>
+	<page src="/lib/3/pages/3/p1.jpg">Р–РёР»Рё С‚СЂРё РїРѕСЂРѕСЃРµРЅРєР°</page>
+	<page src="/lib/3/pages/3/p2.jpg">РџРµСЂРІС‹Р№ РїРѕСЃС‚СЂРѕРёР» РґРѕРј РёР· СЃРѕР»РѕРјС‹</page>
+	<page src="/lib/3/pages/3/p3.jpg">Р’С‚РѕСЂРѕР№ РїРѕСЃС‚СЂРѕРёР» РґРѕРј РёР· РґРµСЂРµРІР°</page>
+	<page src="/lib/3/pages/3/p4.jpg">РўСЂРµС‚РёР№ Р·Р°РЅСЏР»СЃСЏ РґРѕР±С‹С‡РµР№ РіР»РёРЅС‹</page>
+	<page src="/lib/3/pages/3/p5.jpg">Р”РІР° РїРѕСЂРѕСЃРµРЅРєР° РІРµСЃРµР»Рѕ РѕС‚РґС‹С…Р°Р»Рё</page>
+	<page src="/lib/3/pages/3/p6.jpg">РўСЂРµС‚РёР№ СѓРїРѕСЂРЅРѕ С‚СЂСѓРґРёР»СЃСЏ</page>
+	<page src="/lib/3/pages/3/p7.jpg">РўСЂСѓРґРёР»СЃСЏ</page>
 	<page src="/lib/3/pages/3/p8.jpg"/>
 	<page src="/lib/3/pages/3/p9.jpg"/>
 </content>
