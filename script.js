@@ -512,6 +512,21 @@ function selectOption(list) {
   }
 }
 
+function sumImgPages(list) {
+  var xml = "";
+  var content = "";
+  for (var i=0;i<list.options.length;i++) {
+    xml = GetFile(list.options[i].value);
+    content += MakeXSLT(sitemap,'/img_select.xslt');;
+  }
+  if (list.outerHTML) { 
+    list.outerHTML = list.outerHTML.replace(list.innerHTML, content);
+  }
+  else {  
+    list.innerHTML = content;
+  }
+}
+
 function scanSourceCode() {
   var list = document.getElementsByTagName("TEXTAREA");
   for (i=0; i<list.length; i++) {
@@ -589,7 +604,8 @@ function scanTT() {
      if (list[i].className=="galery_external2") {
       //selectOption(list[i]);
       alert(list[i].innerHTML);
-        GetRSS(list[i], list[i].innerHTML, '/img_select.xslt');
+      sumImgPages(list[i]);
+      //  GetRSS(list[i], list[i].innerHTML, '/img_select.xslt');
      }
      SetSeqId(list[i]);
      var v = list[i];
