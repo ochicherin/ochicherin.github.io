@@ -519,6 +519,7 @@ function sumImgPages(list) {
     xml = GetFile(list.options[i].value);
     alert(xml);
     content += MakeXSLT(xml,'/img_select.xslt');
+    alert("MakeXSLT");
     alert(content);
   }
   if (list.outerHTML) { 
