@@ -1,4 +1,5 @@
-﻿<page src="http://pointscope01.jp/data/f1np/f1np1/pic/20110415180100.jpg">15 Apr 2011 18:00</page>
+﻿<content width="533" height="400" bgcolor="cccccc" loadercolor="ffffff" bgimage="2" panelcolor="5d5d61" buttoncolor="5d5d61" textcolor="ffffff" fullscreen="true">
+<page src="http://pointscope01.jp/data/f1np/f1np1/pic/20110415180100.jpg">15 Apr 2011 18:00</page>
 <page src="http://pointscope01.jp/data/f1np/f1np1/pic/20110415170100.jpg">15 Apr 2011 17:00</page>
 <page src="http://pointscope01.jp/data/f1np/f1np1/pic/20110415160100.jpg">15 Apr 2011 16:00</page>
 <page src="http://pointscope01.jp/data/f1np/f1np1/pic/20110415150100.jpg">15 Apr 2011 15:00</page>
@@ -503,3 +504,4 @@
 <page src="http://pointscope01.jp/data/f1np/f1np1/pic/20110310070036.jpg">10 Mar 2011 07:00</page>
 <page src="http://pointscope01.jp/data/f1np/f1np1/pic/20110310060032.jpg">10 Mar 2011 06:00</page>
 <page src="http://pointscope01.jp/data/f1np/f1np1/pic/20110310050029.jpg">10 Mar 2011 05:00</page>
+</content>
