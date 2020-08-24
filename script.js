@@ -584,8 +584,12 @@ function scanTT() {
 //   list[i].readOnly = true;
      selectOption(list[i]);
    }
-   if (list[i].className=="galery" || list[i].className=="galery_external") {
+   if (list[i].className=="galery" || list[i].className=="galery_external" || list[i].className=="galery_external2") {
      if (list[i].className=="galery_external") selectOption(list[i]);
+     if (list[i].className=="galery_external2") {
+      //selectOption(list[i]);
+      alert(list[i].innerHTML);
+     }
      SetSeqId(list[i]);
      var v = list[i];
      while(v) { 
