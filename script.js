@@ -516,10 +516,10 @@ function sumImgPages(list) {
   var xml = "";
   var content = "";
   for (var i=0;i<list.options.length;i++) {
-    xml = GetFile(list.options[i].value);
+    alert("V 1.0");
+    xml = loadXML(list.options[i].value);
     alert(xml);
     content += MakeXSLT(xml,'/img_select.xslt');
-    alert("MakeXSLT");
     alert(content);
   }
   if (list.outerHTML) { 
