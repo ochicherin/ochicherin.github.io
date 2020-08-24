@@ -519,14 +519,10 @@ function sumImgPages(list) {
     xml = loadXML(list.options[i].value);
     content += MakeXSLT(xml,'/img_select.xslt');
   }
-alert(content);
   if (list.outerHTML) { 
-alert("outer");
     list.outerHTML = list.outerHTML.replace(list.innerHTML, content);
-alert(list.outerHTML);
   }
   else {  
-alert("inner");
     list.innerHTML = content;
   }
 }
