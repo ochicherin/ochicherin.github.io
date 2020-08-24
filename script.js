@@ -516,7 +516,7 @@ function sumImgPages(list) {
   var xml = "";
   var content = "";
   for (var i=0;i<list.options.length;i++) {
-    alert("V 8.0");
+    alert("V 9.0");
     xml = loadXML(list.options[i].value);
     alert(xml);
     content += MakeXSLT(xml,'/img_select.xslt');
