@@ -516,11 +516,8 @@ function sumImgPages(list) {
   var xml = "";
   var content = "";
   for (var i=0;i<list.options.length;i++) {
-    alert("V 9.0");
     xml = loadXML(list.options[i].value);
-    alert(xml);
     content += MakeXSLT(xml,'/img_select.xslt');
-    alert(content);
   }
   if (list.outerHTML) { 
     list.outerHTML = list.outerHTML.replace(list.innerHTML, content);
@@ -603,13 +600,8 @@ function scanTT() {
      selectOption(list[i]);
    }
    if (list[i].className=="galery" || list[i].className=="galery_external" || list[i].className=="galery_external2") {
-     if (list[i].className=="galery_external") selectOption(list[i]);
-     if (list[i].className=="galery_external2") {
-      //selectOption(list[i]);
-      alert(list[i].innerHTML);
-      sumImgPages(list[i]);
-      //  GetRSS(list[i], list[i].innerHTML, '/img_select.xslt');
-     }
+     if (list[i].className=="galery_external0") selectOption(list[i]);
+     if (list[i].className=="galery_external") sumImgPages(list[i]);
      SetSeqId(list[i]);
      var v = list[i];
      while(v) { 
