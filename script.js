@@ -857,7 +857,7 @@ function getParameter(name) {
 function getParameters() {
   var prmstr = window.location.search.substr(1);
   var params = {};
-  if prmstr != null && prmstr != "" {
+  if (prmstr != null && prmstr != "") {
     var prmarr = prmstr.split("&");
     for ( var i = 0; i < prmarr.length; i++) {
         var tmparr = prmarr[i].split("=");
