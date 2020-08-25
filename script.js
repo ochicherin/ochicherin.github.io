@@ -857,8 +857,8 @@ function getParameter(name) {
 function getParameters() {
   var prmstr = window.location.search.substr(1);
   var params = {};
+  params.length = 0;
   if (prmstr != null && prmstr != "") {
-alert('getParameters');
     var prmarr = prmstr.split("&");
     for ( var i = 0; i < prmarr.length; i++) {
         var tmparr = prmarr[i].split("=");
@@ -866,7 +866,6 @@ alert('getParameters');
     }
     params.length = prmarr.length;
   } 
-alert('params.length='+params.length);
   return params;
 }
 
@@ -1015,6 +1014,7 @@ function QueryForm(form) {
   }
 }
 
+// Отладка процедуры getParameters() Удалить после завершения
 function ShowParameters() 
 {
   var param=getParameters();
