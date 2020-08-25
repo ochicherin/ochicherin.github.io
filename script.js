@@ -861,8 +861,7 @@ function getParameters() {
     var prmarr = prmstr.split("&");
     for ( var i = 0; i < prmarr.length; i++) {
         var tmparr = prmarr[i].split("=");
-        params[i].name = tmparr[0];
-        params[i].value = tmparr[1];
+        params[i] = {name : tmparr[0], value : tmparr[1]};
     }
   } 
   return params;
