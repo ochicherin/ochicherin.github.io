@@ -867,6 +867,7 @@ alert(name);
 alert('params[i].name='+params[i].name);
     }
   } 
+alert('params.length='+params.length);
   return params;
 }
 
