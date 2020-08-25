@@ -85,6 +85,8 @@
     </item>
     <item title="Использование нестандартных шрифтов" url="/demofont.html"/> 
     <item title="Использование двумерных штрихкодов" url="/demobarcode.html"/> 
+    <item title="Чужой код. Чтение локального файла." url="/testlocalread.html"/> 
+    <item title="Чужой код. Электронная таблица." url="/spreadsheet.html"/> 
   </item>
   <item title="Библиотека" url="/lib.html" desc="Библиотека"> 
     <item title="Правила устройства электроустановок" url="/lib/pue.pdf"/> 
