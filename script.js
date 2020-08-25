@@ -862,10 +862,9 @@ alert('getParameters');
     var prmarr = prmstr.split("&");
     for ( var i = 0; i < prmarr.length; i++) {
         var tmparr = prmarr[i].split("=");
-alert(name);
         params[i] = {name : tmparr[0], value : tmparr[1]};
-alert('params[i].name='+params[i].name);
     }
+    params.length = prmarr.length;
   } 
 alert('params.length='+params.length);
   return params;
