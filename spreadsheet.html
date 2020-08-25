@@ -1,0 +1,39 @@
+<html>
+<script src="https://bossanova.uk/jexcel/v4/jexcel.js"></script>
+<script src="https://bossanova.uk/jsuites/v3/jsuites.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jsuites/v3/jsuites.css" type="text/css" />
+<link rel="stylesheet" href="https://bossanova.uk/jexcel/v4/jexcel.css" type="text/css" />
+
+<div id="spreadsheet"></div>
+
+<script>
+var data = [
+    ['Cheese', 10, 6.00, "=B1*C1",""],
+    ['Apples', 5, 4.00, "=B2*C2",""],
+    ['Carrots', 5, 1.00, "=B3*C3",""],
+    ['Апельсин', 6, 2.00, "=B4*C4","=A4"],
+];
+
+// A custom method to SUM all the cells in the current column
+
+var SUMCOL = function(instance, columnId) {
+    var total = 0;
+    for (var j = 0; j < instance.options.data.length; j++) {
+        if (Number(instance.records[j][columnId-1].innerHTML)) {
+            total += Number(instance.records[j][columnId-1].innerHTML);
+        }
+    }
+    return total;
+}
+
+var table = jexcel(document.getElementById('spreadsheet'), {
+    data:data,
+    minDimensions: [4,10],
+    columnDrag:true,
+    footers: [['Total','=SUMCOL(TABLE(), COLUMN())','=SUMCOL(TABLE(), COLUMN())','=SUMCOL(TABLE(), COLUMN())']],
+    columns: [{
+        width:'200px',
+    }]
+});
+</script>
+</html>
