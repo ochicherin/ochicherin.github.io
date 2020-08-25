@@ -1015,7 +1015,7 @@ function QueryForm(form) {
 function ShowParameters() 
 {
   var param=getParameters();
-  alert('ShowParameters');
+  alert('ShowParameters '+param.length);
   for (var i=0;i<param.length;i++) {
     alert(param[i].name+'='+param[i].value);
   }
