@@ -854,6 +854,20 @@ function getParameter(name) {
   return getParam(window.location.search.substring(1),"&","=",name); 
 }
 
+function getParameters() {
+  var prmstr = window.location.search.substr(1);
+  var params = {};
+  if prmstr != null && prmstr != "" {
+    var prmarr = prmstr.split("&");
+    for ( var i = 0; i < prmarr.length; i++) {
+        var tmparr = prmarr[i].split("=");
+        params[i].name = tmparr[0];
+        params[i].value = tmparr[1];
+    }
+  } 
+  return params;
+}
+
 function getCookie(c_name) {
   return getParam(document.cookie,"; ","=",c_name);
 }
@@ -996,6 +1010,14 @@ function QueryForm(form) {
     if (f.elements[i].name) {
       setInput(f.elements[i], getParameter(f.elements[i].name));
     }
+  }
+}
+
+function ShowParameters(form) {
+  var param=getParameters();
+  var f=document.forms[form];
+  for (var i=0;i<param.length;i++) {
+    alert(param[i].name+'='+param[i].value);
   }
 }
 
