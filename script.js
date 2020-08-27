@@ -851,11 +851,6 @@ function getParam(query, varsSep, pairSep, name) {
   return "";
 }
 
-// Вернуть параметр из URL
-function getUrlParameter(name) {
-  return decodeURIComponent(getParam(window.location.search.substring(1),"&","=",name)); 
-}
-
 // Вернуть массив параметров из URL
 function getUrlParameters() {
   var prmstr = window.location.search.substr(1);
@@ -865,9 +860,17 @@ function getUrlParameters() {
     for ( var i = 0; i < prmarr.length; i++) {
         var tmparr = decodeURIComponent(prmarr[i]).split("=");
         params.push({name : tmparr[0], value : tmparr[1]});
+        params[tmparr[0]]= tmparr[1];
     }
   } 
   return params;
+}
+
+// Вернуть параметр из URL
+function getUrlParameter(name) {
+var params = getUrlParameters();
+    return params[name];  
+//  return decodeURIComponent(getParam(window.location.search.substring(1),"&","=",name)); 
 }
 
 // Вернуть значение куки по имени
