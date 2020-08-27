@@ -837,6 +837,7 @@ function reset_list(input_target_name, service_url, text_input, list_input) {
   refresh_list(input_target_name, service_url, text_input, list_input);
 }
 
+// Вернуть параметр из двухуровнего списка по ключу.
 function getParam(query, varsSep, pairSep, name) {
   if (query.length>0) {
     var vars = query.split(varsSep);
@@ -850,29 +851,31 @@ function getParam(query, varsSep, pairSep, name) {
   return "";
 }
 
-function getParameter(name) {
-  return getParam(window.location.search.substring(1),"&","=",name); 
+// Вернуть параметр из URL
+function getUrlParameter(name) {
+  return decodeURIComponent(getParam(window.location.search.substring(1),"&","=",name)); 
 }
 
-function getParameters() {
+// Вернуть массив параметров из URL
+function getUrlParameters() {
   var prmstr = window.location.search.substr(1);
-  var params = {};
-  params.length = 0;
+  var params = [];
   if (prmstr != null && prmstr != "") {
     var prmarr = prmstr.split("&");
     for ( var i = 0; i < prmarr.length; i++) {
-        var tmparr = prmarr[i].split("=");
-        params[i] = {name : tmparr[0], value : tmparr[1]};
+        var tmparr = decodeURIComponent(prmarr[i]).split("=");
+        params.push({name : tmparr[0], value : tmparr[1]});
     }
-    params.length = prmarr.length;
   } 
   return params;
 }
 
+// Вернуть значение куки по имени
 function getCookie(c_name) {
   return getParam(document.cookie,"; ","=",c_name);
 }
 
+// Установить значение куки по имени
 function setCookie(c_name,value,expiredays) {
   var exdate=new Date();
   exdate.setDate(exdate.getDate()+expiredays);
@@ -1013,7 +1016,7 @@ function QueryForm(form) {
   var f=document.forms[form];
   for (i=0;i<f.elements.length;i++) {
     if (f.elements[i].name) {
-      setInput(f.elements[i], getParameter(f.elements[i].name));
+      setInput(f.elements[i], getUrlParameter(f.elements[i].name));
     }
   }
 }
@@ -1021,7 +1024,7 @@ function QueryForm(form) {
 // Отладка процедуры getParameters() Удалить после завершения
 function ShowParameters() 
 {
-  var param=getParameters();
+  var param=getUrlParameters();
   alert('ShowParameters '+param.length);
   for (var i=0;i<param.length;i++) {
     alert(param[i].name+'='+param[i].value);
