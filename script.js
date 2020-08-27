@@ -962,6 +962,7 @@ function setInput(element,val) {
   return false;
 }
 
+// Очистить поля формы
 function ClearForm(form) {
   var i;
   var f=document.forms[form];
@@ -982,6 +983,7 @@ function ClearForm(form) {
   }
 }
 
+// Запомнить поля формы в куки
 function SaveForm(form) {
  var i;
  var f=document.forms[form];
@@ -994,6 +996,7 @@ function SaveForm(form) {
  }
 }
 
+// Восстановить поля формы из кук
 function LoadForm(form) {
   var i;
   var f=document.forms[form];
@@ -1004,6 +1007,7 @@ function LoadForm(form) {
   }
 }
 
+// Восстановить поля формы из url
 function QueryForm(form) {
   var i;
   var f=document.forms[form];

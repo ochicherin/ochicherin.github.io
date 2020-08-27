@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title>Template test</title> 
+</head> 
+  
+<body> 
+    <script type="text/javascript"> 
+     function LoadTemplate()
+     {
+var user = {
+    "firstName": "John",
+    "login": "john_doe",
+    "password": "test"};
+var inp = document.getElementById('input').innerHTML;
+    alert(inp);
+var str = inp.match(/\${([^}]+)}(?![\S\s]*\${\1})/g);
+    alert('list='+str);
+ for (i=0;i<str.length;i++) {
+      alert('list['+i+']='+str[i]);
+ }
+var textbody = inp.replace(/\${[^{}]+}/g, function(key){
+    alert(key+' '+key.replace(/[\${}]+/g, ""));
+    return user[key.replace(/[\${}]+/g, "")] || "";});
+    alert(textbody);
+    document.getElementById('output').innerHTML = textbody;
+     }
+    </script> 
+    <input type=Submit value="Загрузить" onClick="LoadTemplate();" > 
+    <hr> 
+    <pre id="input">
+Hey ${firstName},
+
+You recently requested ${firstName} password.
+login: ${login}
+password: ${password} ${password2}
+If you did not request your password, please disregard this message.
+</pre> 
+    <hr> 
+    <pre id="output"></pre> 
+    <hr> 
+      
+</body> 
+  
+</html> 
