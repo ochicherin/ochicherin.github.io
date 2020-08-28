@@ -13,6 +13,14 @@
    </image>
    
    <item>
+      <title>Новость без ссылки.</title>
+      <description>Новость без ссылки. Гипотеза, почему не публикуются новости.</description>
+      <pubDate>Fri, 28 Aug 2020 21:52:01 +0300</pubDate>
+      <category>Примеры</category>
+      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+   </item>
+
+   <item>
       <title>Добавлен пример для div include.</title>
       <link>http://ochicherin.github.io/demo/div_include/div_include.html</link>
       <description>Первые результаты реструктуризации сайта. Пример кода, показывающий основной подход при построении страниц сайта.</description>
