@@ -25,7 +25,7 @@
       <title>Решена проблема с обновлением страниц на GitHub.</title>
       <link>http://ochicherin.github.io</link>
       <description>Странное дело. Файлы обновляются, а отдает старые версии. Оказывается у GitHub есть свой движок для построения сайтов. После загрузки он начинает переваривать загруженные html страницы и при виде чужих впадает в ступор.Проблема решается добавлением файла .nojekyll во все(!) директории.</description>
-      <pubDate>24 Aug 2020 20:00:01 +0300</pubDate>
+      <pubDate>24 Aug 2020 00:00:01 +0300</pubDate>
       <category>Примеры</category>
       <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
    </item>
