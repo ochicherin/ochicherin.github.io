@@ -13,10 +13,19 @@
    </image>
    
    <item>
+      <title>Добавлен пример для div include.</title>
+      <link>http://ochicherin.github.io/demo/div_include/div_include.html</link>
+      <description>Первые результаты реструктуризации сайта. Пример кода, показывающий основной подход при построении страниц сайта.</description>
+      <pubDate>Fri, 28 Aug 2020 12:29:01 +0300</pubDate>
+      <category>Примеры</category>
+      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+   </item>
+
+   <item>
       <title>Решена проблема с обновлением страниц на GitHub.</title>
       <link>http://ochicherin.github.io</link>
-      <description>Странное дело. Файлы обновляются, а отдает старые версии. Решилось все добавлением файла .nojekyll в корень сайта.</description>
-      <pubDate>Mon, 24 Aug 2020 20:00:01 +0300</pubDate>
+      <description>Странное дело. Файлы обновляются, а отдает старые версии. Оказывается у GitHub есть свой движок для построения сайтов. После загрузки он начинает переваривать загруженные html страницы и при виде чужих впадает в ступор.Проблема решается добавлением файла .nojekyll во все(!) директории.</description>
+      <pubDate>24 Aug 2020 20:00:01 +0300</pubDate>
       <category>Примеры</category>
       <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
    </item>
