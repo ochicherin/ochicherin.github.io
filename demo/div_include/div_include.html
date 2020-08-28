@@ -9,18 +9,15 @@
 
   <H1>DIV include.</H1>
 
-  <H2>Дом, который построил Джек</H2>
-  <H3>Самуил Маршак</H3>
+Реализация основного правила, 
+сама страница является рамкой для для других страниц.
+Вся информация, которая будет дублироваться, 
+должна быть вынесена на отдельную страницу и подгружаться по мере надобности.
+Copy/Paste токсичен.
+<br>
+Итак пример. Всем знакомое стихотворенье.
 
-<textarea class=preview>area0</textarea>
-<textarea class=preview>area1</textarea>
-<textarea class=preview>area2</textarea>
-<textarea class=preview>area3</textarea>
-<textarea class=preview>area4</textarea>
-<textarea class=preview>area5</textarea>
-<textarea class=preview>area6</textarea>
-<textarea class=preview>area7</textarea>
-<textarea class=preview>area8</textarea>
+<H3>Самуил Маршак. Дом, который построил Джек.</H3>
 
 <div id=area0>
 Вот дом,
@@ -68,8 +65,23 @@
 </div>
 <hr>
 
-<pre>
+Так выглядят исходные элементы страницы.
+<textarea class=preview>area0</textarea>
+<textarea class=preview>area1</textarea>
+<textarea class=preview>area2</textarea>
+<textarea class=preview>area3</textarea>
+<textarea class=preview>area4</textarea>
+<textarea class=preview>area5</textarea>
+<textarea class=preview>area6</textarea>
+<textarea class=preview>area7</textarea>
+<textarea class=preview>area8</textarea>
 
+А так, содержимое подгружаемых файлов.
+<textarea class=sample>step0.html</textarea>
+
+Первоисточник
+<textarea class=example>
+Самуил Маршак. Дом, который построил Джек
 
 Вот дом,
 Который построил Джек.
@@ -141,7 +153,7 @@
 1 Которая в тёмном чулане хранится
 0 В доме,
   Который построил Джек. 
-</pre>
+</textarea>
 
 </BODY>
 </HTML>
