@@ -6,11 +6,13 @@
   <LINK href="/index_files/style.css" type=text/css rel=stylesheet>
 </HEAD>
 <BODY onLoad="initBody();">
+
   <H1>DIV include.</H1>
 
   <H2>Дом, который построил Джек</H2>
   <H3>Самуил Маршак</H3>
 
+<textarea class=preview>area0</textarea>
 <textarea class=preview>area1</textarea>
 <textarea class=preview>area2</textarea>
 <textarea class=preview>area3</textarea>
@@ -20,8 +22,10 @@
 <textarea class=preview>area7</textarea>
 <textarea class=preview>area8</textarea>
 
+<div id=area1>
 Вот дом,
-Который построил Джек.
+<div id=form class=include>step0.html</div>
+</div>
 <hr>
 <div id=area1>
 А это пшеница,
@@ -45,24 +49,20 @@
 <hr>
 <div id=area5>
 А это корова безрогая,
-Лягнувшая старого пса без хвоста,
 <div id=form class=include>step5.html</div>
 </div>
 <hr>
 <div id=area6>
 А это старушка, седая и строгая,
-Которая доит корову безрогую,
 <div id=form class=include>step6.html</div>
 </div>
 <hr>
 <div id=area7>
 А это ленивый и толстый пастух,
-Который бранится с коровницей строгою,
 <div id=form class=include>step7.html</div>
 </div>
 <hr>
 Вот два петуха,
-Которые будят того пастуха,
 <div id=area8>
 <div id=form class=include>step8.html</div>
 </div>
@@ -131,15 +131,15 @@
 Который построил Джек.
 
 Вот два петуха,
-Которые будят того пастуха,
-8 Который бранится с коровницей строгою,
-7 Которая доит корову безрогую,
-6 Лягнувшую старого пса без хвоста,
-5 Который за шиворот треплет кота,
-4 Который пугает и ловит синицу,
-3 Которая часто ворует пшеницу,
-2 Которая в тёмном чулане хранится
-1 В доме,
+8 Которые будят того пастуха,
+7 Который бранится с коровницей строгою,
+6 Которая доит корову безрогую,
+5 Лягнувшую старого пса без хвоста,
+4 Который за шиворот треплет кота,
+3 Который пугает и ловит синицу,
+2 Которая часто ворует пшеницу,
+1 Которая в тёмном чулане хранится
+0 В доме,
   Который построил Джек. 
 </pre>
 
