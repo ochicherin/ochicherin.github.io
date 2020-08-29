@@ -38,6 +38,11 @@
       font-style: normal;
     }
 
+    @font-face {
+      font-family: 'CodeEAN13';
+      src: url('fonts/ean13.ttf') format('truetype');,
+    }
+
 </style>
 </HEAD>
 <BODY onLoad="initBody();">
@@ -103,10 +108,22 @@
  <textarea class=liveview>area1</textarea>
 
 
-Или штрихкод.
+Или штрихкод barcod39.
 
 <span id=area2>
  <span style="font-family: 'barcod39'; font-size:3cm;">12345678</span>
+</span>
+
+Исходный код элемента. 
+ <textarea class=postview>area2</textarea>
+
+Или штрихкод EAN-13.
+ <input type="input" name="inputindex"
+        id="inputindex" value="0000000000000"
+            onchange="document.getElementById('ean13').textContent=NumToEan13(document.getElementById('inputindex').value);"> 
+    <br> 
+<span id=area3>
+ <span style="font-family: 'CodeEAN13'; font-size:3cm;" id='ean13'>12345678</span>
 </span>
 
 Исходный код элемента. 

@@ -1329,4 +1329,34 @@ function findHeader(itemList) {
   }
 }
 
+function NumToEan13(num)
+{
+var V1 = '0123456789'.split('');
+var V2 = 'ABCDEFGHIJ'.split('');
+var V3 = 'abcdefghij'.split('');
+var V4 = 'KLMNOPQRST'.split('');
+var x = num.split('');
+var result = "";
+for (i=0;i<x.length;i++) 
+switch (i) {
+  case 0 : 
+    result += V1[x[i]];
+    break;
+  case 1 : case 2 : case 5 : 
+    result += V2[x[i]];
+    break;
+  case 3 : case 4 : 
+    result += V4[x[i]];
+    break;
+  case 6 : 
+    result += V4[x[i]];
+    result += '*';
+    break;
+  case 7 : case 8 : case 9 : case 10 : case 11 : case 12 : 
+    result += V3[x[i]];
+    break;
+}
+    result += '+';
+return result;
+}
 
