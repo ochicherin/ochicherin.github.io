@@ -13,6 +13,15 @@
    </image>
    
    <item>
+      <title>Добавлен пример Вызов flash читалки через параметры.</title>
+      <link>http://ochicherin.github.io/reader/reader.html?xmlFile=/reader/3.xml</link>
+      <description>Продолжается реструктуризация сайта. Попытка не клонировать страницы flash reader для каждой книги. Если конечно получиться</description>
+      <pubDate>Sat, 29 Aug 2020 21:25:00 +0300</pubDate>
+      <category>Примеры</category>
+      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+   </item>
+
+   <item>
       <title>Новость без ссылки.</title>
       <description>Новость без ссылки. Гипотеза, почему не публикуются новости.</description>
       <pubDate>Fri, 28 Aug 2020 21:52:01 +0300</pubDate>
