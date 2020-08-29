@@ -892,7 +892,7 @@ return textbody;
 // Заменить шаблоны из URL по всему тексту
 function scanTemplates()
 {
-  document.body.innerHTML=UpdateByURL(document.body.innerHTML);
+  document.body.innerHTML=updateTemplateByURL(document.body.innerHTML);
 }
 
 // Вернуть значение куки по имени
