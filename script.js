@@ -873,6 +873,28 @@ var params = getUrlParameters();
 //  return decodeURIComponent(getParam(window.location.search.substring(1),"&","=",name)); 
 }
 
+// Вернуть список шаблонов подстановки вида ${Name}
+function getTemplateParameters(someHTML)
+{
+  return someHTML.match(/\${([^}]+)}(?![\S\s]*\${\1})/g);
+}
+
+// Заменить шаблоны по данным из URL
+function updateTemplateByURL(textbody)
+{
+var url = getUrlParameters();
+var str = getTemplateParameters(textbody);
+    textbody = textbody.replace(/\${[^{}]+}/g, function(key){
+           return url[key.replace(/[\${}]+/g, "")] || "";});
+return textbody;
+} 
+
+// Заменить шаблоны из URL по всему тексту
+function scanTemplates()
+{
+  document.body.innerHTML=UpdateByURL(document.body.innerHTML);
+}
+
 // Вернуть значение куки по имени
 function getCookie(c_name) {
   return getParam(document.cookie,"; ","=",c_name);
