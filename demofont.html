@@ -131,8 +131,8 @@
  <textarea class=postview>area2</textarea>
 
 Или штрихкод EAN-13.
-<input type="input" size=13 maxlength=13 id="inputindex" 
-value="1111111111111"> | <input type=Submit value="Обновить" onClick="document.getElementById('ean13').textContent=NumToEan13(document.getElementById('inputindex').value);" > 
+<input type="input" size=13 maxlength=13 id="inputindex" value="1111111111111"> 
+<input type=Submit value="Обновить" onClick="document.getElementById('ean13').textContent=NumToEan13(document.getElementById('inputindex').value);" > 
     <br> 
 <span id=area3>
  <span style="font-family: 'CodeEAN13'; font-size:3cm;" id='ean13'>1BBLBLL*bbbbbb+</span>
@@ -151,8 +151,8 @@ onClick="document.getElementById('moon1').textContent=document.getElementById('m
          document.getElementById('moon2').textContent=document.getElementById('moontext').value;" > 
     <br> 
 <span id=area4>
- <span style="background: #ffff00; color:#000000; font-family: 'Moon'; font-size:1cm;" id='moon1'></span>
- <span style="background: #000000; color:#fffff0; font-family: 'Moon'; font-size:1cm;" id='moon2'></span>
+ <span style="background: #ffff00; color:#000000; font-family: 'Moon'; font-size:1cm;" id='moon1'>*ABCDEFGHIJKLM@NOPQRSTUVWXYZ</span>
+ <span style="background: #000000; color:#fffff0; font-family: 'Moon'; font-size:1cm;" id='moon2'> abcdefghijklm=nopqrstuvwxyz</span>
 </span>
 
 Исходный код элемента. 
