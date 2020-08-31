@@ -147,10 +147,13 @@
 Или Лунный шрифт.
  <input type="input" name="moontext"
         id="moontext" value="01234567890 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"> 
-<input type=Submit value="Обновить" onClick="document.getElementById('moon').textContent=document.getElementById('moontext').value;" > 
+<input type=Submit value="Обновить" 
+onClick="document.getElementById('moon1').textContent=document.getElementById('moontext').value;
+         document.getElementById('moon2').textContent=document.getElementById('moontext').value;" > 
     <br> 
 <span id=area4>
- <span style="font-family: 'Moon'; font-size:2cm;" id='moon'></span>
+ <span style="background: #ffff00; color:#000000; font-family: 'Moon'; font-size:2cm;" id='moon1'></span>
+ <span style="background: #000000; color:#fffff0; font-family: 'Moon'; font-size:2cm;" id='moon2'></span>
 </span>
 
 Исходный код элемента. 
