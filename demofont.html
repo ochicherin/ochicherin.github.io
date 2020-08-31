@@ -49,6 +49,13 @@
       font-style: normal;
     }
 
+    @font-face {
+      font-family: 'Moon';
+      src: url('fonts/ean13.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+
 </style>
 </HEAD>
 <BODY onLoad="initBody();">
@@ -125,17 +132,31 @@
 
 Или штрихкод EAN-13.
  <input type="input" name="inputindex"
-        id="inputindex" value="0000000000000"
-            onchange="document.getElementById('ean13').textContent=NumToEan13(document.getElementById('inputindex').value);"> 
+        id="inputindex" value="1111111111111"> 
+<input type=Submit value="Обновить" onClick="document.getElementById('ean13').textContent=NumToEan13(document.getElementById('inputindex').value);" > 
     <br> 
 <span id=area3>
- <span style="font-family: 'CodeEAN13'; font-size:3cm;" id='ean13'>0AAKKAK*aaaaaa+</span>
+ <span style="font-family: 'CodeEAN13'; font-size:3cm;" id='ean13'>1BBLBLL*bbbbbb+</span>
 </span>
 
 Исходный код элемента. 
  <textarea class=liveview>area3</textarea>
 
 Впрочем, с кодом EAN-13 <a href="https://ru.wikipedia.org/wiki/European_Article_Number">не все так просто.</a>
+
+Или Лунный шрифт.
+ <input type="input" name="moontext"
+        id="moontext" value="1111111111111"> 
+<input type=Submit value="Обновить" onClick="document.getElementById('moon').textContent=document.getElementById('moontext').value;" > 
+    <br> 
+<span id=area4>
+ <span style="font-family: 'Moon'; font-size:2cm;" id='moon'></span>
+</span>
+
+Исходный код элемента. 
+ <textarea class=liveview>area4</textarea>
+
+
 Всё.
 </pre>
 </body>
