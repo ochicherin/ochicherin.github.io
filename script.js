@@ -33,7 +33,33 @@ function GetFile(file_url) {
   } catch (e){}   
   xmlhttp.open("GET",file_url,false);
   xmlhttp.send(null);
-  return xmlhttp.responseText;
+//  return xmlhttp.responseText;
+  var filebody = xmlhttp.responseText;
+  var filename = file_url.split('/').pop();
+  var section  = filename.split('#')[1];
+  filename = filename.split('#')[0]; 
+  var ext      = filename.split('.')[1];
+  var begin_section, end_section;
+  switch(ext) {
+    case 'html' : case 'htm' :
+      begin_section = '<!--begin '+section+'-->\n';
+      end_section   = '<!--end '+section+'-->\n';
+      break; 
+    case 'js' :
+      begin_section = '//begin '+section+'\n';
+      end_section   = '//end '+section+'\n';
+      break; 
+  }
+  if (section !== undefined && begin_section !== undefined) {
+    var temp = filebody.split(begin_section);
+    if (temp[1] !== undefined) {
+      temp = temp[1].split(end_section);
+      filebody = temp[0];
+    } else {
+      filebody = "Section not found";
+    } 
+  }
+  return filebody;
 }
 
 function GetFileNext(file_url) {
