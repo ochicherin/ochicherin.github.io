@@ -1377,6 +1377,7 @@ function findHeader(itemList) {
   }
 }
 
+//begin NumToEan13
 function NumToEan13(num)
 {
 var V = {};
@@ -1410,4 +1411,5 @@ var result = V['D'][x[0]];
   }
   return result;
 }
+//end NumToEan13
 
