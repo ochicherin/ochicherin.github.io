@@ -1,0 +1,37 @@
+<html>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
+  <script src="/script.js"></script>
+  <LINK href="/index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<body id=area1 onload="initBody();">
+
+<h1>Наследование "дизайна".</h1>
+
+<pre>
+Один и тот же файл документа лежит во всех узлах пути demoframe/a/b/c.
+Файлы, содержащие "обрамление" страницы находятся в узлах 
+/,  demoframe/a,  demoframe/a/b/c.
+
+Робот пытается загрузить "обрамление" сначало из текущей директории.
+Если ему это не удается, он ищет выше, пока не доберется до корня.
+
+</pre>
+
+В приведенном ниже примере.
+<ul>
+<li><a href="/demo/auto_frame/demo/auto_frame.html">./demo/auto_frame Наследуется дизайн корня сайта</a>
+<ul>
+<li><a href="/demo/auto_frame/a/demo/auto_frame.html">./demo/auto_frame/a Локальный дизайн </a>
+<ul>
+<li><a href="/demo/auto_frame/a/b/demo/auto_frame.html">./demo/auto_frame/a/b Наследуется дизайн с уровня /demo/auto_frame/a</a>
+<ul>
+<li><a href="/demo/auto_frame/a/b/c/demo/auto_frame.html">./demo/auto_frame/a/b/с Локальный дизайн</a>
+</ul>
+</ul>
+</ul>
+</ul>
+
+</body>
+</html>
