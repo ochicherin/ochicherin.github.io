@@ -1087,7 +1087,7 @@ function parseCSV(csv)
 {
  var i;
  var s = csv.split("\n");
- for (i=0;i<s.length;i++) {
+ for (i=0;i<s.length-1;i++) {
   s[i] = s[i].split(";");
  }
  return s;
