@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xml>
+   <item title="Компьютеры" url="test"> 
+      <item title="Настольные компьютеры" url="test.html"/> 
+      <item title="Серверы"/> 
+   </item> 
+   <item title="Комплектующие"> 
+      <item title="Процессоры" icon="person.gif"/> 
+      <item title="Материнские платы" icon="person.gif"/> 
+   </item> 
+<!--begin 1-->
+   <item title="Расходные материалы"> 
+      <item title="Картриджи"> 
+         <item title="Картриджи для плоттеров" url="menu_h.html"/> 
+         <item title="Картриджи для принтеров"/> 
+      </item> 
+      <item title="Тонеры"/> 
+      <item title="Бумага"/> 
+   </item> 
+<!--end 1-->
+</xml>

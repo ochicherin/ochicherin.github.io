@@ -19,8 +19,8 @@
       <item title="DIV - toc" url="/demo/div_toc/div_toc.html"/> 
       <item title="- DIV - demo_text" url="/demo/div_demo_text/div_demo_text.html"/> 
       <item title="- DIV - demo_font" url="/demo/div_demo_font/div_demo_font.html"/> 
-      <item title="- TEXTAREA - example" url="/demo/textarea_example/textarea_example.html"/> 
-      <item title="- TEXTAREA - include(sample)" url="/demo/textarea_include/textarea_include.html"/> 
+      <item title="TEXTAREA - example" url="/demo/textarea_example/textarea_example.html"/> 
+      <item title="TEXTAREA - include(sample)" url="/demo/textarea_include/textarea_include.html"/> 
       <item title="- TEXTAREA - preview" url="/demo/textarea_preview/textarea_preview.html"/> 
       <item title="- TEXTAREA - postview" url="/demo/textarea_postview/textarea_postview.html"/> 
       <item title="- TEXTAREA - liveview" url="/demo/textarea_liveview/textarea_liveview.html"/> 

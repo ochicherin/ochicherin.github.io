@@ -41,7 +41,7 @@ function GetFile(file_url) {
   var ext      = filename.split('.')[1];
   var begin_section, end_section;
   switch(ext) {
-    case 'html' : case 'htm' :
+    case 'html' : case 'htm' : case 'xml' :
       begin_section = '<!--begin '+section+'-->\n';
       end_section   = '<!--end '+section+'-->\n';
       break; 

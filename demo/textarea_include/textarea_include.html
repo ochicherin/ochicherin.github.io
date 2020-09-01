@@ -1,0 +1,40 @@
+﻿<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
+  <script src="/script.js"></script>
+  <LINK href="/index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>TEXTAREA - include.</H1>
+
+Часто требуется привести на странице программный код, находящийся в отдельном файле.
+И к тому же, содержащего "нехорошие" с точки зрения браузера элементы.
+Проблема решается при помощи специального элемента интерфейса.
+
+<div id=area1>
+<H3>Пример<H3>
+<textarea class=include>menu.xml</textarea>
+</div>
+
+<h3>Исходный код элемента</h3>
+<textarea class=preview>area1</textarea>
+
+<h3>Код элемента после обработки.</h3>
+<textarea class=postview>area1</textarea>
+
+Впрочем, иногда требуется привести только фрагмент файла.
+
+<div id=area2>
+<H3>Пример<H3>
+<textarea class=include>menu.xml#1</textarea>
+</div>
+
+<h3>Исходный код элемента</h3>
+<textarea class=preview>area2</textarea>
+
+<h3>Код элемента после обработки.</h3>
+<textarea class=postview>area2</textarea>
+
+</BODY>
+</HTML>
