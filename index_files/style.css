@@ -44,6 +44,9 @@ TEXTAREA.example {
 TEXTAREA.sample {
 	FONT-WEIGHT: normal; FONT-SIZE: 10px;BACKGROUND-COLOR: #000000; COLOR: #00ff00; FONT-FAMILY: monospace; TEXT-DECORATION: none; max-height: 300px; OVERFLOW: auto; WIDTH: 576px; DISPLAY: block; border-color: #FAFAFA; border-style: solid
 }
+TEXTAREA.include {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px;BACKGROUND-COLOR: #000000; COLOR: #ffff00; FONT-FAMILY: monospace; TEXT-DECORATION: none; max-height: 300px; OVERFLOW: auto; WIDTH: 576px; DISPLAY: block; border-color: #FAFAFA; border-style: solid
+}
 TEXTAREA.preview {
 	FONT-WEIGHT: normal; FONT-SIZE: 10px;BACKGROUND-COLOR: #ffffff; COLOR: #c96300; FONT-FAMILY: monospace; TEXT-DECORATION: none; max-height: 300px; OVERFLOW: auto; WIDTH: 576px; DISPLAY: block; border-color: #FAFAFA; border-style: solid;
 }

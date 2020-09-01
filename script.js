@@ -604,6 +604,13 @@ function scanTT() {
      if (p!=-1) list[i].value = list[i].value.substring(1,p);
      list[i].rows = Math.min(30,list[i].value.split(/\n/gim).length);
    }
+   if (list[i].className=="include") {
+     list[i].readOnly = true;
+     list[i].value = GetFile(list[i].innerHTML);
+     p = list[i].value.search(/<!-- ><!-- "><!-- '><!-- --><\/textarea><\/form>/gmi);
+     if (p!=-1) list[i].value = list[i].value.substring(1,p);
+     list[i].rows = Math.min(30,list[i].value.split(/\n/gim).length);
+   }
   }
   var list = document.getElementsByTagName("DIV");
   for (i=0; i<list.length; i++) {
