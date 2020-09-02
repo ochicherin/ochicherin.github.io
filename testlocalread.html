@@ -6,6 +6,21 @@
   <LINK href="/index_files/style.css" type=text/css rel=stylesheet>
 </HEAD>
 <BODY onLoad="initBody();">
+<script>
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+</script>
+
   <H1>Пример локальной загрузки/выгрузки файлов.</H1>
 
 Манипулирование файлами из локальной файловой системы.
@@ -13,7 +28,7 @@
 
 
 <H3>Загрузка текста на html страницу(readAsText).</H3>
-  Выберите файл для загрузки : <input type="file" id="input" onChange="openFile(event,'output')">
+  Выберите файл для загрузки : <input type="file" onChange="openFile(event,'output')">
     <script type="text/javascript"> 
      var openFile = function(event,key) {
        var input = event.target;
@@ -30,10 +45,10 @@
 
 <H3>Загрузка текста в экранную форму(readAsText).</H3>
 <form onsubmit="download(this['name'].value, this['text'].value)">
-  Имя файла : <input type="text" name="name" value="test.txt" width=20><br>
+  Имя файла : <input type="text" name="name" value="test.txt" width=20>
   <input type="submit" value="Выгрузить"><br>
-  <textarea name="text" rows="10" cols="80" id="textcsv">Hello world. Русский текст.</textarea><br>
-  Выберите файл для загрузки : <input type="file" id="inputfile" onChange="openFileForm(event)">
+  <textarea name="text" rows="10" cols="75" >Hello world. Русский текст.</textarea><br>
+  Выберите файл для загрузки : <input type="file" accept='image/*' onChange="openFileForm(event)">
     <script type="text/javascript"> 
      var openFileForm = function(event) {
        var input = event.target;
