@@ -2,7 +2,7 @@
 <xml title="Корень">
   <item title="Главная" url="/index.html"> 
     <item title="Основные принципы построения сайта" url="/about.html"> 
-      <item title="Автоматическое обрамление страницы" url="/demo/auto_frame/demoframe.html"/> 
+      <item title="Автоматическое обрамление страницы" url="/demo/auto_frame/auto_frame.html"/> 
       <item title="DIV - include" url="/demo/div_include/div_include.html"/> 
       <item title="- DIV - menu" url="/demo/div_menu/div_menu.html"/> 
       <item title="- DIV - bar" url="/demo/div_bar/div_bar.html"/> 
