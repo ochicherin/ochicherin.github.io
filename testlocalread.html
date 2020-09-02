@@ -60,7 +60,7 @@ function downloadImage(filename, text) {
 <H3>Загрузка текста в экранную форму(readAsText).</H3>
 <form onsubmit="downloadText(this['name'].value, this['text'].value)">
   Имя файла : <input type="text" id="form_name" name="name" value="test.txt" width=20>
-  <input type="submit" value="Выгрузить и обновить экран" class=button><br>
+  <input type="submit" value="Выгрузить" class=button><br>
   <textarea id="form_text" name="text" rows="10" cols="75" >Hello world. Русский текст.</textarea><br>
   Выберите файл для загрузки : <input type="file" accept='text/*' onChange="openFileForm(event)">
     <script type="text/javascript"> 
@@ -75,7 +75,7 @@ function downloadImage(filename, text) {
      };
     </script>
 </form>      
-<input type="submit" value="Просто выгрузить" class=button onClick="downloadText(document.getElementById('form_name').value,document.getElementById('form_text').value)"><br>
+<input type="submit" value="выгрузить" class=button onClick="downloadText(document.getElementById('form_name').value,document.getElementById('form_text').value)"><br>
   
 <H3>Загрузка изображения на html страницу(readAsDataURL).</H3>
 <input type='file' accept='image/*' onchange="openFileImage(event,'image1')"><br>
@@ -91,7 +91,7 @@ function downloadImage(filename, text) {
     reader.readAsDataURL(input.files[0]);
   };
 </script>
-<input type="submit" value="Просто выгрузить" class=button onClick="downloadImage('test.gif'.document.getElementById('image1').src)"><br>
+<input type="submit" value="выгрузить" class=button onClick="downloadImage('test.gif',document.getElementById('image1').src)"><br>
 <hr> 
 <img id='image1'>
 <hr> 
