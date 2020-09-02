@@ -13,6 +13,24 @@
    </image>
    
    <item>
+      <title>Добавлен Пример читалки для локальных файлов формата fb2.</title>
+      <link>http://ochicherin.github.io/testfb2local.html</link>
+      <description>Продолжается реструктуризация сайта. Добавлен Пример читалки для локальных файлов формата fb2.</description>
+      <pubDate>Wed, 02 Sep 2020 19:00:00 +0300</pubDate>
+      <category>Примеры</category>
+      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+   </item>
+
+   <item>
+      <title>Добавлен Пример локальной загрузки/выгрузки файлов.</title>
+      <link>http://ochicherin.github.io/testlocalread.html</link>
+      <description>Вместо реструктуризации сайта появляются новые примеры. Демонстрация механизма, как можно манипулировать локальными файлами.</description>
+      <pubDate>Wed, 02 Sep 2020 17:00:00 +0300</pubDate>
+      <category>Примеры</category>
+      <author>Чичерин Олег &lt;ochicherin@yandex.ru&gt;</author>
+   </item>
+
+   <item>
       <title>Добавлен пример Вызов flash читалки через параметры.</title>
       <link>http://ochicherin.github.io/reader/reader.html?xmlFile=/reader/3.xml</link>
       <description>Продолжается реструктуризация сайта. Попытка не клонировать страницы flash reader для каждой книги. Если конечно получиться</description>
