@@ -26,9 +26,10 @@
 
 Загрузка в экранную форму
 <form onsubmit="download(this['name'].value, this['text'].value)">
-  <input type="text" name="name" value="test.txt" width=30><br>
-  <textarea name="text" id="textcsv">Hello world. Русский текст.</textarea><br>
-  <input type="file" id="inputfile" onChange="openFileForm(event)">
+  Имя файла : <input type="text" name="name" value="test.txt" width=30><br>
+  <input type="submit" value="Выгрузить"><br>
+  <textarea name="text" rows="10" cols="45" id="textcsv">Hello world. Русский текст.</textarea><br>
+  Загрузить файл : <input type="file" id="inputfile" onChange="openFileForm(event)">
     <script type="text/javascript"> 
      var openFileForm = function(event) {
        var input = event.target;
@@ -40,7 +41,6 @@
       reader.readAsText(input.files[0]);
      };
     </script>
-  <input type="submit" value="Download">
 </form>      
   
 
