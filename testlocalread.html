@@ -8,7 +8,11 @@
 <BODY onLoad="initBody();">
   <H1>Пример локальной загрузки/выгрузки файлов.</H1>
 
-<H3>  Загрузка в html текст.</H3>
+Манипулирование файлами из локальной файловой системы.
+Можно подгрузить содержимое файла на страницу, можно выгрузить часть страницы.
+
+
+  <H3>Загрузка в html текст.</H3>
   Выберите файл для загрузки : <input type="file" id="input" onChange="openFile(event,'output')">
     <script type="text/javascript"> 
      var openFile = function(event,key) {
@@ -26,9 +30,9 @@
 
 <H3>Загрузка в экранную форму.</H3>
 <form onsubmit="download(this['name'].value, this['text'].value)">
-  Имя файла : <input type="text" name="name" value="test.txt" width=30><br>
+  Имя файла : <input type="text" name="name" value="test.txt" width=20><br>
   <input type="submit" value="Выгрузить"><br>
-  <textarea name="text" rows="10" cols="45" id="textcsv">Hello world. Русский текст.</textarea><br>
+  <textarea name="text" rows="10" cols="80" id="textcsv">Hello world. Русский текст.</textarea><br>
   Выберите файл для загрузки : <input type="file" id="inputfile" onChange="openFileForm(event)">
     <script type="text/javascript"> 
      var openFileForm = function(event) {
