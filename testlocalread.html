@@ -28,7 +28,7 @@ function download(filename, text) {
 
 
 <H3>Загрузка текста на html страницу(readAsText).</H3>
-  Выберите файл для загрузки : <input type="file" onChange="openFile(event,'output')">
+  Выберите файл для загрузки : <input type="file" accept='text/*' onChange="openFile(event,'output')">
     <script type="text/javascript"> 
      var openFile = function(event,key) {
        var input = event.target;
@@ -46,9 +46,9 @@ function download(filename, text) {
 <H3>Загрузка текста в экранную форму(readAsText).</H3>
 <form onsubmit="download(this['name'].value, this['text'].value)">
   Имя файла : <input type="text" name="name" value="test.txt" width=20>
-  <input type="submit" value="Выгрузить"><br>
+  <input type="submit" value="Выгрузить" class=button><br>
   <textarea name="text" rows="10" cols="75" >Hello world. Русский текст.</textarea><br>
-  Выберите файл для загрузки : <input type="file" accept='image/*' onChange="openFileForm(event)">
+  Выберите файл для загрузки : <input type="file" accept='text/*' onChange="openFileForm(event)">
     <script type="text/javascript"> 
      var openFileForm = function(event) {
        var input = event.target;
