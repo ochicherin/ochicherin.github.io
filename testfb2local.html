@@ -1,0 +1,29 @@
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
+  <script src="/script.js"></script>
+  <LINK href="/index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Пример читалки для локальных файлов формата fb2.</H1>
+
+ Выберите файл для загрузки : <input type="file" accept='text/fb2' onChange="openFile(event,'output')">
+    <script type="text/javascript"> 
+     var openFile = function(event,key) {
+       var input = event.target;
+       var reader = new FileReader();
+       reader.onload = function(){
+         var fb2 = reader.result;   
+         document.getElementById(key).textContent=fb2; 
+       };
+      reader.readAsText(input.files[0]);
+     };
+    </script>
+
+<span id=fb2_area>
+<div id=output></div>
+</span>
+
+</BODY>
+</HTML>

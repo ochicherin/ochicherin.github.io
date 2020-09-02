@@ -89,6 +89,8 @@
     <item title="Чужой код. Чтение локального файла." url="/testlocalread.html"/> 
     <item title="Чужой код. Электронная таблица." url="/spreadsheet.html"/> 
     <item title="Вызов flash читалки через параметры." url="/reader/reader.html?xmlFile=/reader/3.xml"/> 
+    <item title="Пример локальной загрузки/выгрузки файлов." url="/testlocalread.html"/> 
+    <item title="Пример читалки для локальных файлов формата fb2." url="/testfb2local.html"/> 
   </item>
   <item title="Библиотека" url="/lib.html" desc="Библиотека"> 
     <item title="Правила устройства электроустановок" url="/lib/pue.pdf"/> 
