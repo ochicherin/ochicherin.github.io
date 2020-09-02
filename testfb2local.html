@@ -15,7 +15,7 @@
        var reader = new FileReader();
        reader.onload = function(){
          var fb2 = reader.result;
-         GetRSS(document.getElementById(key), fb2, '/fb2html.xslt');    
+         document.getElementById(key).innerHTML = MakeXSLT(fb2, '/fb2html.xslt');
        };
       reader.readAsText(input.files[0]);
      };
