@@ -9,10 +9,10 @@
   <H1>Пример локальной загрузки/выгрузки файлов.</H1>
 
 Манипулирование файлами из локальной файловой системы.
-Можно подгрузить содержимое файла на страницу, можно выгрузить часть страницы.
+Можно подгрузить содержимое файла на страницу, можно выгрузить часть страницы обратно в файловую систему.
 
 
-  <H3>Загрузка в html текст.</H3>
+<H3>Загрузка текста на html страницу(readAsText).</H3>
   Выберите файл для загрузки : <input type="file" id="input" onChange="openFile(event,'output')">
     <script type="text/javascript"> 
      var openFile = function(event,key) {
@@ -28,7 +28,7 @@
     <pre id="output"></pre> 
     <hr> 
 
-<H3>Загрузка в экранную форму.</H3>
+<H3>Загрузка текста в экранную форму(readAsText).</H3>
 <form onsubmit="download(this['name'].value, this['text'].value)">
   Имя файла : <input type="text" name="name" value="test.txt" width=20><br>
   <input type="submit" value="Выгрузить"><br>
@@ -47,6 +47,23 @@
     </script>
 </form>      
   
+<H3>Загрузка изображения на html страницу(readAsDataURL).</H3>
+<input type='file' accept='image/*' onchange="openFileImage(event,'image1')"><br>
+<script>
+  var openFileImage = function(event,key) {
+    var input = event.target;
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result;
+      var output = document.getElementById(key);
+      output.src = dataURL;
+    };
+    reader.readAsDataURL(input.files[0]);
+  };
+</script>
+<hr> 
+<img id='image1'>
+<hr> 
 
 </BODY>
 </HTML>
