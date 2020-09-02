@@ -1,30 +1,48 @@
-<!DOCTYPE html> 
-<html> 
-  
-<head> 
-    <title>Read Text File</title> 
-</head> 
-  
-<body> 
-    <input type="file" name="inputfile"
-            id="inputfile"> 
-    <br> 
-   
-    <pre id="output"></pre> 
-      
+<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
+  <script src="/script.js"></script>
+  <LINK href="/index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>Пример локальной загрузки/выгрузки файлов.</H1>
+
+  Загрузка в html текст.
+  <input type="file" id="input" onChange="openFile(event,'output')">
     <script type="text/javascript"> 
-        document.getElementById('inputfile') 
-            .addEventListener('change', function() { 
-              
-            var fr=new FileReader(); 
-            fr.onload=function(){ 
-                document.getElementById('output') 
-                        .textContent=fr.result; 
-            } 
-              
-            fr.readAsText(this.files[0]); 
-        }) 
-    </script> 
-</body> 
+     var openFile = function(event,key) {
+       var input = event.target;
+       var reader = new FileReader();
+       reader.onload = function(){
+         document.getElementById(key).textContent=reader.result; 
+       };
+      reader.readAsText(input.files[0]);
+     };
+    </script>
+    <hr> 
+    <pre id="output"></pre> 
+    <hr> 
+
+Загрузка в экранную форму
+<form onsubmit="download(this['name'].value, this['text'].value)">
+  <input type="text" name="name" value="test.txt" width=30><br>
+  <textarea name="text" id="textcsv">Hello world. Русский текст.</textarea><br>
+  <input type="file" id="inputfile" onChange="openFileForm(event)">
+    <script type="text/javascript"> 
+     var openFileForm = function(event) {
+       var input = event.target;
+       var reader = new FileReader();
+       reader.onload = function(){
+         input.form['name'].value = input.files[0].name;
+         input.form['text'].value = reader.result;
+       };
+      reader.readAsText(input.files[0]);
+     };
+    </script>
+  <input type="submit" value="Download">
+</form>      
   
-</html> 
+
+</BODY>
+</HTML>
