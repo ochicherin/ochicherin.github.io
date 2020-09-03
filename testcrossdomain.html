@@ -29,10 +29,8 @@ xhr.onerror = function() {
 xhr.send();
 }
 </script>
-<form>
-<input type="input" name="url" value="https://ochicherin.github.io/rss.xml">
-<input type="submit" value="Query" class=button onClick="testQuery(this['url'].value);"><br>
-</form>
+<input type="input" id="url" value="https://ochicherin.github.io/rss.xml">
+<input type="submit" value="Query" class=button onClick="document.getElementById('url').value);"><br>
 
 </BODY>
 </HTML>
