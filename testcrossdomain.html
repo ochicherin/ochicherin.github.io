@@ -1,0 +1,34 @@
+﻿<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
+  <link rel="shortcut icon" href="favicon.ico">
+  <LINK href="index_files/style.css" type=text/css rel=stylesheet>
+  <script src="script.js"></script>
+</HEAD>
+<BODY onLoad="initBody();">
+<script>
+function testQuery()
+{
+// (1)
+var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+
+var xhr = new XHR();
+
+// (2) запрос на другой домен :)
+xhr.open('GET', 'https://rss.newsru.com/top/big/', true);
+
+xhr.onload = function() {
+  alert( this.responseText );
+}
+
+xhr.onerror = function() {
+  alert( 'Ошибка ' + this.status );
+}
+xhr.send();
+}
+</script>
+<input type="submit" value="Query" class=button onClick="testQuery();"><br>
+
+</BODY>
+</HTML>
