@@ -1,0 +1,38 @@
+﻿<HTML>
+  <HEAD>
+  <TITLE id=title>Чичерин Олег</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8">
+  <script src="/script.js"></script>
+  <LINK href="/index_files/style.css" type=text/css rel=stylesheet>
+</HEAD>
+<BODY onLoad="initBody();">
+  <H1>SELECT external.</H1>
+Combo box, содержимое которого подгружается извне. 
+Причем из произвольного количества источников.
+
+<div id=area0>
+<SELECT id="list1" class=external>
+  <option value="/demo/data/pigs.html">3 поросенка.</option>
+  <option value="/demo/data/rovers.html">Гребцы.</option>
+</SELECT>
+</div>
+<hr>
+
+<h5>Так выглядел бы обычный combobox.</h5>
+<div id=area1>
+<SELECT id="list2">
+  <option value="/demo/data/pigs.html">3 поросенка.</option>
+  <option value="/demo/data/rovers.html">Гребцы.</option>
+</SELECT>
+</div>
+
+<textarea class=preview>area1</textarea>
+
+<h5>Так выглядит элемент в исходном состоянии.</h5>
+<textarea class=preview>area0</textarea>
+
+<h5>А так в текущем.</h5>
+<textarea class=postview>area0</textarea>
+
+</BODY>
+</HTML>
