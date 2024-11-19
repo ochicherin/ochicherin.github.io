@@ -13,6 +13,6 @@
   </TR> -->
   <TR>
     <TD bgColor=#c96300 align=center width=160 height=23><a href="/rss.xml">RSS</a></TD>
-    <TD align=right bgColor=#333333 class="footer">&nbsp;&nbsp;Чичерин О.Н., Москва, 2009-2024 &nbsp;&nbsp;</TD>
+    <TD align=right bgColor=#333333 class="footer">&nbsp;&nbsp;Чичерин О.Н., Москва, 2009 &nbsp;&nbsp;</TD>
   </TR>
 </TABLE>
